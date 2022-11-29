@@ -44,29 +44,22 @@ public class ForgetPassword extends javax.swing.JFrame {
         setPreferredSize(new java.awt.Dimension(1280, 720));
         getContentPane().setLayout(null);
 
-        txt_username.setBackground(new java.awt.Color(255, 255, 255));
         txt_username.setFont(new java.awt.Font("Outfit", 0, 20)); // NOI18N
-        txt_username.setForeground(new java.awt.Color(0, 0, 0));
         txt_username.setBorder(null);
         getContentPane().add(txt_username);
         txt_username.setBounds(730, 276, 330, 20);
 
-        txt_pin.setBackground(new java.awt.Color(255, 255, 255));
         txt_pin.setFont(new java.awt.Font("Outfit", 0, 20)); // NOI18N
-        txt_pin.setForeground(new java.awt.Color(0, 0, 0));
         txt_pin.setBorder(null);
         getContentPane().add(txt_pin);
         txt_pin.setBounds(730, 370, 320, 20);
 
-        txt_newPass.setBackground(new java.awt.Color(255, 255, 255));
         txt_newPass.setFont(new java.awt.Font("Outfit", 0, 20)); // NOI18N
-        txt_newPass.setForeground(new java.awt.Color(0, 0, 0));
         txt_newPass.setBorder(null);
         getContentPane().add(txt_newPass);
         txt_newPass.setBounds(730, 464, 330, 20);
 
         checkPass.setBackground(new java.awt.Color(255, 255, 255));
-        checkPass.setForeground(new java.awt.Color(0, 0, 0));
         checkPass.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 checkPassActionPerformed(evt);
@@ -76,14 +69,12 @@ public class ForgetPassword extends javax.swing.JFrame {
         checkPass.setBounds(720, 500, 20, 19);
 
         jLabel2.setFont(new java.awt.Font("Outfit", 0, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Show Password");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(740, 500, 100, 18);
+        jLabel2.setBounds(740, 500, 100, 19);
 
         btn_reset.setBackground(new java.awt.Color(252, 191, 73));
-        btn_reset.setFont(new java.awt.Font("Outfit", 0, 21)); // NOI18N
-        btn_reset.setForeground(new java.awt.Color(0, 0, 0));
+        btn_reset.setFont(new java.awt.Font("Outfit", 0, 33)); // NOI18N
         btn_reset.setText("Reset Password");
         btn_reset.setBorder(null);
         btn_reset.addActionListener(new java.awt.event.ActionListener() {
@@ -99,10 +90,9 @@ public class ForgetPassword extends javax.swing.JFrame {
         jPanel1.setBounds(680, 550, 410, 70);
 
         jLabel1.setFont(new java.awt.Font("Outfit", 0, 14)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Sudah punya akun ?");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(800, 630, 130, 18);
+        jLabel1.setBounds(800, 630, 130, 19);
 
         jLabel3.setFont(new java.awt.Font("Outfit", 0, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 133, 255));
