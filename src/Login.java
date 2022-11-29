@@ -123,10 +123,10 @@ public class Login extends javax.swing.JFrame {
                 txt_password.requestFocus();
             }else{
                 java.sql.Connection conn = (Connection)Connect.GetConnection();
-                String sql = "SELECT * FROM pengguna WHERE username = ? AND password = ?";
+                String sql = "SELECT * FROM pengguna WHERE username ='"+txt_username.getText()+"' AND password = '"+ txt_password.getText()+"'";
                 java.sql.PreparedStatement pst = conn.prepareStatement(sql);
-                pst.setString(1, txt_username.getText());
-                pst.setString(2, txt_password.getText());
+//                pst.setString(1, );
+//                pst.setString(2, );
                 java.sql.ResultSet rs = pst.executeQuery(sql);
 
                 if(rs.next()){
