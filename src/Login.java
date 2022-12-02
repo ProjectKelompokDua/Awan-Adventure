@@ -42,7 +42,6 @@ public class Login extends javax.swing.JFrame {
         exit = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         minimize = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
         bg = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -162,10 +161,6 @@ public class Login extends javax.swing.JFrame {
         getContentPane().add(jPanel4);
         jPanel4.setBounds(1130, 0, 30, 30);
 
-        jLabel1.setText("jLabel1");
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(760, 90, 38, 16);
-
         bg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/loginPage.jpg"))); // NOI18N
         getContentPane().add(bg);
         bg.setBounds(0, 0, 1200, 675);
@@ -278,7 +273,6 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JButton btn_login;
     private javax.swing.JCheckBox checkPass;
     private javax.swing.JLabel exit;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
