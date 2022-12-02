@@ -73,8 +73,6 @@ public class FormKasir extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jSeparator2 = new javax.swing.JSeparator();
-        tgl_pinjam = new com.toedter.calendar.JDateChooser();
-        tgl_kembali = new com.toedter.calendar.JDateChooser();
         jLabel12 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         txt_identitas1 = new javax.swing.JTextField();
@@ -84,6 +82,12 @@ public class FormKasir extends javax.swing.JFrame {
         btn_tambahBarang = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
+        tgl_kembali = new com.toedter.calendar.JDateChooser();
+        tgl_pinjam = new com.toedter.calendar.JDateChooser();
+        jPanel5 = new javax.swing.JPanel();
+        MenuName = new javax.swing.JLabel();
+        jPanel6 = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
         bg = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -94,7 +98,6 @@ public class FormKasir extends javax.swing.JFrame {
 
         btn_beranda.setBackground(new java.awt.Color(248, 221, 113));
         btn_beranda.setFont(new java.awt.Font("Outfit", 0, 14)); // NOI18N
-        btn_beranda.setForeground(new java.awt.Color(0, 0, 0));
         btn_beranda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/home.png"))); // NOI18N
         btn_beranda.setText("Beranda");
         btn_beranda.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 15, 1, 1, new java.awt.Color(248, 221, 113)));
@@ -103,7 +106,6 @@ public class FormKasir extends javax.swing.JFrame {
 
         btn_kasir.setBackground(new java.awt.Color(248, 221, 113));
         btn_kasir.setFont(new java.awt.Font("Outfit", 0, 14)); // NOI18N
-        btn_kasir.setForeground(new java.awt.Color(0, 0, 0));
         btn_kasir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/trolley-removebg-preview.png"))); // NOI18N
         btn_kasir.setText("Form Kasir");
         btn_kasir.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 15, 1, 1, new java.awt.Color(248, 221, 113)));
@@ -113,7 +115,6 @@ public class FormKasir extends javax.swing.JFrame {
 
         btn_dataBarang.setBackground(new java.awt.Color(248, 221, 113));
         btn_dataBarang.setFont(new java.awt.Font("Outfit", 0, 14)); // NOI18N
-        btn_dataBarang.setForeground(new java.awt.Color(0, 0, 0));
         btn_dataBarang.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/package.png"))); // NOI18N
         btn_dataBarang.setText("Data Barang");
         btn_dataBarang.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 15, 1, 1, new java.awt.Color(248, 221, 113)));
@@ -122,7 +123,6 @@ public class FormKasir extends javax.swing.JFrame {
 
         btn_sewa.setBackground(new java.awt.Color(248, 221, 113));
         btn_sewa.setFont(new java.awt.Font("Outfit", 0, 14)); // NOI18N
-        btn_sewa.setForeground(new java.awt.Color(0, 0, 0));
         btn_sewa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/rent-removebg-preview.png"))); // NOI18N
         btn_sewa.setText("Data Sewaan");
         btn_sewa.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 15, 1, 1, new java.awt.Color(248, 221, 113)));
@@ -131,7 +131,6 @@ public class FormKasir extends javax.swing.JFrame {
 
         btn_return.setBackground(new java.awt.Color(248, 221, 113));
         btn_return.setFont(new java.awt.Font("Outfit", 0, 14)); // NOI18N
-        btn_return.setForeground(new java.awt.Color(0, 0, 0));
         btn_return.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/product-return-removebg-preview.png"))); // NOI18N
         btn_return.setText("Form Pengembalian");
         btn_return.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 15, 1, 1, new java.awt.Color(248, 221, 113)));
@@ -140,7 +139,6 @@ public class FormKasir extends javax.swing.JFrame {
 
         btn_pengguna.setBackground(new java.awt.Color(248, 221, 113));
         btn_pengguna.setFont(new java.awt.Font("Outfit", 0, 14)); // NOI18N
-        btn_pengguna.setForeground(new java.awt.Color(0, 0, 0));
         btn_pengguna.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/user-removebg-preview.png"))); // NOI18N
         btn_pengguna.setText("Pengguna");
         btn_pengguna.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 15, 1, 1, new java.awt.Color(248, 221, 113)));
@@ -155,7 +153,6 @@ public class FormKasir extends javax.swing.JFrame {
 
         btn_report.setBackground(new java.awt.Color(248, 221, 113));
         btn_report.setFont(new java.awt.Font("Outfit", 0, 14)); // NOI18N
-        btn_report.setForeground(new java.awt.Color(0, 0, 0));
         btn_report.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/report-removebg-preview.png"))); // NOI18N
         btn_report.setText("Laporan");
         btn_report.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 15, 1, 1, new java.awt.Color(248, 221, 113)));
@@ -200,8 +197,7 @@ public class FormKasir extends javax.swing.JFrame {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logo.png"))); // NOI18N
 
-        jLabel2.setFont(new java.awt.Font("Outfit Medium", 0, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel2.setText("Awan Adventure");
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
@@ -211,21 +207,21 @@ public class FormKasir extends javax.swing.JFrame {
             .addGroup(jPanel9Layout.createSequentialGroup()
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel9Layout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addComponent(jLabel2))
-                    .addGroup(jPanel9Layout.createSequentialGroup()
                         .addGap(72, 72, 72)
-                        .addComponent(jLabel1)))
-                .addContainerGap(33, Short.MAX_VALUE))
+                        .addComponent(jLabel1))
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addGap(21, 21, 21)
+                        .addComponent(jLabel2)))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel9Layout.createSequentialGroup()
                 .addGap(27, 27, 27)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel2)
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addContainerGap(9, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 120));
@@ -233,20 +229,16 @@ public class FormKasir extends javax.swing.JFrame {
         jPanel1.setLayout(null);
 
         label_nama.setFont(new java.awt.Font("Outfit", 0, 18)); // NOI18N
-        label_nama.setForeground(new java.awt.Color(0, 0, 0));
         label_nama.setText("Nama");
         jPanel1.add(label_nama);
         label_nama.setBounds(40, 170, 90, 30);
 
-        txt_nama.setBackground(new java.awt.Color(255, 255, 255));
         txt_nama.setFont(new java.awt.Font("Outfit", 0, 16)); // NOI18N
-        txt_nama.setForeground(new java.awt.Color(0, 0, 0));
         txt_nama.setBorder(null);
         jPanel1.add(txt_nama);
         txt_nama.setBounds(130, 170, 240, 30);
 
         label_alamat.setFont(new java.awt.Font("Outfit", 0, 18)); // NOI18N
-        label_alamat.setForeground(new java.awt.Color(0, 0, 0));
         label_alamat.setText("Alamat");
         jPanel1.add(label_alamat);
         label_alamat.setBounds(40, 220, 90, 30);
@@ -285,14 +277,11 @@ public class FormKasir extends javax.swing.JFrame {
         jPanel2.setBounds(910, 0, 90, 70);
 
         status.setFont(new java.awt.Font("Outfit", 0, 18)); // NOI18N
-        status.setForeground(new java.awt.Color(0, 0, 0));
         status.setText("jLabel5");
         jPanel1.add(status);
         status.setBounds(800, 10, 60, 60);
 
-        tbl_barang.setBackground(new java.awt.Color(255, 255, 255));
         tbl_barang.setFont(new java.awt.Font("Outfit", 0, 16)); // NOI18N
-        tbl_barang.setForeground(new java.awt.Color(0, 0, 0));
         tbl_barang.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
@@ -319,7 +308,6 @@ public class FormKasir extends javax.swing.JFrame {
 
         jButton1.setBackground(new java.awt.Color(252, 191, 73));
         jButton1.setFont(new java.awt.Font("Outfit", 0, 16)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(0, 0, 0));
         jButton1.setText("Proses");
         jButton1.setBorder(null);
         jPanel1.add(jButton1);
@@ -329,16 +317,12 @@ public class FormKasir extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Input Barang"));
-        jPanel3.setForeground(new java.awt.Color(0, 0, 0));
 
         jLabel3.setBackground(new java.awt.Color(255, 255, 255));
         jLabel3.setFont(new java.awt.Font("Outfit", 0, 16)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Barang");
 
-        combo_barang.setBackground(new java.awt.Color(255, 255, 255));
         combo_barang.setFont(new java.awt.Font("Outfit", 0, 16)); // NOI18N
-        combo_barang.setForeground(new java.awt.Color(0, 0, 0));
         combo_barang.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pilih Barang..." }));
         combo_barang.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -348,12 +332,9 @@ public class FormKasir extends javax.swing.JFrame {
 
         jLabel5.setBackground(new java.awt.Color(255, 255, 255));
         jLabel5.setFont(new java.awt.Font("Outfit", 0, 16)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Jumlah");
 
-        combo_jumlah.setBackground(new java.awt.Color(255, 255, 255));
         combo_jumlah.setFont(new java.awt.Font("Outfit", 0, 16)); // NOI18N
-        combo_jumlah.setForeground(new java.awt.Color(0, 0, 0));
         combo_jumlah.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0" }));
 
         jLabel11.setFont(new java.awt.Font("Outfit", 0, 14)); // NOI18N
@@ -404,10 +385,8 @@ public class FormKasir extends javax.swing.JFrame {
         jPanel1.add(jPanel3);
         jPanel3.setBounds(40, 400, 350, 130);
 
-        text_areaAlamat.setBackground(new java.awt.Color(255, 255, 255));
         text_areaAlamat.setColumns(15);
         text_areaAlamat.setFont(new java.awt.Font("Outfit", 0, 16)); // NOI18N
-        text_areaAlamat.setForeground(new java.awt.Color(0, 0, 0));
         text_areaAlamat.setRows(5);
         text_areaAlamat.setBorder(null);
         jScrollPane2.setViewportView(text_areaAlamat);
@@ -416,97 +395,68 @@ public class FormKasir extends javax.swing.JFrame {
         jScrollPane2.setBounds(130, 220, 240, 110);
 
         jLabel8.setFont(new java.awt.Font("Outfit", 0, 18)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
         jLabel8.setText("Identitas diri");
         jPanel1.add(jLabel8);
         jLabel8.setBounds(580, 170, 110, 30);
 
-        combo_identitas.setBackground(new java.awt.Color(255, 255, 255));
         combo_identitas.setFont(new java.awt.Font("Outfit", 0, 16)); // NOI18N
-        combo_identitas.setForeground(new java.awt.Color(0, 0, 0));
         combo_identitas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pilih Identitas...", "KTP", "SIM", "Kartu Pelajar" }));
         jPanel1.add(combo_identitas);
         combo_identitas.setBounds(750, 170, 220, 30);
 
         jLabel9.setFont(new java.awt.Font("Outfit", 0, 18)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(0, 0, 0));
         jLabel9.setText("Nomor Identitas");
         jPanel1.add(jLabel9);
         jLabel9.setBounds(580, 220, 140, 30);
 
-        txt_identitas.setBackground(new java.awt.Color(255, 255, 255));
         txt_identitas.setFont(new java.awt.Font("Outfit", 0, 16)); // NOI18N
-        txt_identitas.setForeground(new java.awt.Color(0, 0, 0));
         txt_identitas.setBorder(null);
         jPanel1.add(txt_identitas);
         txt_identitas.setBounds(750, 220, 220, 30);
 
         jLabel10.setFont(new java.awt.Font("Outfit", 0, 18)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(0, 0, 0));
         jLabel10.setText("Tanggal penyewaan");
         jPanel1.add(jLabel10);
         jLabel10.setBounds(580, 270, 170, 30);
 
         jLabel13.setFont(new java.awt.Font("Outfit", 0, 16)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(0, 0, 0));
         jLabel13.setText("Total    :      Rp");
         jPanel1.add(jLabel13);
         jLabel13.setBounds(620, 630, 100, 21);
 
         jLabel14.setFont(new java.awt.Font("Outfit", 0, 16)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(0, 0, 0));
         jPanel1.add(jLabel14);
         jLabel14.setBounds(720, 630, 43, 20);
         jPanel1.add(jSeparator2);
         jSeparator2.setBounds(620, 650, 200, 10);
 
-        tgl_pinjam.setBackground(new java.awt.Color(255, 255, 255));
-        tgl_pinjam.setForeground(new java.awt.Color(0, 0, 0));
-        tgl_pinjam.setDateFormatString("y-m-d");
-        jPanel1.add(tgl_pinjam);
-        tgl_pinjam.setBounds(750, 270, 100, 30);
-
-        tgl_kembali.setBackground(new java.awt.Color(255, 255, 255));
-        tgl_kembali.setForeground(new java.awt.Color(0, 0, 0));
-        tgl_kembali.setDateFormatString("y-m-d");
-        jPanel1.add(tgl_kembali);
-        tgl_kembali.setBounds(868, 270, 100, 30);
-
         jLabel12.setFont(new java.awt.Font("Outfit", 0, 36)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(0, 0, 0));
         jLabel12.setText("-");
         jPanel1.add(jLabel12);
         jLabel12.setBounds(850, 260, 20, 40);
 
         jLabel15.setFont(new java.awt.Font("Outfit", 0, 18)); // NOI18N
-        jLabel15.setForeground(new java.awt.Color(0, 0, 0));
         jLabel15.setText("Nomor Identitas");
         jPanel1.add(jLabel15);
         jLabel15.setBounds(580, 220, 140, 30);
 
-        txt_identitas1.setBackground(new java.awt.Color(255, 255, 255));
         txt_identitas1.setFont(new java.awt.Font("Outfit", 0, 16)); // NOI18N
-        txt_identitas1.setForeground(new java.awt.Color(0, 0, 0));
         txt_identitas1.setBorder(null);
         jPanel1.add(txt_identitas1);
         txt_identitas1.setBounds(750, 220, 220, 30);
 
         jLabel16.setFont(new java.awt.Font("Outfit", 0, 18)); // NOI18N
-        jLabel16.setForeground(new java.awt.Color(0, 0, 0));
         jLabel16.setText("DP");
         jPanel1.add(jLabel16);
         jLabel16.setBounds(580, 320, 140, 30);
 
-        txt_dp.setBackground(new java.awt.Color(255, 255, 255));
         txt_dp.setFont(new java.awt.Font("Outfit", 0, 16)); // NOI18N
-        txt_dp.setForeground(new java.awt.Color(0, 0, 0));
         txt_dp.setBorder(null);
         jPanel1.add(txt_dp);
         txt_dp.setBounds(750, 320, 220, 30);
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
         jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder("Proses"));
-        jPanel4.setForeground(new java.awt.Color(0, 0, 0));
 
         btn_tambahBarang.setBackground(new java.awt.Color(92, 184, 92));
         btn_tambahBarang.setFont(new java.awt.Font("Outfit", 0, 14)); // NOI18N
@@ -522,13 +472,11 @@ public class FormKasir extends javax.swing.JFrame {
 
         jButton2.setBackground(new java.awt.Color(23, 162, 184));
         jButton2.setFont(new java.awt.Font("Outfit", 0, 16)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(0, 0, 0));
         jButton2.setText("Edit");
         jButton2.setBorder(null);
 
         jButton3.setBackground(new java.awt.Color(220, 53, 69));
         jButton3.setFont(new java.awt.Font("Outfit", 0, 16)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(0, 0, 0));
         jButton3.setText("Hapus");
         jButton3.setBorder(null);
 
@@ -559,6 +507,59 @@ public class FormKasir extends javax.swing.JFrame {
 
         jPanel1.add(jPanel4);
         jPanel4.setBounds(40, 540, 350, 60);
+        jPanel1.add(tgl_kembali);
+        tgl_kembali.setBounds(870, 270, 88, 30);
+        jPanel1.add(tgl_pinjam);
+        tgl_pinjam.setBounds(750, 270, 88, 30);
+
+        jPanel5.setBackground(new java.awt.Color(255, 255, 255));
+
+        MenuName.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        MenuName.setText("Form Kasir");
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(MenuName)
+                .addContainerGap(310, Short.MAX_VALUE))
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(17, 17, 17)
+                .addComponent(MenuName)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jPanel1.add(jPanel5);
+        jPanel5.setBounds(0, 0, 533, 67);
+
+        jPanel6.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel6.setText("Beranda / Kasir");
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel6)
+                .addContainerGap(37, Short.MAX_VALUE))
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                .addGap(0, 3, Short.MAX_VALUE)
+                .addComponent(jLabel6))
+        );
+
+        jPanel1.add(jPanel6);
+        jPanel6.setBounds(30, 90, 140, 20);
 
         bg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/formKasir.jpg"))); // NOI18N
         bg.setPreferredSize(new java.awt.Dimension(1000, 675));
@@ -722,6 +723,7 @@ public class FormKasir extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel MenuName;
     private javax.swing.JLabel bg;
     private javax.swing.JButton btn_beranda;
     private javax.swing.JButton btn_dataBarang;
@@ -749,12 +751,15 @@ public class FormKasir extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
