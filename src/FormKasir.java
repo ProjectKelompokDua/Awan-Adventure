@@ -277,7 +277,7 @@ public class FormKasir extends javax.swing.JFrame {
         jPanel2.setBounds(910, 0, 90, 70);
 
         status.setFont(new java.awt.Font("Outfit", 0, 18)); // NOI18N
-        status.setText("jLabel5");
+        status.setText("Admin");
         jPanel1.add(status);
         status.setBounds(800, 10, 60, 60);
 
@@ -535,12 +535,12 @@ public class FormKasir extends javax.swing.JFrame {
         );
 
         jPanel1.add(jPanel5);
-        jPanel5.setBounds(0, 0, 533, 67);
+        jPanel5.setBounds(10, 0, 534, 67);
 
         jPanel6.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel6.setText("Beranda / Kasir");
+        jLabel6.setText("Home / Kasir");
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -549,7 +549,7 @@ public class FormKasir extends javax.swing.JFrame {
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel6)
-                .addContainerGap(37, Short.MAX_VALUE))
+                .addContainerGap(52, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
