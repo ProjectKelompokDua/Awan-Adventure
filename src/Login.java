@@ -42,22 +42,19 @@ public class Login extends javax.swing.JFrame {
         exit = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         minimize = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         bg = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Awan Adventure");
-        setBackground(new java.awt.Color(242, 242, 242));
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(1200, 675));
         getContentPane().setLayout(null);
 
-        txt_username.setBackground(new java.awt.Color(255, 255, 255));
         txt_username.setFont(new java.awt.Font("Outfit", 0, 20)); // NOI18N
         txt_username.setBorder(null);
         getContentPane().add(txt_username);
         txt_username.setBounds(680, 320, 310, 20);
 
-        txt_password.setBackground(new java.awt.Color(255, 255, 255));
         txt_password.setFont(new java.awt.Font("Outfit", 0, 20)); // NOI18N
         txt_password.setBorder(null);
         getContentPane().add(txt_password);
@@ -65,7 +62,6 @@ public class Login extends javax.swing.JFrame {
 
         btn_login.setBackground(new java.awt.Color(252, 191, 73));
         btn_login.setFont(new java.awt.Font("Outfit", 0, 21)); // NOI18N
-        btn_login.setForeground(new java.awt.Color(0, 0, 0));
         btn_login.setText("Login");
         btn_login.setBorder(null);
         btn_login.addActionListener(new java.awt.event.ActionListener() {
@@ -106,10 +102,9 @@ public class Login extends javax.swing.JFrame {
         checkPass.setBounds(670, 450, 20, 19);
 
         jLabel3.setFont(new java.awt.Font("Outfit", 0, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Show Password");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(690, 450, 110, 18);
+        jLabel3.setBounds(690, 450, 110, 19);
 
         jPanel3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel3.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -119,7 +114,6 @@ public class Login extends javax.swing.JFrame {
         });
 
         exit.setFont(new java.awt.Font("Outfit Black", 0, 24)); // NOI18N
-        exit.setForeground(new java.awt.Color(0, 0, 0));
         exit.setText("X");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -147,7 +141,6 @@ public class Login extends javax.swing.JFrame {
         });
 
         minimize.setFont(new java.awt.Font("Outfit Black", 0, 24)); // NOI18N
-        minimize.setForeground(new java.awt.Color(0, 0, 0));
         minimize.setText("-");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
@@ -168,6 +161,10 @@ public class Login extends javax.swing.JFrame {
 
         getContentPane().add(jPanel4);
         jPanel4.setBounds(1130, 0, 30, 30);
+
+        jLabel1.setText("jLabel1");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(760, 90, 38, 16);
 
         bg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/loginPage.jpg"))); // NOI18N
         getContentPane().add(bg);
@@ -281,6 +278,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JButton btn_login;
     private javax.swing.JCheckBox checkPass;
     private javax.swing.JLabel exit;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
