@@ -74,7 +74,7 @@ public class ForgetPassword extends javax.swing.JFrame {
         jLabel2.setBounds(740, 500, 100, 19);
 
         btn_reset.setBackground(new java.awt.Color(252, 191, 73));
-        btn_reset.setFont(new java.awt.Font("Outfit", 0, 33)); // NOI18N
+        btn_reset.setFont(new java.awt.Font("Outfit", 0, 21)); // NOI18N
         btn_reset.setText("Reset Password");
         btn_reset.setBorder(null);
         btn_reset.addActionListener(new java.awt.event.ActionListener() {
