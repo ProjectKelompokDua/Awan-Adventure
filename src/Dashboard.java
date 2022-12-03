@@ -1,5 +1,12 @@
 
+import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import javax.swing.JOptionPane;
+import javax.swing.Timer;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -15,8 +22,104 @@ public class Dashboard extends javax.swing.JFrame {
     /**
      * Creates new form Dashboard
      */
+        public static int pesanan_berlangsung;
+
+    public void Pesanan_Berlangsung() {
+        try {
+            String sql = "SELECT COUNT(Status) AS psn_brlngsg FROM data_sewaan WHERE Status = 'Proses'";
+            java.sql.Connection conn = (Connection) koneksi.Connect.GetConnection();
+            java.sql.PreparedStatement pst = conn.prepareStatement(sql);
+            java.sql.ResultSet rs = pst.executeQuery(sql);
+            if (rs.next()) {
+                pesanan_berlangsung = rs.getInt("psn_brlngsg");
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
+        String result = String.valueOf(pesanan_berlangsung);
+        txt_pesanan_lngsng.setText(result);
+    }
+    
+    public static int ttl_pesanan;
+
+    public void Total_Pesanan() {
+        try {
+            String sql = "SELECT COUNT(id_sewaan) AS jml_pesanan FROM data_sewaan";
+            java.sql.Connection conn = (Connection) koneksi.Connect.GetConnection();
+            java.sql.PreparedStatement pst = conn.prepareStatement(sql);
+            java.sql.ResultSet rs = pst.executeQuery(sql);
+            if (rs.next()) {
+                ttl_pesanan = rs.getInt("jml_pesanan");
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
+        String result = String.valueOf(ttl_pesanan);
+        txt_ttl_pesanan.setText(result);
+    }
+    
+        public static int pesanan_selesai;
+
+    public void Pesanan_Selesai() {
+        try {
+            String sql = "SELECT COUNT(id_pengembalian) AS jml_pengembalian FROM data_pengembalian";
+            java.sql.Connection conn = (Connection) koneksi.Connect.GetConnection();
+            java.sql.PreparedStatement pst = conn.prepareStatement(sql);
+            java.sql.ResultSet rs = pst.executeQuery(sql);
+            if (rs.next()) {
+                pesanan_selesai = rs.getInt("jml_pengembalian");
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
+        String result = String.valueOf(pesanan_selesai);
+        txt_pesanan_selesai.setText(result);
+    }
+    
+        public static int total;
+
+    public void Total_Transaksi() {
+        try {
+            String sql = "SELECT SUM(total) AS jml FROM data_sewaan";
+            java.sql.Connection conn = (Connection) koneksi.Connect.GetConnection();
+            java.sql.PreparedStatement pst = conn.prepareStatement(sql);
+            java.sql.ResultSet rs = pst.executeQuery(sql);
+            if (rs.next()) {
+                total = rs.getInt("jml");
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
+        String result = String.valueOf(total);
+        total_transaksi.setText("Rp" + result);
+    }
+    
+        public void tanggal() {
+        Date ys = new Date();
+        SimpleDateFormat s = new SimpleDateFormat("dd-MM-yyyy");
+        txttgl.setText(s.format(ys));
+    }
+
+    public void showTime() {
+        new Timer(0, new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                Date d = new Date();
+                SimpleDateFormat s = new SimpleDateFormat("hh-mm-ss");
+                String tim = s.format(d);
+                txtwaktu.setText(tim);
+            }
+        }).start();
+    }
+    
     public Dashboard() {
         initComponents();
+        tanggal();
+        Total_Transaksi();
+        Total_Pesanan();
+        Pesanan_Selesai();
+        Pesanan_Berlangsung();
+        showTime();
     }
 
     /**
@@ -45,6 +148,18 @@ public class Dashboard extends javax.swing.JFrame {
         btn_return = new javax.swing.JButton();
         btn_pengguna = new javax.swing.JButton();
         btn_report = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+        txt_pesanan_lngsng = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        txt_pesanan_selesai = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        total_transaksi = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        txt_ttl_pesanan = new javax.swing.JLabel();
+        jLabel26 = new javax.swing.JLabel();
+        txttgl = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
+        txtwaktu = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -264,8 +379,56 @@ public class Dashboard extends javax.swing.JFrame {
 
         getContentPane().add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 190, 560));
 
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel5.setText("Pesanan Berlangsung");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 170, -1, -1));
+
+        txt_pesanan_lngsng.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        txt_pesanan_lngsng.setText("-");
+        getContentPane().add(txt_pesanan_lngsng, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 180, -1, -1));
+
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel6.setText("Pesanan Selesai");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 170, -1, -1));
+
+        txt_pesanan_selesai.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        txt_pesanan_selesai.setText("-");
+        getContentPane().add(txt_pesanan_selesai, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 180, -1, -1));
+
+        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel7.setText("Total Transaksi");
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 170, -1, -1));
+
+        total_transaksi.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        total_transaksi.setText("-");
+        getContentPane().add(total_transaksi, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 180, -1, -1));
+
+        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel8.setText("Total Pesanan");
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 170, -1, -1));
+
+        txt_ttl_pesanan.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        txt_ttl_pesanan.setText("-");
+        getContentPane().add(txt_ttl_pesanan, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 180, -1, -1));
+
+        jLabel26.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel26.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8_pay_date_30px.png"))); // NOI18N
+        getContentPane().add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 640, 30, 30));
+
+        txttgl.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        txttgl.setText("tanggal");
+        getContentPane().add(txttgl, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 640, -1, 30));
+
+        jLabel25.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8_time_30px.png"))); // NOI18N
+        getContentPane().add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 640, 30, 30));
+
+        txtwaktu.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        txtwaktu.setText("waktu");
+        getContentPane().add(txtwaktu, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 640, -1, 30));
+
         jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/dashboard.png"))); // NOI18N
-        getContentPane().add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1195, -1));
+        getContentPane().add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1200, -1));
 
         pack();
         setLocationRelativeTo(null);
@@ -334,11 +497,23 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
+    private javax.swing.JLabel total_transaksi;
+    private javax.swing.JLabel txt_pesanan_lngsng;
+    private javax.swing.JLabel txt_pesanan_selesai;
+    private javax.swing.JLabel txt_ttl_pesanan;
+    private javax.swing.JLabel txttgl;
+    private javax.swing.JLabel txtwaktu;
     // End of variables declaration//GEN-END:variables
 }
