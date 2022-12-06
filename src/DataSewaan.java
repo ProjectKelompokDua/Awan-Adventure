@@ -95,19 +95,18 @@ public class DataSewaan extends javax.swing.JFrame {
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(18, 18, 18)
                 .addComponent(jLabel10)
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addContainerGap(42, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                .addContainerGap(7, Short.MAX_VALUE)
+            .addGroup(jPanel6Layout.createSequentialGroup()
                 .addComponent(jLabel10)
-                .addContainerGap())
+                .addGap(0, 13, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 90, -1, -1));
+        getContentPane().add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(206, 90, 160, 30));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logo.png"))); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 30, -1, -1));
@@ -264,6 +263,7 @@ public class DataSewaan extends javax.swing.JFrame {
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 0, -1, -1));
 
+        table_sewaan.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         table_sewaan.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -275,6 +275,7 @@ public class DataSewaan extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        table_sewaan.setRowHeight(40);
         table_sewaan.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 table_sewaanMouseClicked(evt);
@@ -374,9 +375,9 @@ public class DataSewaan extends javax.swing.JFrame {
             ResultSet res = statement.executeQuery("SELECT data_sewaan.id_sewaan, data_sewaan.nama_penyewa, data_sewaan.jenis_identitas,\n"
                     + "data_sewaan.dp, data_barang.nama_barang, data_sewaan.tanggal_pinjam, data_sewaan.tanggal_kembali,\n"
                     + "data_sewaan.jumlah, data_sewaan.total\n"
-                    + "FROM data_sewaan, data_barang\n"
-                    + "where data_sewaan.id_barang = data_barang.id_barang AND\n"
-                    + "nama_penyewa like '%"+cari+"%' or jenis_identitas like '%"+cari+"%'");
+                    + "FROM data_sewaan join data_barang\n"
+                    + "on data_sewaan.id_barang = data_barang.id_barang \n"
+                    + "where nama_penyewa like '%"+cari+"%' or jenis_identitas like '%"+cari+"%'");
 
             while (res.next()) {
                 dtm.addRow(new Object[]{
@@ -408,7 +409,7 @@ public class DataSewaan extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Metal".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
