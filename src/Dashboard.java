@@ -40,6 +40,7 @@ public class Dashboard extends javax.swing.JFrame {
         txt_pesanan_lngsng.setText(result);
     }
     
+    
     public static int ttl_pesanan;
 
     public void Total_Pesanan() {
@@ -160,6 +161,7 @@ public class Dashboard extends javax.swing.JFrame {
         txttgl = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
         txtwaktu = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
         jLabel21 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -287,6 +289,7 @@ public class Dashboard extends javax.swing.JFrame {
         btn_beranda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/home.png"))); // NOI18N
         btn_beranda.setText("Beranda");
         btn_beranda.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 15, 1, 1, new java.awt.Color(248, 221, 113)));
+        btn_beranda.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btn_beranda.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btn_beranda.setIconTextGap(12);
 
@@ -336,6 +339,11 @@ public class Dashboard extends javax.swing.JFrame {
         btn_pengguna.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_pengguna.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btn_pengguna.setIconTextGap(12);
+        btn_pengguna.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_penggunaMouseClicked(evt);
+            }
+        });
 
         btn_report.setBackground(new java.awt.Color(248, 221, 113));
         btn_report.setFont(new java.awt.Font("Outfit", 0, 14)); // NOI18N
@@ -427,6 +435,21 @@ public class Dashboard extends javax.swing.JFrame {
         txtwaktu.setText("waktu");
         getContentPane().add(txtwaktu, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 640, -1, 30));
 
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 90, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 40, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 20, 90, 40));
+
         jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/dashboard.png"))); // NOI18N
         getContentPane().add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1200, -1));
 
@@ -448,6 +471,12 @@ public class Dashboard extends javax.swing.JFrame {
         this.setVisible(false);
         new FormKasir().setVisible(true);
     }//GEN-LAST:event_btn_kasirMouseClicked
+
+    private void btn_penggunaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_penggunaMouseClicked
+        // TODO add your handling code here:
+        this.setVisible(false);
+        new Pengguna().setVisible(true);
+    }//GEN-LAST:event_btn_penggunaMouseClicked
 
     /**
      * @param args the command line arguments
@@ -504,6 +533,7 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;

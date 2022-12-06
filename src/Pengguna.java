@@ -22,6 +22,9 @@ public class Pengguna extends javax.swing.JFrame {
     public Pengguna() {
         initComponents();
         loadTable();
+        txt_pin.enable();
+        btn_tambah.setEnabled(true);
+        
     }
     
     public void setStatus(String nama){
@@ -61,8 +64,9 @@ public class Pengguna extends javax.swing.JFrame {
         txt_password.setText(null);
         combo_akses.setSelectedIndex(0);
         txt_pin.setText(null);
-        btn_tambah.enable();
+        btn_tambah.setEnabled(true);
         tbl_pengguna.clearSelection();
+        txt_pin.enable();
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -128,9 +132,9 @@ public class Pengguna extends javax.swing.JFrame {
         btn_beranda.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 15, 1, 1, new java.awt.Color(248, 221, 113)));
         btn_beranda.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btn_beranda.setIconTextGap(12);
-        btn_beranda.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_berandaActionPerformed(evt);
+        btn_beranda.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_berandaMouseClicked(evt);
             }
         });
 
@@ -291,7 +295,6 @@ public class Pengguna extends javax.swing.JFrame {
         jPanel2.setBounds(910, 0, 90, 70);
 
         status.setFont(new java.awt.Font("Outfit", 0, 18)); // NOI18N
-        status.setText("Admin");
         jPanel1.add(status);
         status.setBounds(800, 10, 60, 60);
 
@@ -506,7 +509,7 @@ public class Pengguna extends javax.swing.JFrame {
             }
         });
         jPanel1.add(txt_cariPengguna);
-        txt_cariPengguna.setBounds(720, 370, 230, 30);
+        txt_cariPengguna.setBounds(720, 370, 230, 29);
 
         jLabel9.setFont(new java.awt.Font("Outfit", 0, 14)); // NOI18N
         jLabel9.setText("Cari");
@@ -636,6 +639,7 @@ public class Pengguna extends javax.swing.JFrame {
         combo_akses.setSelectedItem(field6);
         txt_pin.setText(field7);
         btn_tambah.setEnabled(false);
+        txt_pin.disable();
     }//GEN-LAST:event_tbl_penggunaMouseClicked
 
     private void btn_editActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_editActionPerformed
@@ -663,7 +667,7 @@ public class Pengguna extends javax.swing.JFrame {
                 Connection conn = koneksi.Connect.GetConnection();
                 PreparedStatement pst = conn.prepareStatement(sql);
                 pst.execute();
-                JOptionPane.showMessageDialog(rootPane, "Data berhasil ditambahkan");
+                JOptionPane.showMessageDialog(rootPane, "Data berhasil diperbaharui");
                 loadTable();
                 clear();
             }
@@ -759,11 +763,11 @@ public class Pengguna extends javax.swing.JFrame {
         new FormKasir().setVisible(true);
     }//GEN-LAST:event_btn_kasirMouseClicked
 
-    private void btn_berandaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_berandaActionPerformed
+    private void btn_berandaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_berandaMouseClicked
         // TODO add your handling code here:
         this.setVisible(false);
         new Dashboard().setVisible(true);
-    }//GEN-LAST:event_btn_berandaActionPerformed
+    }//GEN-LAST:event_btn_berandaMouseClicked
     
     
     /**

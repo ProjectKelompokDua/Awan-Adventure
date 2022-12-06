@@ -96,7 +96,7 @@
             <Property name="iconTextGap" type="int" value="12"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_berandaActionPerformed"/>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btn_berandaMouseClicked"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btn_kasir">
@@ -376,7 +376,6 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Outfit" size="18" style="0"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Admin"/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">

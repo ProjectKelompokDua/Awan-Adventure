@@ -22,9 +22,6 @@ public class FormKasir extends javax.swing.JFrame {
         updateComboBarang();
         tbl_barang.removeAll();
     }
-    public void setStatus(String nama){
-        status.setText(nama);
-    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -101,6 +98,7 @@ public class FormKasir extends javax.swing.JFrame {
         btn_beranda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/home.png"))); // NOI18N
         btn_beranda.setText("Beranda");
         btn_beranda.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 15, 1, 1, new java.awt.Color(248, 221, 113)));
+        btn_beranda.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_beranda.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btn_beranda.setIconTextGap(12);
         btn_beranda.addActionListener(new java.awt.event.ActionListener() {
@@ -282,7 +280,6 @@ public class FormKasir extends javax.swing.JFrame {
         jPanel2.setBounds(910, 0, 90, 70);
 
         status.setFont(new java.awt.Font("Outfit", 0, 18)); // NOI18N
-        status.setText("Admin");
         jPanel1.add(status);
         status.setBounds(800, 10, 60, 60);
 
