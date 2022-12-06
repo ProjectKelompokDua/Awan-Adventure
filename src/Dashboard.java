@@ -228,7 +228,7 @@ public class Dashboard extends javax.swing.JFrame {
         jPanel6.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel10.setText("Home / Pengguna");
+        jLabel10.setText("Home / Dashboard");
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -292,6 +292,11 @@ public class Dashboard extends javax.swing.JFrame {
         btn_beranda.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btn_beranda.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btn_beranda.setIconTextGap(12);
+        btn_beranda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_berandaActionPerformed(evt);
+            }
+        });
 
         btn_kasir.setBackground(new java.awt.Color(248, 221, 113));
         btn_kasir.setFont(new java.awt.Font("Outfit", 0, 14)); // NOI18N
@@ -339,9 +344,15 @@ public class Dashboard extends javax.swing.JFrame {
         btn_pengguna.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_pengguna.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btn_pengguna.setIconTextGap(12);
+<<<<<<< HEAD
         btn_pengguna.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btn_penggunaMouseClicked(evt);
+=======
+        btn_pengguna.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_penggunaActionPerformed(evt);
+>>>>>>> 4d1e119654fc22669b9dba0e441edf57cd9a1b69
             }
         });
 
@@ -472,11 +483,23 @@ public class Dashboard extends javax.swing.JFrame {
         new FormKasir().setVisible(true);
     }//GEN-LAST:event_btn_kasirMouseClicked
 
+<<<<<<< HEAD
     private void btn_penggunaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_penggunaMouseClicked
         // TODO add your handling code here:
         this.setVisible(false);
         new Pengguna().setVisible(true);
     }//GEN-LAST:event_btn_penggunaMouseClicked
+=======
+    private void btn_penggunaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_penggunaActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false);
+        new Pengguna().setVisible(true);
+    }//GEN-LAST:event_btn_penggunaActionPerformed
+
+    private void btn_berandaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_berandaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_berandaActionPerformed
+>>>>>>> 4d1e119654fc22669b9dba0e441edf57cd9a1b69
 
     /**
      * @param args the command line arguments

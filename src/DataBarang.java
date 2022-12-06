@@ -70,11 +70,37 @@ public class DataBarang extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+<<<<<<< HEAD
+=======
+        id_barang = new javax.swing.JLabel();
+        btn_cari = new javax.swing.JButton();
+        btn_edit = new javax.swing.JButton();
+        btn_tambah = new javax.swing.JButton();
+        btn_hapus = new javax.swing.JButton();
+>>>>>>> 4d1e119654fc22669b9dba0e441edf57cd9a1b69
         txt_stok = new javax.swing.JTextField();
         txt_namaBarang = new javax.swing.JTextField();
         txt_harga1 = new javax.swing.JTextField();
         txt_harga2 = new javax.swing.JTextField();
         txt_cari = new javax.swing.JTextField();
+<<<<<<< HEAD
+=======
+        jPanel2 = new javax.swing.JPanel();
+        jLabel14 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
+        jLabel26 = new javax.swing.JLabel();
+        btn_beranda = new javax.swing.JButton();
+        btn_databarang = new javax.swing.JButton();
+        btn_datasewa = new javax.swing.JButton();
+        btn_pengguna = new javax.swing.JButton();
+        btn_kasir = new javax.swing.JButton();
+        btn_pengembalian = new javax.swing.JButton();
+>>>>>>> 4d1e119654fc22669b9dba0e441edf57cd9a1b69
         jScrollPane2 = new javax.swing.JScrollPane();
         table_barang = new javax.swing.JTable();
         jPanel8 = new javax.swing.JPanel();
@@ -100,8 +126,17 @@ public class DataBarang extends javax.swing.JFrame {
         setUndecorated(true);
         getContentPane().setLayout(null);
 
+<<<<<<< HEAD
         jLabel6.setFont(new java.awt.Font("Outfit", 0, 16)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(0, 0, 0));
+=======
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel7.setText("Proses");
+        getContentPane().add(jLabel7);
+        jLabel7.setBounds(690, 160, 40, 16);
+
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+>>>>>>> 4d1e119654fc22669b9dba0e441edf57cd9a1b69
         jLabel6.setText("Keterangan");
         getContentPane().add(jLabel6);
         jLabel6.setBounds(250, 320, 100, 21);
@@ -128,12 +163,60 @@ public class DataBarang extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Nama Barang");
         getContentPane().add(jLabel2);
+<<<<<<< HEAD
         jLabel2.setBounds(250, 160, 100, 30);
 
         txt_stok.setBackground(new java.awt.Color(255, 255, 255));
         txt_stok.setFont(new java.awt.Font("Outfit", 0, 16)); // NOI18N
         txt_stok.setForeground(new java.awt.Color(0, 0, 0));
         txt_stok.setBorder(null);
+=======
+        jLabel2.setBounds(220, 160, 100, 20);
+
+        id_barang.setForeground(new java.awt.Color(242, 242, 242));
+        id_barang.setText("jLabel21");
+        getContentPane().add(id_barang);
+        id_barang.setBounds(870, 290, 45, 16);
+
+        btn_cari.setBackground(new java.awt.Color(252, 191, 74));
+        btn_cari.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btn_cari.setText("Cari");
+        getContentPane().add(btn_cari);
+        btn_cari.setBounds(1040, 540, 80, 30);
+
+        btn_edit.setBackground(new java.awt.Color(252, 191, 74));
+        btn_edit.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btn_edit.setText("Edit");
+        btn_edit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_editActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btn_edit);
+        btn_edit.setBounds(800, 200, 80, 30);
+
+        btn_tambah.setBackground(new java.awt.Color(252, 191, 74));
+        btn_tambah.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btn_tambah.setText("Tambah");
+        btn_tambah.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_tambahActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btn_tambah);
+        btn_tambah.setBounds(690, 200, 100, 30);
+
+        btn_hapus.setBackground(new java.awt.Color(252, 191, 74));
+        btn_hapus.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btn_hapus.setText("Hapus");
+        btn_hapus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_hapusActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btn_hapus);
+        btn_hapus.setBounds(890, 200, 80, 30);
+>>>>>>> 4d1e119654fc22669b9dba0e441edf57cd9a1b69
         getContentPane().add(txt_stok);
         txt_stok.setBounds(400, 200, 310, 30);
 
@@ -168,7 +251,114 @@ public class DataBarang extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txt_cari);
+<<<<<<< HEAD
         txt_cari.setBounds(910, 430, 240, 30);
+=======
+        txt_cari.setBounds(730, 540, 240, 30);
+
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel14.setFont(new java.awt.Font("Microsoft YaHei UI Light", 0, 18)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(204, 0, 51));
+        jLabel14.setText("Logout");
+        jLabel14.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel14MouseClicked(evt);
+            }
+        });
+        jPanel2.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, -1, -1));
+
+        getContentPane().add(jPanel2);
+        jPanel2.setBounds(860, 0, 150, 60);
+
+        jPanel1.setBackground(new java.awt.Color(255, 204, 102));
+        jPanel1.setLayout(null);
+
+        jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/home.png"))); // NOI18N
+        jPanel1.add(jLabel21);
+        jLabel21.setBounds(10, 0, 72, 60);
+
+        jLabel22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/trolley-removebg-preview.png"))); // NOI18N
+        jPanel1.add(jLabel22);
+        jLabel22.setBounds(10, 80, 50, 40);
+
+        jLabel23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/rent-removebg-preview.png"))); // NOI18N
+        jPanel1.add(jLabel23);
+        jLabel23.setBounds(10, 230, 70, 30);
+
+        jLabel24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/package.png"))); // NOI18N
+        jPanel1.add(jLabel24);
+        jLabel24.setBounds(10, 150, 72, 50);
+
+        jLabel25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/product-return-removebg-preview.png"))); // NOI18N
+        jPanel1.add(jLabel25);
+        jLabel25.setBounds(10, 280, 80, 60);
+
+        jLabel26.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/user-removebg-preview.png"))); // NOI18N
+        jPanel1.add(jLabel26);
+        jLabel26.setBounds(10, 360, 72, 50);
+
+        btn_beranda.setBackground(new java.awt.Color(255, 204, 102));
+        btn_beranda.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btn_beranda.setText("Beranda");
+        btn_beranda.setBorder(null);
+        btn_beranda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_berandaActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btn_beranda);
+        btn_beranda.setBounds(0, 0, 200, 70);
+
+        btn_databarang.setBackground(new java.awt.Color(255, 204, 102));
+        btn_databarang.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btn_databarang.setText("Data Barang");
+        btn_databarang.setBorder(null);
+        jPanel1.add(btn_databarang);
+        btn_databarang.setBounds(0, 140, 200, 70);
+
+        btn_datasewa.setBackground(new java.awt.Color(255, 204, 102));
+        btn_datasewa.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btn_datasewa.setText("Data Penyewaan");
+        btn_datasewa.setBorder(null);
+        jPanel1.add(btn_datasewa);
+        btn_datasewa.setBounds(10, 210, 200, 70);
+
+        btn_pengguna.setBackground(new java.awt.Color(255, 204, 102));
+        btn_pengguna.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btn_pengguna.setText("Pengguna");
+        btn_pengguna.setBorder(null);
+        btn_pengguna.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_penggunaActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btn_pengguna);
+        btn_pengguna.setBounds(0, 350, 200, 70);
+
+        btn_kasir.setBackground(new java.awt.Color(255, 204, 102));
+        btn_kasir.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btn_kasir.setText("Form Kasir");
+        btn_kasir.setBorder(null);
+        btn_kasir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_kasirActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btn_kasir);
+        btn_kasir.setBounds(0, 70, 200, 70);
+
+        btn_pengembalian.setBackground(new java.awt.Color(255, 204, 102));
+        btn_pengembalian.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btn_pengembalian.setText("Pengembalian");
+        btn_pengembalian.setBorder(null);
+        jPanel1.add(btn_pengembalian);
+        btn_pengembalian.setBounds(0, 280, 200, 70);
+
+        getContentPane().add(jPanel1);
+        jPanel1.setBounds(0, 120, 200, 610);
+>>>>>>> 4d1e119654fc22669b9dba0e441edf57cd9a1b69
 
         table_barang.setBackground(new java.awt.Color(255, 255, 255));
         table_barang.setFont(new java.awt.Font("Outfit", 0, 16)); // NOI18N
@@ -192,6 +382,7 @@ public class DataBarang extends javax.swing.JFrame {
         jScrollPane2.setViewportView(table_barang);
 
         getContentPane().add(jScrollPane2);
+<<<<<<< HEAD
         jScrollPane2.setBounds(250, 480, 900, 180);
 
         jPanel8.setBackground(new java.awt.Color(248, 221, 113));
@@ -395,12 +586,22 @@ public class DataBarang extends javax.swing.JFrame {
         jLabel8.setBounds(200, 0, 1000, 670);
 
         setSize(new java.awt.Dimension(1200, 675));
+=======
+        jScrollPane2.setBounds(240, 600, 730, 390);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/dataBarang.jpg"))); // NOI18N
+        jLabel1.setText("jLabel1");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(0, -30, 1270, 720);
+
+        setSize(new java.awt.Dimension(1030, 692));
+>>>>>>> 4d1e119654fc22669b9dba0e441edf57cd9a1b69
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_hapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_hapusActionPerformed
 try{
-        String sql = "DELETE FROM data_barang Where id_barang = ?,'";
+        String sql = "DELETE FROM data_barang Where id_barang ='"+id_barang.getText()+"'";
         java.sql.Connection conn=(Connection)Connect.GetConnection();
         java.sql.PreparedStatement pst=conn.prepareStatement(sql);
         pst.execute();
@@ -479,10 +680,14 @@ try{
             }else if(Terang.getText().equals("")){ 
                 JOptionPane.showMessageDialog(rootPane, "Data Password harus diisi"); 
             }else{ 
-                String insertdata = "update data_barang set nama_barang='"+ txt_namaBarang.getText() +"',stok='"+ txt_stok.getText() +"', harga_hari='"+ txt_harga1.getText() +"', harga_2hari='"+ txt_harga2.getText() +"', keterangan='"+ Terang.getText() +"'"; 
+                String insertdata = "update data_barang set nama_barang='"+ txt_namaBarang.getText() 
+                        +"',stok='"+ txt_stok.getText() +"', harga_hari='"+ txt_harga1.getText() 
+                        +"', harga_2hari='"+ txt_harga2.getText() +"', keterangan='"+ Terang.getText() 
+                        +"', where id_barang='"+id_barang.getText()+"'";
+                
                 Connection connect = koneksi.Connect.GetConnection(); 
                 PreparedStatement ps = connect.prepareStatement(insertdata); 
-                ps.execute(); 
+                ps.executeUpdate(); 
                  
                 JOptionPane.showMessageDialog(rootPane, "Data Barang berhasil diperbarui"); 
                  } 
@@ -512,8 +717,19 @@ int i = table_barang.getSelectedRow();
         txt_harga2.setText(field5); 
         Terang.setText(field6); 
         
+        try{
+        String sql = "SELECT * FROM data_barang WHERE nama_barang ='"+field2+"'";
+        Connection conn = koneksi.Connect.GetConnection();
+        PreparedStatement pst = conn.prepareStatement(sql);
+        ResultSet rs = pst.executeQuery();
+        rs.next();
+        id_barang.setText(rs.getString("id_barang"));
+        } catch(Exception e){
+            
+        }
     }//GEN-LAST:event_table_barangMouseClicked
 
+<<<<<<< HEAD
     private void btn_berandaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_berandaActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);
@@ -525,6 +741,30 @@ int i = table_barang.getSelectedRow();
         this.setVisible(false);
         new Pengguna().setVisible(true);
     }//GEN-LAST:event_btn_penggunaMouseClicked
+=======
+    private void jLabel14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel14MouseClicked
+      int confirmLogout = JOptionPane.showConfirmDialog(rootPane, "Yakin ingin logout ?", "Logout", JOptionPane.YES_NO_OPTION);
+        if(confirmLogout == JOptionPane.YES_OPTION){
+            this.setVisible(false);
+            new Login().setVisible(true);
+        }
+    }//GEN-LAST:event_jLabel14MouseClicked
+
+    private void btn_berandaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_berandaActionPerformed
+       this.setVisible(false);
+        new Dashboard().setVisible(true);
+    }//GEN-LAST:event_btn_berandaActionPerformed
+
+    private void btn_penggunaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_penggunaActionPerformed
+        this.setVisible(false);
+        new Pengguna().setVisible(true);
+    }//GEN-LAST:event_btn_penggunaActionPerformed
+
+    private void btn_kasirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_kasirActionPerformed
+        this.setVisible(false);
+        new FormKasir().setVisible(true);
+    }//GEN-LAST:event_btn_kasirActionPerformed
+>>>>>>> 4d1e119654fc22669b9dba0e441edf57cd9a1b69
 
     /**
      * @param args the command line arguments
@@ -562,6 +802,7 @@ int i = table_barang.getSelectedRow();
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+<<<<<<< HEAD
     private javax.swing.JTextArea Terang;
     private javax.swing.JButton btn_beranda;
     private javax.swing.JButton btn_dataBarang;
@@ -572,19 +813,49 @@ int i = table_barang.getSelectedRow();
     private javax.swing.JButton btn_report;
     private javax.swing.JButton btn_return;
     private javax.swing.JButton btn_sewa;
+=======
+    private javax.swing.JTextField Terang;
+    private javax.swing.JButton btn_beranda;
+    private javax.swing.JButton btn_cari;
+    private javax.swing.JButton btn_databarang;
+    private javax.swing.JButton btn_datasewa;
+    private javax.swing.JButton btn_edit;
+    private javax.swing.JButton btn_hapus;
+    private javax.swing.JButton btn_kasir;
+    private javax.swing.JButton btn_pengembalian;
+    private javax.swing.JButton btn_pengguna;
+>>>>>>> 4d1e119654fc22669b9dba0e441edf57cd9a1b69
     private javax.swing.JButton btn_tambah;
+    private javax.swing.JLabel id_barang;
     private javax.swing.JLabel jLabel1;
+<<<<<<< HEAD
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel21;
+=======
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+>>>>>>> 4d1e119654fc22669b9dba0e441edf57cd9a1b69
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+<<<<<<< HEAD
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
+=======
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+>>>>>>> 4d1e119654fc22669b9dba0e441edf57cd9a1b69
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable table_barang;
     private javax.swing.JTextField txt_cari;

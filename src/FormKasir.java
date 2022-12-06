@@ -131,6 +131,11 @@ public class FormKasir extends javax.swing.JFrame {
         btn_sewa.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 15, 1, 1, new java.awt.Color(248, 221, 113)));
         btn_sewa.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btn_sewa.setIconTextGap(12);
+        btn_sewa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_sewaActionPerformed(evt);
+            }
+        });
 
         btn_return.setBackground(new java.awt.Color(248, 221, 113));
         btn_return.setFont(new java.awt.Font("Outfit", 0, 14)); // NOI18N
@@ -691,6 +696,12 @@ public class FormKasir extends javax.swing.JFrame {
         this.setVisible(false);
         new Dashboard().setVisible(true);
     }//GEN-LAST:event_btn_berandaActionPerformed
+
+    private void btn_sewaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_sewaActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false);
+        new DataSewaan().setVisible(true);
+    }//GEN-LAST:event_btn_sewaActionPerformed
 
     /**
      * @param args the command line arguments

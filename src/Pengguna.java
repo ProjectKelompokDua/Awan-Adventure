@@ -355,7 +355,7 @@ public class Pengguna extends javax.swing.JFrame {
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(txt_nama, javax.swing.GroupLayout.DEFAULT_SIZE, 310, Short.MAX_VALUE)
                             .addComponent(txt_username))))
-                .addContainerGap(24, Short.MAX_VALUE))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -589,7 +589,7 @@ public class Pengguna extends javax.swing.JFrame {
         // TODO add your handling code here:
         try{
             if(txt_nama.getText().equals("")){
-                JOptionPane.showMessageDialog(rootPane, "Data Nama harus diisi");
+                JOptionPane.showMessageDialog(rootPane,  "Data Nama harus diisi");
                 txt_nama.requestFocus();
             }else if(txt_username.getText().equals("")){
                 JOptionPane.showMessageDialog(rootPane, "Data Username harus diisi");
@@ -667,7 +667,11 @@ public class Pengguna extends javax.swing.JFrame {
                 Connection conn = koneksi.Connect.GetConnection();
                 PreparedStatement pst = conn.prepareStatement(sql);
                 pst.execute();
+<<<<<<< HEAD
                 JOptionPane.showMessageDialog(rootPane, "Data berhasil diperbaharui");
+=======
+                JOptionPane.showMessageDialog(rootPane, "Data berhasil diedit");
+>>>>>>> 4d1e119654fc22669b9dba0e441edf57cd9a1b69
                 loadTable();
                 clear();
             }
