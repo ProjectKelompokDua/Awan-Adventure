@@ -65,26 +65,23 @@ public class DataBarang extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel7 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-<<<<<<< HEAD
-=======
         id_barang = new javax.swing.JLabel();
         btn_cari = new javax.swing.JButton();
         btn_edit = new javax.swing.JButton();
         btn_tambah = new javax.swing.JButton();
         btn_hapus = new javax.swing.JButton();
->>>>>>> 4d1e119654fc22669b9dba0e441edf57cd9a1b69
         txt_stok = new javax.swing.JTextField();
         txt_namaBarang = new javax.swing.JTextField();
         txt_harga1 = new javax.swing.JTextField();
         txt_harga2 = new javax.swing.JTextField();
+        Terang = new javax.swing.JTextField();
         txt_cari = new javax.swing.JTextField();
-<<<<<<< HEAD
-=======
         jPanel2 = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
@@ -100,77 +97,41 @@ public class DataBarang extends javax.swing.JFrame {
         btn_pengguna = new javax.swing.JButton();
         btn_kasir = new javax.swing.JButton();
         btn_pengembalian = new javax.swing.JButton();
->>>>>>> 4d1e119654fc22669b9dba0e441edf57cd9a1b69
         jScrollPane2 = new javax.swing.JScrollPane();
         table_barang = new javax.swing.JTable();
-        jPanel8 = new javax.swing.JPanel();
-        btn_beranda = new javax.swing.JButton();
-        btn_kasir = new javax.swing.JButton();
-        btn_dataBarang = new javax.swing.JButton();
-        btn_sewa = new javax.swing.JButton();
-        btn_return = new javax.swing.JButton();
-        btn_pengguna = new javax.swing.JButton();
-        btn_report = new javax.swing.JButton();
-        jPanel9 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel21 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        Terang = new javax.swing.JTextArea();
-        jPanel1 = new javax.swing.JPanel();
-        btn_tambah = new javax.swing.JButton();
-        btn_edit = new javax.swing.JButton();
-        btn_hapus = new javax.swing.JButton();
-        jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setUndecorated(true);
         getContentPane().setLayout(null);
 
-<<<<<<< HEAD
-        jLabel6.setFont(new java.awt.Font("Outfit", 0, 16)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
-=======
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel7.setText("Proses");
         getContentPane().add(jLabel7);
         jLabel7.setBounds(690, 160, 40, 16);
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
->>>>>>> 4d1e119654fc22669b9dba0e441edf57cd9a1b69
         jLabel6.setText("Keterangan");
         getContentPane().add(jLabel6);
-        jLabel6.setBounds(250, 320, 100, 21);
+        jLabel6.setBounds(220, 340, 80, 16);
 
-        jLabel5.setFont(new java.awt.Font("Outfit", 0, 16)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel5.setText("Harga < 2 hari");
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(250, 280, 110, 30);
+        jLabel5.setBounds(220, 290, 90, 16);
 
-        jLabel4.setFont(new java.awt.Font("Outfit", 0, 16)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel4.setText("Harga 1 Hari");
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(250, 240, 100, 30);
+        jLabel4.setBounds(220, 240, 70, 16);
 
-        jLabel3.setFont(new java.awt.Font("Outfit", 0, 16)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel3.setText("Stok");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(250, 200, 40, 30);
+        jLabel3.setBounds(220, 200, 30, 16);
 
-        jLabel2.setFont(new java.awt.Font("Outfit", 0, 16)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel2.setText("Nama Barang");
         getContentPane().add(jLabel2);
-<<<<<<< HEAD
-        jLabel2.setBounds(250, 160, 100, 30);
-
-        txt_stok.setBackground(new java.awt.Color(255, 255, 255));
-        txt_stok.setFont(new java.awt.Font("Outfit", 0, 16)); // NOI18N
-        txt_stok.setForeground(new java.awt.Color(0, 0, 0));
-        txt_stok.setBorder(null);
-=======
         jLabel2.setBounds(220, 160, 100, 20);
 
         id_barang.setForeground(new java.awt.Color(242, 242, 242));
@@ -216,44 +177,23 @@ public class DataBarang extends javax.swing.JFrame {
         });
         getContentPane().add(btn_hapus);
         btn_hapus.setBounds(890, 200, 80, 30);
->>>>>>> 4d1e119654fc22669b9dba0e441edf57cd9a1b69
         getContentPane().add(txt_stok);
-        txt_stok.setBounds(400, 200, 310, 30);
-
-        txt_namaBarang.setBackground(new java.awt.Color(255, 255, 255));
-        txt_namaBarang.setFont(new java.awt.Font("Outfit", 0, 16)); // NOI18N
-        txt_namaBarang.setForeground(new java.awt.Color(0, 0, 0));
-        txt_namaBarang.setBorder(null);
+        txt_stok.setBounds(330, 200, 310, 30);
         getContentPane().add(txt_namaBarang);
-        txt_namaBarang.setBounds(400, 160, 310, 30);
-
-        txt_harga1.setBackground(new java.awt.Color(255, 255, 255));
-        txt_harga1.setFont(new java.awt.Font("Outfit", 0, 16)); // NOI18N
-        txt_harga1.setForeground(new java.awt.Color(0, 0, 0));
-        txt_harga1.setBorder(null);
+        txt_namaBarang.setBounds(330, 160, 310, 30);
         getContentPane().add(txt_harga1);
-        txt_harga1.setBounds(400, 240, 310, 30);
-
-        txt_harga2.setBackground(new java.awt.Color(255, 255, 255));
-        txt_harga2.setFont(new java.awt.Font("Outfit", 0, 16)); // NOI18N
-        txt_harga2.setForeground(new java.awt.Color(0, 0, 0));
-        txt_harga2.setBorder(null);
+        txt_harga1.setBounds(330, 240, 310, 30);
         getContentPane().add(txt_harga2);
-        txt_harga2.setBounds(400, 280, 310, 30);
+        txt_harga2.setBounds(330, 290, 310, 30);
+        getContentPane().add(Terang);
+        Terang.setBounds(330, 340, 310, 120);
 
-        txt_cari.setBackground(new java.awt.Color(255, 255, 255));
-        txt_cari.setFont(new java.awt.Font("Outfit", 0, 16)); // NOI18N
-        txt_cari.setForeground(new java.awt.Color(0, 0, 0));
-        txt_cari.setBorder(null);
         txt_cari.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txt_cariKeyReleased(evt);
             }
         });
         getContentPane().add(txt_cari);
-<<<<<<< HEAD
-        txt_cari.setBounds(910, 430, 240, 30);
-=======
         txt_cari.setBounds(730, 540, 240, 30);
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
@@ -358,11 +298,7 @@ public class DataBarang extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(0, 120, 200, 610);
->>>>>>> 4d1e119654fc22669b9dba0e441edf57cd9a1b69
 
-        table_barang.setBackground(new java.awt.Color(255, 255, 255));
-        table_barang.setFont(new java.awt.Font("Outfit", 0, 16)); // NOI18N
-        table_barang.setForeground(new java.awt.Color(0, 0, 0));
         table_barang.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -382,211 +318,6 @@ public class DataBarang extends javax.swing.JFrame {
         jScrollPane2.setViewportView(table_barang);
 
         getContentPane().add(jScrollPane2);
-<<<<<<< HEAD
-        jScrollPane2.setBounds(250, 480, 900, 180);
-
-        jPanel8.setBackground(new java.awt.Color(248, 221, 113));
-
-        btn_beranda.setBackground(new java.awt.Color(248, 221, 113));
-        btn_beranda.setFont(new java.awt.Font("Outfit", 0, 14)); // NOI18N
-        btn_beranda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/home.png"))); // NOI18N
-        btn_beranda.setText("Beranda");
-        btn_beranda.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 15, 1, 1, new java.awt.Color(248, 221, 113)));
-        btn_beranda.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btn_beranda.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btn_beranda.setIconTextGap(12);
-        btn_beranda.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_berandaActionPerformed(evt);
-            }
-        });
-
-        btn_kasir.setBackground(new java.awt.Color(248, 221, 113));
-        btn_kasir.setFont(new java.awt.Font("Outfit", 0, 14)); // NOI18N
-        btn_kasir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/trolley-removebg-preview.png"))); // NOI18N
-        btn_kasir.setText("Form Kasir");
-        btn_kasir.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 15, 1, 1, new java.awt.Color(248, 221, 113)));
-        btn_kasir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btn_kasir.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btn_kasir.setIconTextGap(12);
-
-        btn_dataBarang.setBackground(new java.awt.Color(248, 221, 113));
-        btn_dataBarang.setFont(new java.awt.Font("Outfit", 0, 14)); // NOI18N
-        btn_dataBarang.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/package.png"))); // NOI18N
-        btn_dataBarang.setText("Data Barang");
-        btn_dataBarang.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 15, 1, 1, new java.awt.Color(248, 221, 113)));
-        btn_dataBarang.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btn_dataBarang.setIconTextGap(12);
-
-        btn_sewa.setBackground(new java.awt.Color(248, 221, 113));
-        btn_sewa.setFont(new java.awt.Font("Outfit", 0, 14)); // NOI18N
-        btn_sewa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/rent-removebg-preview.png"))); // NOI18N
-        btn_sewa.setText("Data Sewaan");
-        btn_sewa.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 15, 1, 1, new java.awt.Color(248, 221, 113)));
-        btn_sewa.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btn_sewa.setIconTextGap(12);
-
-        btn_return.setBackground(new java.awt.Color(248, 221, 113));
-        btn_return.setFont(new java.awt.Font("Outfit", 0, 14)); // NOI18N
-        btn_return.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/product-return-removebg-preview.png"))); // NOI18N
-        btn_return.setText("Form Pengembalian");
-        btn_return.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 15, 1, 1, new java.awt.Color(248, 221, 113)));
-        btn_return.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btn_return.setIconTextGap(12);
-
-        btn_pengguna.setBackground(new java.awt.Color(248, 221, 113));
-        btn_pengguna.setFont(new java.awt.Font("Outfit", 0, 14)); // NOI18N
-        btn_pengguna.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/user-removebg-preview.png"))); // NOI18N
-        btn_pengguna.setText("Pengguna");
-        btn_pengguna.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 15, 1, 1, new java.awt.Color(248, 221, 113)));
-        btn_pengguna.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btn_pengguna.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btn_pengguna.setIconTextGap(12);
-        btn_pengguna.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btn_penggunaMouseClicked(evt);
-            }
-        });
-
-        btn_report.setBackground(new java.awt.Color(248, 221, 113));
-        btn_report.setFont(new java.awt.Font("Outfit", 0, 14)); // NOI18N
-        btn_report.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/report-removebg-preview.png"))); // NOI18N
-        btn_report.setText("Laporan");
-        btn_report.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 15, 1, 1, new java.awt.Color(248, 221, 113)));
-        btn_report.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btn_report.setIconTextGap(12);
-
-        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
-        jPanel8.setLayout(jPanel8Layout);
-        jPanel8Layout.setHorizontalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(btn_beranda, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(btn_kasir, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(btn_dataBarang, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(btn_sewa, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(btn_return, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-            .addComponent(btn_pengguna, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(btn_report, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        jPanel8Layout.setVerticalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel8Layout.createSequentialGroup()
-                .addGap(35, 35, 35)
-                .addComponent(btn_beranda, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btn_kasir, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btn_dataBarang, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btn_sewa, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btn_return, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btn_pengguna, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btn_report, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(104, 104, 104))
-        );
-
-        getContentPane().add(jPanel8);
-        jPanel8.setBounds(0, 120, 200, 560);
-
-        jPanel9.setBackground(new java.awt.Color(252, 191, 73));
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logo.png"))); // NOI18N
-
-        jLabel21.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel21.setText("Awan Adventure");
-
-        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
-        jPanel9.setLayout(jPanel9Layout);
-        jPanel9Layout.setHorizontalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel9Layout.createSequentialGroup()
-                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel9Layout.createSequentialGroup()
-                        .addGap(72, 72, 72)
-                        .addComponent(jLabel1))
-                    .addGroup(jPanel9Layout.createSequentialGroup()
-                        .addGap(21, 21, 21)
-                        .addComponent(jLabel21)))
-                .addContainerGap(29, Short.MAX_VALUE))
-        );
-        jPanel9Layout.setVerticalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel9Layout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel21)
-                .addContainerGap(9, Short.MAX_VALUE))
-        );
-
-        getContentPane().add(jPanel9);
-        jPanel9.setBounds(0, 0, 200, 120);
-
-        Terang.setBackground(new java.awt.Color(255, 255, 255));
-        Terang.setColumns(20);
-        Terang.setFont(new java.awt.Font("Outfit", 0, 14)); // NOI18N
-        Terang.setForeground(new java.awt.Color(0, 0, 0));
-        Terang.setRows(5);
-        jScrollPane1.setViewportView(Terang);
-
-        getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(400, 330, 310, 130);
-
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Proses"));
-        jPanel1.setForeground(new java.awt.Color(0, 0, 0));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        btn_tambah.setBackground(new java.awt.Color(252, 191, 74));
-        btn_tambah.setFont(new java.awt.Font("Outfit", 0, 16)); // NOI18N
-        btn_tambah.setForeground(new java.awt.Color(0, 0, 0));
-        btn_tambah.setText("Tambah");
-        btn_tambah.setBorder(null);
-        btn_tambah.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_tambahActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btn_tambah, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 90, 40));
-
-        btn_edit.setBackground(new java.awt.Color(252, 191, 74));
-        btn_edit.setFont(new java.awt.Font("Outfit", 0, 16)); // NOI18N
-        btn_edit.setForeground(new java.awt.Color(0, 0, 0));
-        btn_edit.setText("Edit");
-        btn_edit.setBorder(null);
-        btn_edit.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_editActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btn_edit, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 30, 90, 40));
-
-        btn_hapus.setBackground(new java.awt.Color(252, 191, 74));
-        btn_hapus.setFont(new java.awt.Font("Outfit", 0, 16)); // NOI18N
-        btn_hapus.setForeground(new java.awt.Color(0, 0, 0));
-        btn_hapus.setText("Hapus");
-        btn_hapus.setBorder(null);
-        btn_hapus.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_hapusActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btn_hapus, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 30, 90, 40));
-
-        getContentPane().add(jPanel1);
-        jPanel1.setBounds(800, 160, 350, 90);
-
-        jLabel8.setFont(new java.awt.Font("Outfit", 0, 16)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/dataBarang.jpg"))); // NOI18N
-        getContentPane().add(jLabel8);
-        jLabel8.setBounds(200, 0, 1000, 670);
-
-        setSize(new java.awt.Dimension(1200, 675));
-=======
         jScrollPane2.setBounds(240, 600, 730, 390);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/dataBarang.jpg"))); // NOI18N
@@ -595,7 +326,6 @@ public class DataBarang extends javax.swing.JFrame {
         jLabel1.setBounds(0, -30, 1270, 720);
 
         setSize(new java.awt.Dimension(1030, 692));
->>>>>>> 4d1e119654fc22669b9dba0e441edf57cd9a1b69
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -729,19 +459,6 @@ int i = table_barang.getSelectedRow();
         }
     }//GEN-LAST:event_table_barangMouseClicked
 
-<<<<<<< HEAD
-    private void btn_berandaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_berandaActionPerformed
-        // TODO add your handling code here:
-        this.setVisible(false);
-        new Dashboard().setVisible(true);
-    }//GEN-LAST:event_btn_berandaActionPerformed
-
-    private void btn_penggunaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_penggunaMouseClicked
-        // TODO add your handling code here:
-        this.setVisible(false);
-        new Pengguna().setVisible(true);
-    }//GEN-LAST:event_btn_penggunaMouseClicked
-=======
     private void jLabel14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel14MouseClicked
       int confirmLogout = JOptionPane.showConfirmDialog(rootPane, "Yakin ingin logout ?", "Logout", JOptionPane.YES_NO_OPTION);
         if(confirmLogout == JOptionPane.YES_OPTION){
@@ -764,7 +481,6 @@ int i = table_barang.getSelectedRow();
         this.setVisible(false);
         new FormKasir().setVisible(true);
     }//GEN-LAST:event_btn_kasirActionPerformed
->>>>>>> 4d1e119654fc22669b9dba0e441edf57cd9a1b69
 
     /**
      * @param args the command line arguments
@@ -802,18 +518,6 @@ int i = table_barang.getSelectedRow();
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-<<<<<<< HEAD
-    private javax.swing.JTextArea Terang;
-    private javax.swing.JButton btn_beranda;
-    private javax.swing.JButton btn_dataBarang;
-    private javax.swing.JButton btn_edit;
-    private javax.swing.JButton btn_hapus;
-    private javax.swing.JButton btn_kasir;
-    private javax.swing.JButton btn_pengguna;
-    private javax.swing.JButton btn_report;
-    private javax.swing.JButton btn_return;
-    private javax.swing.JButton btn_sewa;
-=======
     private javax.swing.JTextField Terang;
     private javax.swing.JButton btn_beranda;
     private javax.swing.JButton btn_cari;
@@ -824,14 +528,9 @@ int i = table_barang.getSelectedRow();
     private javax.swing.JButton btn_kasir;
     private javax.swing.JButton btn_pengembalian;
     private javax.swing.JButton btn_pengguna;
->>>>>>> 4d1e119654fc22669b9dba0e441edf57cd9a1b69
     private javax.swing.JButton btn_tambah;
     private javax.swing.JLabel id_barang;
     private javax.swing.JLabel jLabel1;
-<<<<<<< HEAD
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel21;
-=======
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel21;
@@ -840,22 +539,13 @@ int i = table_barang.getSelectedRow();
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
->>>>>>> 4d1e119654fc22669b9dba0e441edf57cd9a1b69
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-<<<<<<< HEAD
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel8;
-    private javax.swing.JPanel jPanel9;
-    private javax.swing.JScrollPane jScrollPane1;
-=======
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
->>>>>>> 4d1e119654fc22669b9dba0e441edf57cd9a1b69
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable table_barang;
     private javax.swing.JTextField txt_cari;
