@@ -3,6 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+import java.awt.Frame;
 import javax.swing.JOptionPane;
 import java.sql.*;
 import javax.swing.JTextField;
@@ -31,28 +32,13 @@ public class FormKasir extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel8 = new javax.swing.JPanel();
-        btn_beranda = new javax.swing.JButton();
-        btn_kasir = new javax.swing.JButton();
-        btn_dataBarang = new javax.swing.JButton();
-        btn_sewa = new javax.swing.JButton();
-        btn_return = new javax.swing.JButton();
-        btn_pengguna = new javax.swing.JButton();
-        btn_report = new javax.swing.JButton();
-        jPanel9 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
         label_nama = new javax.swing.JLabel();
         txt_nama = new javax.swing.JTextField();
         label_alamat = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
         status = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tbl_barang = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
-        jSeparator1 = new javax.swing.JSeparator();
         jPanel3 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         combo_barang = new javax.swing.JComboBox<>();
@@ -69,10 +55,7 @@ public class FormKasir extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
-        jSeparator2 = new javax.swing.JSeparator();
         jLabel12 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
-        txt_identitas1 = new javax.swing.JTextField();
         jLabel16 = new javax.swing.JLabel();
         txt_dp = new javax.swing.JTextField();
         jPanel4 = new javax.swing.JPanel();
@@ -81,212 +64,48 @@ public class FormKasir extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         tgl_kembali = new com.toedter.calendar.JDateChooser();
         tgl_pinjam = new com.toedter.calendar.JDateChooser();
+        icon = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        menubar = new javax.swing.JPanel();
+        btn_beranda = new javax.swing.JButton();
+        btn_kasir = new javax.swing.JButton();
+        btn_dataBarang = new javax.swing.JButton();
+        btn_sewa = new javax.swing.JButton();
+        btn_return = new javax.swing.JButton();
+        btn_pengguna = new javax.swing.JButton();
+        btn_report = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        jSeparator2 = new javax.swing.JSeparator();
+        total_harga = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
-        MenuName = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
-        jLabel6 = new javax.swing.JLabel();
+        minimize = new javax.swing.JLabel();
+        jPanel7 = new javax.swing.JPanel();
+        exit = new javax.swing.JLabel();
         bg = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel8.setBackground(new java.awt.Color(248, 221, 113));
-
-        btn_beranda.setBackground(new java.awt.Color(248, 221, 113));
-        btn_beranda.setFont(new java.awt.Font("Outfit", 0, 14)); // NOI18N
-        btn_beranda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/home.png"))); // NOI18N
-        btn_beranda.setText("Beranda");
-        btn_beranda.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 15, 1, 1, new java.awt.Color(248, 221, 113)));
-        btn_beranda.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btn_beranda.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btn_beranda.setIconTextGap(12);
-        btn_beranda.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_berandaActionPerformed(evt);
-            }
-        });
-
-        btn_kasir.setBackground(new java.awt.Color(248, 221, 113));
-        btn_kasir.setFont(new java.awt.Font("Outfit", 0, 14)); // NOI18N
-        btn_kasir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/trolley-removebg-preview.png"))); // NOI18N
-        btn_kasir.setText("Form Kasir");
-        btn_kasir.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 15, 1, 1, new java.awt.Color(248, 221, 113)));
-        btn_kasir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btn_kasir.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btn_kasir.setIconTextGap(12);
-
-        btn_dataBarang.setBackground(new java.awt.Color(248, 221, 113));
-        btn_dataBarang.setFont(new java.awt.Font("Outfit", 0, 14)); // NOI18N
-        btn_dataBarang.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/package.png"))); // NOI18N
-        btn_dataBarang.setText("Data Barang");
-        btn_dataBarang.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 15, 1, 1, new java.awt.Color(248, 221, 113)));
-        btn_dataBarang.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btn_dataBarang.setIconTextGap(12);
-
-        btn_sewa.setBackground(new java.awt.Color(248, 221, 113));
-        btn_sewa.setFont(new java.awt.Font("Outfit", 0, 14)); // NOI18N
-        btn_sewa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/rent-removebg-preview.png"))); // NOI18N
-        btn_sewa.setText("Data Sewaan");
-        btn_sewa.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 15, 1, 1, new java.awt.Color(248, 221, 113)));
-        btn_sewa.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btn_sewa.setIconTextGap(12);
-        btn_sewa.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_sewaActionPerformed(evt);
-            }
-        });
-
-        btn_return.setBackground(new java.awt.Color(248, 221, 113));
-        btn_return.setFont(new java.awt.Font("Outfit", 0, 14)); // NOI18N
-        btn_return.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/product-return-removebg-preview.png"))); // NOI18N
-        btn_return.setText("Form Pengembalian");
-        btn_return.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 15, 1, 1, new java.awt.Color(248, 221, 113)));
-        btn_return.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btn_return.setIconTextGap(12);
-
-        btn_pengguna.setBackground(new java.awt.Color(248, 221, 113));
-        btn_pengguna.setFont(new java.awt.Font("Outfit", 0, 14)); // NOI18N
-        btn_pengguna.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/user-removebg-preview.png"))); // NOI18N
-        btn_pengguna.setText("Pengguna");
-        btn_pengguna.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 15, 1, 1, new java.awt.Color(248, 221, 113)));
-        btn_pengguna.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btn_pengguna.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btn_pengguna.setIconTextGap(12);
-        btn_pengguna.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btn_penggunaMouseClicked(evt);
-            }
-        });
-
-        btn_report.setBackground(new java.awt.Color(248, 221, 113));
-        btn_report.setFont(new java.awt.Font("Outfit", 0, 14)); // NOI18N
-        btn_report.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/report-removebg-preview.png"))); // NOI18N
-        btn_report.setText("Laporan");
-        btn_report.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 15, 1, 1, new java.awt.Color(248, 221, 113)));
-        btn_report.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btn_report.setIconTextGap(12);
-
-        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
-        jPanel8.setLayout(jPanel8Layout);
-        jPanel8Layout.setHorizontalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(btn_beranda, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(btn_kasir, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(btn_dataBarang, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(btn_sewa, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(btn_return, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-            .addComponent(btn_pengguna, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(btn_report, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        jPanel8Layout.setVerticalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel8Layout.createSequentialGroup()
-                .addGap(35, 35, 35)
-                .addComponent(btn_beranda, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btn_kasir, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btn_dataBarang, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btn_sewa, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btn_return, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btn_pengguna, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btn_report, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(104, 104, 104))
-        );
-
-        getContentPane().add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 200, 560));
-
-        jPanel9.setBackground(new java.awt.Color(252, 191, 73));
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logo.png"))); // NOI18N
-
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel2.setText("Awan Adventure");
-
-        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
-        jPanel9.setLayout(jPanel9Layout);
-        jPanel9Layout.setHorizontalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel9Layout.createSequentialGroup()
-                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel9Layout.createSequentialGroup()
-                        .addGap(72, 72, 72)
-                        .addComponent(jLabel1))
-                    .addGroup(jPanel9Layout.createSequentialGroup()
-                        .addGap(21, 21, 21)
-                        .addComponent(jLabel2)))
-                .addContainerGap(25, Short.MAX_VALUE))
-        );
-        jPanel9Layout.setVerticalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel9Layout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel2)
-                .addContainerGap(9, Short.MAX_VALUE))
-        );
-
-        getContentPane().add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 120));
-
-        jPanel1.setLayout(null);
-
         label_nama.setFont(new java.awt.Font("Outfit", 0, 18)); // NOI18N
         label_nama.setText("Nama");
-        jPanel1.add(label_nama);
-        label_nama.setBounds(40, 170, 90, 30);
+        getContentPane().add(label_nama, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 150, -1, 30));
 
         txt_nama.setFont(new java.awt.Font("Outfit", 0, 16)); // NOI18N
         txt_nama.setBorder(null);
-        jPanel1.add(txt_nama);
-        txt_nama.setBounds(130, 170, 240, 30);
+        getContentPane().add(txt_nama, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 150, 360, 30));
 
         label_alamat.setFont(new java.awt.Font("Outfit", 0, 18)); // NOI18N
         label_alamat.setText("Alamat");
-        jPanel1.add(label_alamat);
-        label_alamat.setBounds(40, 220, 90, 30);
-
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
-
-        jLabel4.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel4.setFont(new java.awt.Font("Outfit", 0, 20)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 0, 0));
-        jLabel4.setText("Logout");
-        jLabel4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel4MouseClicked(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(14, Short.MAX_VALUE))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(28, Short.MAX_VALUE)
-                .addComponent(jLabel4)
-                .addGap(16, 16, 16))
-        );
-
-        jPanel1.add(jPanel2);
-        jPanel2.setBounds(910, 0, 90, 70);
+        getContentPane().add(label_alamat, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 190, -1, -1));
 
         status.setFont(new java.awt.Font("Outfit", 0, 18)); // NOI18N
-        jPanel1.add(status);
-        status.setBounds(800, 10, 60, 60);
+        getContentPane().add(status, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 280, -1, -1));
 
         tbl_barang.setFont(new java.awt.Font("Outfit", 0, 16)); // NOI18N
         tbl_barang.setModel(new javax.swing.table.DefaultTableModel(
@@ -310,19 +129,15 @@ public class FormKasir extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tbl_barang);
 
-        jPanel1.add(jScrollPane1);
-        jScrollPane1.setBounds(430, 400, 540, 200);
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 350, 550, 250));
 
         jButton1.setBackground(new java.awt.Color(252, 191, 73));
         jButton1.setFont(new java.awt.Font("Outfit", 0, 16)); // NOI18N
         jButton1.setText("Proses");
         jButton1.setBorder(null);
-        jPanel1.add(jButton1);
-        jButton1.setBounds(870, 620, 100, 40);
-        jPanel1.add(jSeparator1);
-        jSeparator1.setBounds(0, 370, 1000, 10);
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 620, 100, 40));
 
-        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel3.setBackground(new java.awt.Color(242, 242, 242));
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Input Barang"));
 
         jLabel3.setBackground(new java.awt.Color(255, 255, 255));
@@ -386,11 +201,10 @@ public class FormKasir extends javax.swing.JFrame {
                         .addComponent(combo_jumlah, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel11))
                     .addComponent(txt_stok, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(29, Short.MAX_VALUE))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
 
-        jPanel1.add(jPanel3);
-        jPanel3.setBounds(40, 400, 350, 130);
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 350, 350, 120));
 
         text_areaAlamat.setColumns(15);
         text_areaAlamat.setFont(new java.awt.Font("Outfit", 0, 16)); // NOI18N
@@ -398,71 +212,54 @@ public class FormKasir extends javax.swing.JFrame {
         text_areaAlamat.setBorder(null);
         jScrollPane2.setViewportView(text_areaAlamat);
 
-        jPanel1.add(jScrollPane2);
-        jScrollPane2.setBounds(130, 220, 240, 110);
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 190, 360, -1));
 
         jLabel8.setFont(new java.awt.Font("Outfit", 0, 18)); // NOI18N
         jLabel8.setText("Identitas diri");
-        jPanel1.add(jLabel8);
-        jLabel8.setBounds(580, 170, 110, 30);
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 190, -1, 30));
 
         combo_identitas.setFont(new java.awt.Font("Outfit", 0, 16)); // NOI18N
         combo_identitas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pilih Identitas...", "KTP", "SIM", "Kartu Pelajar" }));
-        jPanel1.add(combo_identitas);
-        combo_identitas.setBounds(750, 170, 220, 30);
+        getContentPane().add(combo_identitas, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 150, 260, 30));
 
         jLabel9.setFont(new java.awt.Font("Outfit", 0, 18)); // NOI18N
         jLabel9.setText("Nomor Identitas");
-        jPanel1.add(jLabel9);
-        jLabel9.setBounds(580, 220, 140, 30);
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 150, -1, 30));
 
         txt_identitas.setFont(new java.awt.Font("Outfit", 0, 16)); // NOI18N
         txt_identitas.setBorder(null);
-        jPanel1.add(txt_identitas);
-        txt_identitas.setBounds(750, 220, 220, 30);
+        txt_identitas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_identitasActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txt_identitas, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 190, 260, 30));
 
         jLabel10.setFont(new java.awt.Font("Outfit", 0, 18)); // NOI18N
         jLabel10.setText("Tanggal penyewaan");
-        jPanel1.add(jLabel10);
-        jLabel10.setBounds(580, 270, 170, 30);
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 230, -1, 30));
 
         jLabel13.setFont(new java.awt.Font("Outfit", 0, 16)); // NOI18N
         jLabel13.setText("Total    :      Rp");
-        jPanel1.add(jLabel13);
-        jLabel13.setBounds(620, 630, 100, 21);
+        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 630, -1, -1));
 
         jLabel14.setFont(new java.awt.Font("Outfit", 0, 16)); // NOI18N
-        jPanel1.add(jLabel14);
-        jLabel14.setBounds(720, 630, 43, 20);
-        jPanel1.add(jSeparator2);
-        jSeparator2.setBounds(620, 650, 200, 10);
+        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        jLabel12.setFont(new java.awt.Font("Outfit", 0, 36)); // NOI18N
-        jLabel12.setText("-");
-        jPanel1.add(jLabel12);
-        jLabel12.setBounds(850, 260, 20, 40);
-
-        jLabel15.setFont(new java.awt.Font("Outfit", 0, 18)); // NOI18N
-        jLabel15.setText("Nomor Identitas");
-        jPanel1.add(jLabel15);
-        jLabel15.setBounds(580, 220, 140, 30);
-
-        txt_identitas1.setFont(new java.awt.Font("Outfit", 0, 16)); // NOI18N
-        txt_identitas1.setBorder(null);
-        jPanel1.add(txt_identitas1);
-        txt_identitas1.setBounds(750, 220, 220, 30);
+        jLabel12.setFont(new java.awt.Font("Outfit Medium", 0, 18)); // NOI18N
+        jLabel12.setText("To");
+        jLabel12.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 230, -1, 30));
 
         jLabel16.setFont(new java.awt.Font("Outfit", 0, 18)); // NOI18N
         jLabel16.setText("DP");
-        jPanel1.add(jLabel16);
-        jLabel16.setBounds(580, 320, 140, 30);
+        getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 270, -1, 30));
 
         txt_dp.setFont(new java.awt.Font("Outfit", 0, 16)); // NOI18N
         txt_dp.setBorder(null);
-        jPanel1.add(txt_dp);
-        txt_dp.setBounds(750, 320, 220, 30);
+        getContentPane().add(txt_dp, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 270, 260, 30));
 
-        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel4.setBackground(new java.awt.Color(242, 242, 242));
         jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder("Proses"));
 
         btn_tambahBarang.setBackground(new java.awt.Color(92, 184, 92));
@@ -481,6 +278,11 @@ public class FormKasir extends javax.swing.JFrame {
         jButton2.setFont(new java.awt.Font("Outfit", 0, 16)); // NOI18N
         jButton2.setText("Edit");
         jButton2.setBorder(null);
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setBackground(new java.awt.Color(220, 53, 69));
         jButton3.setFont(new java.awt.Font("Outfit", 0, 16)); // NOI18N
@@ -493,87 +295,300 @@ public class FormKasir extends javax.swing.JFrame {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32)
-                .addComponent(btn_tambahBarang, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addComponent(btn_tambahBarang, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(7, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(9, 9, 9)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btn_tambahBarang, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jButton2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(1, 1, 1)
+                        .addComponent(btn_tambahBarang, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jButton2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
+                    .addComponent(jButton3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
-        jPanel1.add(jPanel4);
-        jPanel4.setBounds(40, 540, 350, 60);
-        jPanel1.add(tgl_kembali);
-        tgl_kembali.setBounds(870, 270, 88, 30);
-        jPanel1.add(tgl_pinjam);
-        tgl_pinjam.setBounds(750, 270, 88, 30);
+        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 480, 350, 70));
+        getContentPane().add(tgl_kembali, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 230, 110, 30));
+        getContentPane().add(tgl_pinjam, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 230, 110, 30));
+
+        icon.setBackground(new java.awt.Color(252, 191, 73));
+
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logo.png"))); // NOI18N
+
+        jLabel2.setFont(new java.awt.Font("Outfit Medium", 1, 18)); // NOI18N
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("Awan Adventure");
+
+        javax.swing.GroupLayout iconLayout = new javax.swing.GroupLayout(icon);
+        icon.setLayout(iconLayout);
+        iconLayout.setHorizontalGroup(
+            iconLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
+            .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        iconLayout.setVerticalGroup(
+            iconLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(iconLayout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(jLabel7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel2)
+                .addContainerGap(14, Short.MAX_VALUE))
+        );
+
+        getContentPane().add(icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 190, 120));
+
+        menubar.setBackground(new java.awt.Color(248, 221, 113));
+
+        btn_beranda.setBackground(new java.awt.Color(248, 221, 113));
+        btn_beranda.setFont(new java.awt.Font("Outfit", 0, 14)); // NOI18N
+        btn_beranda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/home.png"))); // NOI18N
+        btn_beranda.setText("Beranda");
+        btn_beranda.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 15, 1, 1, new java.awt.Color(248, 221, 113)));
+        btn_beranda.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btn_beranda.setIconTextGap(12);
+        btn_beranda.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_berandaMouseClicked(evt);
+            }
+        });
+
+        btn_kasir.setBackground(new java.awt.Color(248, 221, 113));
+        btn_kasir.setFont(new java.awt.Font("Outfit", 0, 14)); // NOI18N
+        btn_kasir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/trolley-removebg-preview.png"))); // NOI18N
+        btn_kasir.setText("Form Kasir");
+        btn_kasir.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 15, 1, 1, new java.awt.Color(248, 221, 113)));
+        btn_kasir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_kasir.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btn_kasir.setIconTextGap(12);
+
+        btn_dataBarang.setBackground(new java.awt.Color(248, 221, 113));
+        btn_dataBarang.setFont(new java.awt.Font("Outfit", 0, 14)); // NOI18N
+        btn_dataBarang.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/package.png"))); // NOI18N
+        btn_dataBarang.setText("Data Barang");
+        btn_dataBarang.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 15, 1, 1, new java.awt.Color(248, 221, 113)));
+        btn_dataBarang.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btn_dataBarang.setIconTextGap(12);
+        btn_dataBarang.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_dataBarangMouseClicked(evt);
+            }
+        });
+
+        btn_sewa.setBackground(new java.awt.Color(248, 221, 113));
+        btn_sewa.setFont(new java.awt.Font("Outfit", 0, 14)); // NOI18N
+        btn_sewa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/rent-removebg-preview.png"))); // NOI18N
+        btn_sewa.setText("Data Sewaan");
+        btn_sewa.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 15, 1, 1, new java.awt.Color(248, 221, 113)));
+        btn_sewa.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btn_sewa.setIconTextGap(12);
+        btn_sewa.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_sewaMouseClicked(evt);
+            }
+        });
+
+        btn_return.setBackground(new java.awt.Color(248, 221, 113));
+        btn_return.setFont(new java.awt.Font("Outfit", 0, 14)); // NOI18N
+        btn_return.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/product-return-removebg-preview.png"))); // NOI18N
+        btn_return.setText("Form Pengembalian");
+        btn_return.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 15, 1, 1, new java.awt.Color(248, 221, 113)));
+        btn_return.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btn_return.setIconTextGap(12);
+        btn_return.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_returnMouseClicked(evt);
+            }
+        });
+
+        btn_pengguna.setBackground(new java.awt.Color(248, 221, 113));
+        btn_pengguna.setFont(new java.awt.Font("Outfit", 0, 14)); // NOI18N
+        btn_pengguna.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/user-removebg-preview.png"))); // NOI18N
+        btn_pengguna.setText("Pengguna");
+        btn_pengguna.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 15, 1, 1, new java.awt.Color(248, 221, 113)));
+        btn_pengguna.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_pengguna.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btn_pengguna.setIconTextGap(12);
+        btn_pengguna.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_penggunaMouseClicked(evt);
+            }
+        });
+
+        btn_report.setBackground(new java.awt.Color(248, 221, 113));
+        btn_report.setFont(new java.awt.Font("Outfit", 0, 14)); // NOI18N
+        btn_report.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/report-removebg-preview.png"))); // NOI18N
+        btn_report.setText("Laporan");
+        btn_report.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 15, 1, 1, new java.awt.Color(248, 221, 113)));
+        btn_report.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btn_report.setIconTextGap(12);
+
+        javax.swing.GroupLayout menubarLayout = new javax.swing.GroupLayout(menubar);
+        menubar.setLayout(menubarLayout);
+        menubarLayout.setHorizontalGroup(
+            menubarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(btn_beranda, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btn_kasir, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btn_dataBarang, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btn_sewa, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btn_return, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
+            .addComponent(btn_pengguna, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btn_report, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        menubarLayout.setVerticalGroup(
+            menubarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(menubarLayout.createSequentialGroup()
+                .addGap(35, 35, 35)
+                .addComponent(btn_beranda, javax.swing.GroupLayout.DEFAULT_SIZE, 58, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btn_kasir, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btn_dataBarang, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btn_sewa, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btn_return, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btn_pengguna, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btn_report, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(101, 101, 101))
+        );
+
+        getContentPane().add(menubar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 190, 560));
+
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel4.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel4.setFont(new java.awt.Font("Outfit", 0, 20)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel4.setText("Logout");
+        jLabel4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel4MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 90, 80, 30));
+        getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 320, 1000, 20));
+        getContentPane().add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 650, 200, 10));
+
+        total_harga.setFont(new java.awt.Font("Outfit", 0, 18)); // NOI18N
+        total_harga.setForeground(new java.awt.Color(0, 0, 0));
+        getContentPane().add(total_harga, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 630, 100, 20));
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 50, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 60, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 10, 50, 60));
 
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
-
-        MenuName.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
-        MenuName.setText("Form Kasir");
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addComponent(MenuName)
-                .addContainerGap(310, Short.MAX_VALUE))
+            .addGap(0, 60, Short.MAX_VALUE)
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addComponent(MenuName)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGap(0, 30, Short.MAX_VALUE)
         );
 
-        jPanel1.add(jPanel5);
-        jPanel5.setBounds(10, 0, 534, 67);
+        getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 30, 60, 30));
 
-        jPanel6.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanel6MouseClicked(evt);
+            }
+        });
 
-        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel6.setText("Home / Kasir");
+        minimize.setFont(new java.awt.Font("Outfit Black", 0, 24)); // NOI18N
+        minimize.setText("-");
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel6)
-                .addContainerGap(52, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                .addContainerGap(15, Short.MAX_VALUE)
+                .addComponent(minimize, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                .addGap(0, 3, Short.MAX_VALUE)
-                .addComponent(jLabel6))
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(minimize, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jPanel1.add(jPanel6);
-        jPanel6.setBounds(30, 90, 140, 20);
+        getContentPane().add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 0, 40, -1));
+
+        jPanel7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanel7MouseClicked(evt);
+            }
+        });
+
+        exit.setFont(new java.awt.Font("Outfit Black", 0, 24)); // NOI18N
+        exit.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        exit.setText("X");
+
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(exit, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(exit, javax.swing.GroupLayout.PREFERRED_SIZE, 30, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(1160, 0, 40, -1));
 
         bg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/formKasir.jpg"))); // NOI18N
         bg.setPreferredSize(new java.awt.Dimension(1000, 675));
-        jPanel1.add(bg);
-        bg.setBounds(0, 0, 1000, 675);
-
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 0, 1000, 680));
+        getContentPane().add(bg, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 0, 1010, -1));
 
         pack();
         setLocationRelativeTo(null);
@@ -685,23 +700,56 @@ public class FormKasir extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btn_tambahBarangActionPerformed
 
+    private void btn_dataBarangMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_dataBarangMouseClicked
+        // TODO add your handling code here:
+        this.setVisible(false);
+        new DataBarang().setVisible(true);
+    }//GEN-LAST:event_btn_dataBarangMouseClicked
+
+    private void btn_sewaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_sewaMouseClicked
+        // TODO add your handling code here:
+        this.setVisible(false);
+        new DataSewaan().setVisible(true);
+    }//GEN-LAST:event_btn_sewaMouseClicked
+
+    private void btn_returnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_returnMouseClicked
+        // TODO add your handling code here:
+        this.setVisible(false);
+        new FormPengembalian().setVisible(true);
+    }//GEN-LAST:event_btn_returnMouseClicked
+
     private void btn_penggunaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_penggunaMouseClicked
         // TODO add your handling code here:
         this.setVisible(false);
         new Pengguna().setVisible(true);
     }//GEN-LAST:event_btn_penggunaMouseClicked
 
-    private void btn_berandaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_berandaActionPerformed
+    private void txt_identitasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_identitasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_identitasActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jPanel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel6MouseClicked
+        // TODO add your handling code here:
+        this.setState(Frame.ICONIFIED);
+    }//GEN-LAST:event_jPanel6MouseClicked
+
+    private void jPanel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel7MouseClicked
+        // TODO add your handling code here:
+        int confirmExit = JOptionPane.showConfirmDialog(rootPane, "Yakin ingin keluar ?", "Confirmation", JOptionPane.YES_NO_OPTION);
+        if(confirmExit == JOptionPane.YES_OPTION){
+            System.exit(0);
+        }
+    }//GEN-LAST:event_jPanel7MouseClicked
+
+    private void btn_berandaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_berandaMouseClicked
         // TODO add your handling code here:
         this.setVisible(false);
         new Dashboard().setVisible(true);
-    }//GEN-LAST:event_btn_berandaActionPerformed
-
-    private void btn_sewaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_sewaActionPerformed
-        // TODO add your handling code here:
-        this.setVisible(false);
-        new DataSewaan().setVisible(true);
-    }//GEN-LAST:event_btn_sewaActionPerformed
+    }//GEN-LAST:event_btn_berandaMouseClicked
 
     /**
      * @param args the command line arguments
@@ -742,7 +790,6 @@ public class FormKasir extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel MenuName;
     private javax.swing.JLabel bg;
     private javax.swing.JButton btn_beranda;
     private javax.swing.JButton btn_dataBarang;
@@ -755,22 +802,22 @@ public class FormKasir extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> combo_barang;
     private javax.swing.JComboBox<String> combo_identitas;
     private javax.swing.JComboBox<String> combo_jumlah;
+    private javax.swing.JLabel exit;
+    private javax.swing.JPanel icon;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
@@ -779,22 +826,23 @@ public class FormKasir extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel8;
-    private javax.swing.JPanel jPanel9;
+    private javax.swing.JPanel jPanel7;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JLabel label_alamat;
     private javax.swing.JLabel label_nama;
+    private javax.swing.JPanel menubar;
+    private javax.swing.JLabel minimize;
     private javax.swing.JLabel status;
     private javax.swing.JTable tbl_barang;
     private javax.swing.JTextArea text_areaAlamat;
     private com.toedter.calendar.JDateChooser tgl_kembali;
     private com.toedter.calendar.JDateChooser tgl_pinjam;
+    private javax.swing.JLabel total_harga;
     private javax.swing.JTextField txt_dp;
     private javax.swing.JTextField txt_identitas;
-    private javax.swing.JTextField txt_identitas1;
     private javax.swing.JTextField txt_nama;
     private javax.swing.JLabel txt_stok;
     // End of variables declaration//GEN-END:variables

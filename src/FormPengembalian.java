@@ -29,21 +29,7 @@ public class FormPengembalian extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel4 = new javax.swing.JLabel();
-        MenuName = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jPanel8 = new javax.swing.JPanel();
-        btn_beranda = new javax.swing.JButton();
-        btn_kasir = new javax.swing.JButton();
-        btn_dataBarang = new javax.swing.JButton();
-        btn_sewa = new javax.swing.JButton();
-        btn_return = new javax.swing.JButton();
-        btn_pengguna = new javax.swing.JButton();
-        btn_report = new javax.swing.JButton();
-        jPanel9 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
@@ -54,12 +40,27 @@ public class FormPengembalian extends javax.swing.JFrame {
         cmb_barangrusak = new javax.swing.JComboBox<>();
         txt_ttl_denda = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
-        btn_hapus = new javax.swing.JButton();
-        btn_tambah = new javax.swing.JButton();
-        btn_edit = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tbl_pengembalian = new javax.swing.JTable();
-        jLabel1 = new javax.swing.JLabel();
+        icon = new javax.swing.JPanel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        menubar = new javax.swing.JPanel();
+        btn_beranda = new javax.swing.JButton();
+        btn_kasir = new javax.swing.JButton();
+        btn_dataBarang = new javax.swing.JButton();
+        btn_sewa = new javax.swing.JButton();
+        btn_return = new javax.swing.JButton();
+        btn_pengguna = new javax.swing.JButton();
+        btn_report = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        jPanel4 = new javax.swing.JPanel();
+        btn_tambahBarang = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jSeparator1 = new javax.swing.JSeparator();
+        jTextField1 = new javax.swing.JTextField();
+        bg = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -75,17 +76,86 @@ public class FormPengembalian extends javax.swing.JFrame {
                 jLabel4MouseClicked(evt);
             }
         });
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 30, -1, -1));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 90, -1, -1));
 
-        MenuName.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
-        MenuName.setText("Form Pengembalian");
-        getContentPane().add(MenuName, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 20, -1, -1));
+        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 8)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 51, 51));
+        jLabel6.setText("Rusak & Terlambat");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 430, -1, -1));
 
-        jLabel10.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel10.setText("Home / Pengembalian");
-        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 90, -1, -1));
+        jLabel8.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel8.setText("Keterlambatan");
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 230, -1, -1));
 
-        jPanel8.setBackground(new java.awt.Color(248, 221, 113));
+        jLabel9.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel9.setText("Barang Rusak");
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 290, -1, -1));
+
+        jLabel11.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel11.setText("Jenis Kerusakan");
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 350, -1, -1));
+
+        jLabel12.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel12.setText("Total Denda");
+        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 410, -1, -1));
+
+        getContentPane().add(cmb_jeniskerusakan, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 350, 250, 30));
+
+        getContentPane().add(cmb_penyewa, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 170, 250, 30));
+
+        getContentPane().add(cmb_keterlambatan, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 230, 250, 30));
+
+        getContentPane().add(cmb_barangrusak, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 290, 250, 30));
+        getContentPane().add(txt_ttl_denda, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 410, 250, 30));
+
+        jLabel13.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel13.setText("Penyewa");
+        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 170, -1, -1));
+
+        tbl_pengembalian.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(tbl_pengembalian);
+
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 290, 530, 360));
+
+        icon.setBackground(new java.awt.Color(252, 191, 73));
+
+        jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logo.png"))); // NOI18N
+
+        jLabel2.setFont(new java.awt.Font("Outfit Medium", 1, 18)); // NOI18N
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("Awan Adventure");
+
+        javax.swing.GroupLayout iconLayout = new javax.swing.GroupLayout(icon);
+        icon.setLayout(iconLayout);
+        iconLayout.setHorizontalGroup(
+            iconLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
+            .addComponent(jLabel14, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        iconLayout.setVerticalGroup(
+            iconLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(iconLayout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(jLabel14)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel2)
+                .addContainerGap(14, Short.MAX_VALUE))
+        );
+
+        getContentPane().add(icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 190, 120));
+
+        menubar.setBackground(new java.awt.Color(248, 221, 113));
 
         btn_beranda.setBackground(new java.awt.Color(248, 221, 113));
         btn_beranda.setFont(new java.awt.Font("Outfit", 0, 14)); // NOI18N
@@ -94,6 +164,11 @@ public class FormPengembalian extends javax.swing.JFrame {
         btn_beranda.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 15, 1, 1, new java.awt.Color(248, 221, 113)));
         btn_beranda.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btn_beranda.setIconTextGap(12);
+        btn_beranda.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_berandaMouseClicked(evt);
+            }
+        });
 
         btn_kasir.setBackground(new java.awt.Color(248, 221, 113));
         btn_kasir.setFont(new java.awt.Font("Outfit", 0, 14)); // NOI18N
@@ -116,6 +191,11 @@ public class FormPengembalian extends javax.swing.JFrame {
         btn_dataBarang.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 15, 1, 1, new java.awt.Color(248, 221, 113)));
         btn_dataBarang.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btn_dataBarang.setIconTextGap(12);
+        btn_dataBarang.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_dataBarangMouseClicked(evt);
+            }
+        });
 
         btn_sewa.setBackground(new java.awt.Color(248, 221, 113));
         btn_sewa.setFont(new java.awt.Font("Outfit", 0, 14)); // NOI18N
@@ -124,6 +204,11 @@ public class FormPengembalian extends javax.swing.JFrame {
         btn_sewa.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 15, 1, 1, new java.awt.Color(248, 221, 113)));
         btn_sewa.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btn_sewa.setIconTextGap(12);
+        btn_sewa.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_sewaMouseClicked(evt);
+            }
+        });
 
         btn_return.setBackground(new java.awt.Color(248, 221, 113));
         btn_return.setFont(new java.awt.Font("Outfit", 0, 14)); // NOI18N
@@ -141,9 +226,9 @@ public class FormPengembalian extends javax.swing.JFrame {
         btn_pengguna.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_pengguna.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btn_pengguna.setIconTextGap(12);
-        btn_pengguna.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_penggunaActionPerformed(evt);
+        btn_pengguna.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_penggunaMouseClicked(evt);
             }
         });
 
@@ -155,23 +240,23 @@ public class FormPengembalian extends javax.swing.JFrame {
         btn_report.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btn_report.setIconTextGap(12);
 
-        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
-        jPanel8.setLayout(jPanel8Layout);
-        jPanel8Layout.setHorizontalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout menubarLayout = new javax.swing.GroupLayout(menubar);
+        menubar.setLayout(menubarLayout);
+        menubarLayout.setHorizontalGroup(
+            menubarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(btn_beranda, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(btn_kasir, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(btn_dataBarang, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(btn_sewa, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(btn_return, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btn_return, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
             .addComponent(btn_pengguna, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(btn_report, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-        jPanel8Layout.setVerticalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel8Layout.createSequentialGroup()
+        menubarLayout.setVerticalGroup(
+            menubarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(menubarLayout.createSequentialGroup()
                 .addGap(35, 35, 35)
-                .addComponent(btn_beranda, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE)
+                .addComponent(btn_beranda, javax.swing.GroupLayout.DEFAULT_SIZE, 58, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btn_kasir, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -184,114 +269,93 @@ public class FormPengembalian extends javax.swing.JFrame {
                 .addComponent(btn_pengguna, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btn_report, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(101, 101, 101))
+        );
+
+        getContentPane().add(menubar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 190, 560));
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 160, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 60, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 10, 160, 60));
+
+        jPanel4.setBackground(new java.awt.Color(242, 242, 242));
+        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder("Proses"));
+
+        btn_tambahBarang.setBackground(new java.awt.Color(92, 184, 92));
+        btn_tambahBarang.setFont(new java.awt.Font("Outfit", 0, 14)); // NOI18N
+        btn_tambahBarang.setForeground(new java.awt.Color(255, 255, 255));
+        btn_tambahBarang.setText("Tambah");
+        btn_tambahBarang.setBorder(null);
+        btn_tambahBarang.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        jButton2.setBackground(new java.awt.Color(23, 162, 184));
+        jButton2.setFont(new java.awt.Font("Outfit", 0, 16)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(255, 255, 255));
+        jButton2.setText("Edit");
+        jButton2.setBorder(null);
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        jButton3.setBackground(new java.awt.Color(220, 53, 69));
+        jButton3.setFont(new java.awt.Font("Outfit", 0, 16)); // NOI18N
+        jButton3.setForeground(new java.awt.Color(255, 255, 255));
+        jButton3.setText("Hapus");
+        jButton3.setBorder(null);
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btn_tambahBarang, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(107, 107, 107))
         );
-
-        getContentPane().add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 180, 550));
-
-        jPanel9.setBackground(new java.awt.Color(252, 191, 73));
-
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logo.png"))); // NOI18N
-
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel3.setText("Awan Adventure");
-
-        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
-        jPanel9.setLayout(jPanel9Layout);
-        jPanel9Layout.setHorizontalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel9Layout.createSequentialGroup()
-                .addContainerGap(20, Short.MAX_VALUE)
-                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addGap(64, 64, 64))))
-        );
-        jPanel9Layout.setVerticalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel9Layout.createSequentialGroup()
-                .addContainerGap(30, Short.MAX_VALUE)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel3)
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(6, 6, 6)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE))
+                .addGap(6, 6, 6))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btn_tambahBarang, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        getContentPane().add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 180, 120));
+        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 160, 350, 70));
 
-        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 8)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 51, 51));
-        jLabel6.setText("Rusak & Terlambat");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 430, -1, -1));
+        jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 120, 20, 560));
 
-        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel7.setText("Proses");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 160, -1, -1));
+        jTextField1.setBackground(new java.awt.Color(255, 255, 255));
+        jTextField1.setFont(new java.awt.Font("Outfit", 0, 18)); // NOI18N
+        jTextField1.setForeground(new java.awt.Color(0, 0, 0));
+        jTextField1.setBorder(null);
+        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1004, 246, 170, 30));
 
-        jLabel8.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel8.setText("Keterlambatan");
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 230, -1, -1));
-
-        jLabel9.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel9.setText("Barang Rusak");
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 290, -1, -1));
-
-        jLabel11.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel11.setText("Jenis Kerusakan");
-        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 350, -1, -1));
-
-        jLabel12.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel12.setText("Total Denda");
-        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 410, -1, -1));
-
-        getContentPane().add(cmb_jeniskerusakan, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 350, 190, 30));
-
-        getContentPane().add(cmb_penyewa, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 170, 190, 30));
-
-        getContentPane().add(cmb_keterlambatan, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 230, 190, 30));
-
-        getContentPane().add(cmb_barangrusak, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 290, 190, 30));
-        getContentPane().add(txt_ttl_denda, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 410, 190, 30));
-
-        jLabel13.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel13.setText("Penyewa");
-        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 170, -1, -1));
-
-        btn_hapus.setBackground(new java.awt.Color(252, 191, 73));
-        btn_hapus.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btn_hapus.setText("Hapus");
-        getContentPane().add(btn_hapus, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 210, 120, 30));
-
-        btn_tambah.setBackground(new java.awt.Color(252, 191, 73));
-        btn_tambah.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btn_tambah.setText("Tambah");
-        getContentPane().add(btn_tambah, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 210, 120, 30));
-
-        btn_edit.setBackground(new java.awt.Color(252, 191, 73));
-        btn_edit.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btn_edit.setText("Edit");
-        getContentPane().add(btn_edit, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 210, 120, 30));
-
-        tbl_pengembalian.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane1.setViewportView(tbl_pengembalian);
-
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 290, 530, 170));
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Form Pengembalian 1.png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        bg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/formPengembalian.jpg"))); // NOI18N
+        getContentPane().add(bg, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 0, -1, -1));
 
         pack();
         setLocationRelativeTo(null);
@@ -312,11 +376,33 @@ public class FormPengembalian extends javax.swing.JFrame {
         new FormKasir().setVisible(true);
     }//GEN-LAST:event_btn_kasirMouseClicked
 
-    private void btn_penggunaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_penggunaActionPerformed
+    private void btn_dataBarangMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_dataBarangMouseClicked
+        // TODO add your handling code here:
+        this.setVisible(false);
+        new DataBarang().setVisible(true);
+    }//GEN-LAST:event_btn_dataBarangMouseClicked
+
+    private void btn_sewaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_sewaMouseClicked
+        // TODO add your handling code here:
+        this.setVisible(false);
+        new DataSewaan().setVisible(true);
+    }//GEN-LAST:event_btn_sewaMouseClicked
+
+    private void btn_penggunaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_penggunaMouseClicked
         // TODO add your handling code here:
         this.setVisible(false);
         new Pengguna().setVisible(true);
-    }//GEN-LAST:event_btn_penggunaActionPerformed
+    }//GEN-LAST:event_btn_penggunaMouseClicked
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void btn_berandaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_berandaMouseClicked
+        // TODO add your handling code here:
+        this.setVisible(false);
+        new Dashboard().setVisible(true);
+    }//GEN-LAST:event_btn_berandaMouseClicked
 
     /**
      * @param args the command line arguments
@@ -354,36 +440,37 @@ public class FormPengembalian extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel MenuName;
+    private javax.swing.JLabel bg;
     private javax.swing.JButton btn_beranda;
     private javax.swing.JButton btn_dataBarang;
-    private javax.swing.JButton btn_edit;
-    private javax.swing.JButton btn_hapus;
     private javax.swing.JButton btn_kasir;
     private javax.swing.JButton btn_pengguna;
     private javax.swing.JButton btn_report;
     private javax.swing.JButton btn_return;
     private javax.swing.JButton btn_sewa;
-    private javax.swing.JButton btn_tambah;
+    private javax.swing.JButton btn_tambahBarang;
     private javax.swing.JComboBox<String> cmb_barangrusak;
     private javax.swing.JComboBox<String> cmb_jeniskerusakan;
     private javax.swing.JComboBox<String> cmb_keterlambatan;
     private javax.swing.JComboBox<String> cmb_penyewa;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
+    private javax.swing.JPanel icon;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel8;
-    private javax.swing.JPanel jPanel9;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JPanel menubar;
     private javax.swing.JTable tbl_pengembalian;
     private javax.swing.JTextField txt_ttl_denda;
     // End of variables declaration//GEN-END:variables

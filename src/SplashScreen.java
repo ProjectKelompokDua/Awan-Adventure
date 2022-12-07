@@ -26,7 +26,7 @@ public class SplashScreen extends javax.swing.JFrame {
     private void aksi(){
         action = new ActionListener(){
             public void actionPerformed(ActionEvent e){
-                progress.setValue(progress.getValue() + 5);
+                progress.setValue(progress.getValue() + 2);
                 progress.setStringPainted(true);
                 if(progress.getPercentComplete() == 1.0){
                     timer.stop();
@@ -51,6 +51,7 @@ public class SplashScreen extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         getContentPane().add(progress, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 650, 1200, 30));
 
