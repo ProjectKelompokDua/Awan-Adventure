@@ -130,7 +130,7 @@ public class DataBarang extends javax.swing.JFrame {
         id_barang.setForeground(new java.awt.Color(242, 242, 242));
         id_barang.setText("jLabel21");
         getContentPane().add(id_barang);
-        id_barang.setBounds(870, 290, 43, 16);
+        id_barang.setBounds(870, 290, 45, 16);
         getContentPane().add(txt_stok);
         txt_stok.setBounds(330, 200, 310, 30);
         getContentPane().add(txt_namaBarang);
@@ -196,6 +196,11 @@ public class DataBarang extends javax.swing.JFrame {
         btn_beranda.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 15, 1, 1, new java.awt.Color(248, 221, 113)));
         btn_beranda.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btn_beranda.setIconTextGap(12);
+        btn_beranda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_berandaActionPerformed(evt);
+            }
+        });
 
         btn_kasir.setBackground(new java.awt.Color(248, 221, 113));
         btn_kasir.setFont(new java.awt.Font("Outfit", 0, 14)); // NOI18N
@@ -423,18 +428,20 @@ try{
         
         try { 
             Statement statement = (Statement)Connect.GetConnection().createStatement(); 
-            ResultSet res = statement.executeQuery("select * from data_barang where id_barang like '%"+txt_cari.getText()+"%' or nama_barang like '%"+txt_cari.getText()+"%' or stok like '%"+txt_cari.getText()+"%'or harga_hari like '%"+txt_cari.getText()+"%'or harga_2hari like '%"+txt_cari.getText()+"%'"); 
+            ResultSet res = statement.executeQuery("select * from data_barang where nama_barang like '%"+txt_cari.getText()+"%'"); 
              
             while(res.next()){ 
                 dtm.addRow(new Object[]{ 
-                    res.getString("ID Barang"), 
-                    res.getString("Nama Barang"), 
-                    res.getString("Stok"), 
-                    res.getString("Harga 1 Hari"), 
-                    res.getString("Harga 2 Hari"),
-                    res.getString("Keterangan")
+                    res.getString("id_barang"), 
+                    res.getString("nama_barang"), 
+                    res.getString("stok"), 
+                    res.getString("harga_hari"), 
+                    res.getString("harga_2hari"),
+                    res.getString("keterangan")
                 }); 
                 table_barang.setModel(dtm); 
+                
+                
             } 
         } catch(Exception e) { 
 
@@ -461,11 +468,14 @@ try{
                 String insertdata = "update data_barang set nama_barang='"+ txt_namaBarang.getText() 
                         +"',stok='"+ txt_stok.getText() +"', harga_hari='"+ txt_harga1.getText() 
                         +"', harga_2hari='"+ txt_harga2.getText() +"', keterangan='"+ Terang.getText() 
-                        +"', where id_barang='"+id_barang.getText()+"'";
+                        +"' where id_barang='"+id_barang.getText()+"'";
                 
                 Connection connect = koneksi.Connect.GetConnection(); 
                 PreparedStatement ps = connect.prepareStatement(insertdata); 
                 ps.executeUpdate(); 
+                
+                load_table();
+                kosong();
                  
                 JOptionPane.showMessageDialog(rootPane, "Data Barang berhasil diperbarui"); 
                  } 
@@ -473,7 +483,6 @@ try{
             JOptionPane.showMessageDialog(rootPane, "Error"); 
             System.out.println(e.getMessage()); 
         }
-          
         
     }//GEN-LAST:event_btn_editActionPerformed
     
@@ -532,6 +541,11 @@ int i = table_barang.getSelectedRow();
         this.setVisible(false);
         new Pengguna().setVisible(true);
     }//GEN-LAST:event_btn_penggunaActionPerformed
+
+    private void btn_berandaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_berandaActionPerformed
+        this.setVisible(false);
+        new Dashboard().setVisible(true);
+    }//GEN-LAST:event_btn_berandaActionPerformed
 
     /**
      * @param args the command line arguments

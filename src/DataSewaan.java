@@ -66,6 +66,11 @@ public class DataSewaan extends javax.swing.JFrame {
         jLabel3.setText("Awan Adventure");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, -1, -1));
 
+        txt_carisewaan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_carisewaanActionPerformed(evt);
+            }
+        });
         txt_carisewaan.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txt_carisewaanKeyReleased(evt);
@@ -409,6 +414,10 @@ public class DataSewaan extends javax.swing.JFrame {
         this.setVisible(false);
         new Pengguna().setVisible(true);
     }//GEN-LAST:event_btn_penggunaMouseClicked
+
+    private void txt_carisewaanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_carisewaanActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_carisewaanActionPerformed
 
     /**
      * @param args the command line arguments
