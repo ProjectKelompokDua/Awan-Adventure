@@ -667,11 +667,7 @@ public class Pengguna extends javax.swing.JFrame {
                 Connection conn = koneksi.Connect.GetConnection();
                 PreparedStatement pst = conn.prepareStatement(sql);
                 pst.execute();
-<<<<<<< HEAD
                 JOptionPane.showMessageDialog(rootPane, "Data berhasil diperbaharui");
-=======
-                JOptionPane.showMessageDialog(rootPane, "Data berhasil diedit");
->>>>>>> 4d1e119654fc22669b9dba0e441edf57cd9a1b69
                 loadTable();
                 clear();
             }
