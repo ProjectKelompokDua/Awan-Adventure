@@ -1,5 +1,4 @@
 import com.mysql.cj.jdbc.Driver;
-import java.awt.Frame;
 import java.sql.*;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -79,17 +78,9 @@ public class DataBarang extends javax.swing.JFrame {
         Terang = new javax.swing.JTextField();
         txt_cari = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
+        jLabel14 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         table_barang = new javax.swing.JTable();
-        jPanel3 = new javax.swing.JPanel();
-        exit = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
-        btn_tambah = new javax.swing.JButton();
-        btn_edit = new javax.swing.JButton();
-        btn_hapus = new javax.swing.JButton();
-        jPanel9 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
         jPanel8 = new javax.swing.JPanel();
         btn_beranda = new javax.swing.JButton();
         btn_kasir = new javax.swing.JButton();
@@ -98,11 +89,14 @@ public class DataBarang extends javax.swing.JFrame {
         btn_return = new javax.swing.JButton();
         btn_pengguna = new javax.swing.JButton();
         btn_report = new javax.swing.JButton();
-        jPanel5 = new javax.swing.JPanel();
-        jLabel14 = new javax.swing.JLabel();
-        jPanel4 = new javax.swing.JPanel();
-        minimize = new javax.swing.JLabel();
-        bg = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        btn_tambah = new javax.swing.JButton();
+        btn_edit = new javax.swing.JButton();
+        btn_hapus = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jPanel9 = new javax.swing.JPanel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -136,7 +130,7 @@ public class DataBarang extends javax.swing.JFrame {
         id_barang.setForeground(new java.awt.Color(242, 242, 242));
         id_barang.setText("jLabel21");
         getContentPane().add(id_barang);
-        id_barang.setBounds(870, 290, 43, 16);
+        id_barang.setBounds(870, 290, 45, 16);
         getContentPane().add(txt_stok);
         txt_stok.setBounds(330, 200, 310, 30);
         getContentPane().add(txt_namaBarang);
@@ -158,8 +152,19 @@ public class DataBarang extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel14.setFont(new java.awt.Font("Microsoft YaHei UI Light", 0, 18)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(204, 0, 51));
+        jLabel14.setText("Logout");
+        jLabel14.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel14MouseClicked(evt);
+            }
+        });
+        jPanel2.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, -1));
+
         getContentPane().add(jPanel2);
-        jPanel2.setBounds(1110, 30, 80, 30);
+        jPanel2.setBounds(1110, 10, 80, 60);
 
         table_barang.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -182,100 +187,6 @@ public class DataBarang extends javax.swing.JFrame {
         getContentPane().add(jScrollPane2);
         jScrollPane2.setBounds(230, 510, 930, 140);
 
-        jPanel3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel3.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jPanel3MouseClicked(evt);
-            }
-        });
-
-        exit.setFont(new java.awt.Font("Outfit Black", 0, 24)); // NOI18N
-        exit.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        exit.setText("X");
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(exit, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(exit, javax.swing.GroupLayout.PREFERRED_SIZE, 30, Short.MAX_VALUE)
-        );
-
-        getContentPane().add(jPanel3);
-        jPanel3.setBounds(1160, 0, 40, 30);
-
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Proses"));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        btn_tambah.setBackground(new java.awt.Color(252, 191, 74));
-        btn_tambah.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btn_tambah.setText("Tambah");
-        btn_tambah.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_tambahActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btn_tambah, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 100, 40));
-
-        btn_edit.setBackground(new java.awt.Color(252, 191, 74));
-        btn_edit.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btn_edit.setText("Edit");
-        btn_edit.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_editActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btn_edit, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 40, 100, 40));
-
-        btn_hapus.setBackground(new java.awt.Color(252, 191, 74));
-        btn_hapus.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btn_hapus.setText("Hapus");
-        btn_hapus.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_hapusActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btn_hapus, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 40, 100, 40));
-
-        getContentPane().add(jPanel1);
-        jPanel1.setBounds(800, 160, 370, 90);
-
-        jPanel9.setBackground(new java.awt.Color(252, 191, 73));
-
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logo.png"))); // NOI18N
-
-        jLabel7.setFont(new java.awt.Font("Outfit Medium", 1, 18)); // NOI18N
-        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel7.setText("Awan Adventure");
-
-        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
-        jPanel9.setLayout(jPanel9Layout);
-        jPanel9Layout.setHorizontalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
-            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        jPanel9Layout.setVerticalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel9Layout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel7)
-                .addContainerGap(14, Short.MAX_VALUE))
-        );
-
-        getContentPane().add(jPanel9);
-        jPanel9.setBounds(0, 0, 190, 120);
-
         jPanel8.setBackground(new java.awt.Color(248, 221, 113));
 
         btn_beranda.setBackground(new java.awt.Color(248, 221, 113));
@@ -285,9 +196,9 @@ public class DataBarang extends javax.swing.JFrame {
         btn_beranda.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 15, 1, 1, new java.awt.Color(248, 221, 113)));
         btn_beranda.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btn_beranda.setIconTextGap(12);
-        btn_beranda.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btn_berandaMouseClicked(evt);
+        btn_beranda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_berandaActionPerformed(evt);
             }
         });
 
@@ -312,6 +223,11 @@ public class DataBarang extends javax.swing.JFrame {
         btn_dataBarang.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 15, 1, 1, new java.awt.Color(248, 221, 113)));
         btn_dataBarang.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btn_dataBarang.setIconTextGap(12);
+        btn_dataBarang.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_dataBarangActionPerformed(evt);
+            }
+        });
 
         btn_sewa.setBackground(new java.awt.Color(248, 221, 113));
         btn_sewa.setFont(new java.awt.Font("Outfit", 0, 14)); // NOI18N
@@ -320,11 +236,6 @@ public class DataBarang extends javax.swing.JFrame {
         btn_sewa.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 15, 1, 1, new java.awt.Color(248, 221, 113)));
         btn_sewa.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btn_sewa.setIconTextGap(12);
-        btn_sewa.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btn_sewaMouseClicked(evt);
-            }
-        });
 
         btn_return.setBackground(new java.awt.Color(248, 221, 113));
         btn_return.setFont(new java.awt.Font("Outfit", 0, 14)); // NOI18N
@@ -333,11 +244,6 @@ public class DataBarang extends javax.swing.JFrame {
         btn_return.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 15, 1, 1, new java.awt.Color(248, 221, 113)));
         btn_return.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btn_return.setIconTextGap(12);
-        btn_return.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btn_returnMouseClicked(evt);
-            }
-        });
 
         btn_pengguna.setBackground(new java.awt.Color(248, 221, 113));
         btn_pengguna.setFont(new java.awt.Font("Outfit", 0, 14)); // NOI18N
@@ -347,9 +253,9 @@ public class DataBarang extends javax.swing.JFrame {
         btn_pengguna.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_pengguna.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btn_pengguna.setIconTextGap(12);
-        btn_pengguna.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btn_penggunaMouseClicked(evt);
+        btn_pengguna.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_penggunaActionPerformed(evt);
             }
         });
 
@@ -396,84 +302,99 @@ public class DataBarang extends javax.swing.JFrame {
         getContentPane().add(jPanel8);
         jPanel8.setBounds(0, 120, 190, 560);
 
-        jPanel5.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Proses"));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 80, Short.MAX_VALUE)
-        );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 60, Short.MAX_VALUE)
-        );
-
-        getContentPane().add(jPanel5);
-        jPanel5.setBounds(1030, 10, 80, 60);
-
-        jLabel14.setFont(new java.awt.Font("Outfit", 0, 20)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(204, 0, 51));
-        jLabel14.setText("Logout");
-        jLabel14.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel14MouseClicked(evt);
+        btn_tambah.setBackground(new java.awt.Color(252, 191, 74));
+        btn_tambah.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btn_tambah.setText("Tambah");
+        btn_tambah.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_tambahActionPerformed(evt);
             }
         });
-        getContentPane().add(jLabel14);
-        jLabel14.setBounds(1100, 84, 70, 30);
+        jPanel1.add(btn_tambah, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 100, 40));
 
-        jPanel4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel4.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jPanel4MouseClicked(evt);
+        btn_edit.setBackground(new java.awt.Color(252, 191, 74));
+        btn_edit.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btn_edit.setText("Edit");
+        btn_edit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_editActionPerformed(evt);
             }
         });
+        jPanel1.add(btn_edit, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 40, 100, 40));
 
-        minimize.setFont(new java.awt.Font("Outfit Black", 0, 24)); // NOI18N
-        minimize.setText("-");
+        btn_hapus.setBackground(new java.awt.Color(252, 191, 74));
+        btn_hapus.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btn_hapus.setText("Hapus");
+        btn_hapus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_hapusActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btn_hapus, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 40, 100, 40));
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(14, 14, 14)
-                .addComponent(minimize)
-                .addContainerGap(15, Short.MAX_VALUE))
+        getContentPane().add(jPanel1);
+        jPanel1.setBounds(800, 160, 370, 90);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/dataBarang.jpg"))); // NOI18N
+        jLabel1.setText("jLabel1");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(190, 0, 1010, 670);
+
+        jPanel9.setBackground(new java.awt.Color(252, 191, 73));
+
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logo.png"))); // NOI18N
+
+        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel9.setText("Awan Adventure");
+
+        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
+        jPanel9.setLayout(jPanel9Layout);
+        jPanel9Layout.setHorizontalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addGap(72, 72, 72)
+                        .addComponent(jLabel8))
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addGap(21, 21, 21)
+                        .addComponent(jLabel9)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(minimize, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+        jPanel9Layout.setVerticalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(jLabel8)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel9)
+                .addContainerGap(9, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel4);
-        jPanel4.setBounds(1120, 0, 40, 30);
-
-        bg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/dataBarang.jpg"))); // NOI18N
-        bg.setText("jLabel1");
-        getContentPane().add(bg);
-        bg.setBounds(190, 0, 1010, 670);
+        getContentPane().add(jPanel9);
+        jPanel9.setBounds(-3, 0, 200, 120);
 
         setSize(new java.awt.Dimension(1200, 675));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_hapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_hapusActionPerformed
-    try{
-            String sql = "DELETE FROM data_barang Where id_barang ='"+id_barang.getText()+"'";
-            java.sql.Connection conn=(Connection)Connect.GetConnection();
-            java.sql.PreparedStatement pst=conn.prepareStatement(sql);
-            pst.execute();
-            JOptionPane.showMessageDialog(null, "Data Berhasil Dihapus");
-            kosong();
-            load_table();
-
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(this, e.getMessage());
-        }        
+try{
+        String sql = "DELETE FROM data_barang Where id_barang ='"+id_barang.getText()+"'";
+        java.sql.Connection conn=(Connection)Connect.GetConnection();
+        java.sql.PreparedStatement pst=conn.prepareStatement(sql);
+        pst.execute();
+        JOptionPane.showMessageDialog(null, "Data Berhasil Dihapus");
+        kosong();
+        load_table();
+                       
+    } catch (Exception e) {
+        JOptionPane.showMessageDialog(this, e.getMessage());
+    }        
     }//GEN-LAST:event_btn_hapusActionPerformed
 
     private void btn_tambahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tambahActionPerformed
@@ -507,22 +428,24 @@ public class DataBarang extends javax.swing.JFrame {
         
         try { 
             Statement statement = (Statement)Connect.GetConnection().createStatement(); 
-            ResultSet res = statement.executeQuery("select * from data_barang where id_barang like '%"+txt_cari.getText()+"%'"); 
+            ResultSet res = statement.executeQuery("select * from data_barang where nama_barang like '%"+txt_cari.getText()+"%'"); 
              
             while(res.next()){ 
                 dtm.addRow(new Object[]{ 
-                    res.getString("ID Barang"), 
-                    res.getString("Nama Barang"), 
-                    res.getString("Stok"), 
-                    res.getString("Harga 1 Hari"), 
-                    res.getString("Harga 2 Hari"),
-                    res.getString("Keterangan")
+                    res.getString("id_barang"), 
+                    res.getString("nama_barang"), 
+                    res.getString("stok"), 
+                    res.getString("harga_hari"), 
+                    res.getString("harga_2hari"),
+                    res.getString("keterangan")
                 }); 
                 table_barang.setModel(dtm); 
+                
+                
             } 
         } catch(Exception e) { 
-            System.out.println(e);
-        }
+
+}
     }//GEN-LAST:event_txt_cariKeyReleased
 
     private void btn_editActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_editActionPerformed
@@ -541,16 +464,18 @@ public class DataBarang extends javax.swing.JFrame {
                 txt_harga2.requestFocus(); 
             }else if(Terang.getText().equals("")){ 
                 JOptionPane.showMessageDialog(rootPane, "Data Password harus diisi"); 
-                Terang.requestFocus();
             }else{ 
                 String insertdata = "update data_barang set nama_barang='"+ txt_namaBarang.getText() 
                         +"',stok='"+ txt_stok.getText() +"', harga_hari='"+ txt_harga1.getText() 
                         +"', harga_2hari='"+ txt_harga2.getText() +"', keterangan='"+ Terang.getText() 
-                        +"', where id_barang='"+id_barang.getText()+"'";
+                        +"' where id_barang='"+id_barang.getText()+"'";
                 
                 Connection connect = koneksi.Connect.GetConnection(); 
                 PreparedStatement ps = connect.prepareStatement(insertdata); 
                 ps.executeUpdate(); 
+                
+                load_table();
+                kosong();
                  
                 JOptionPane.showMessageDialog(rootPane, "Data Barang berhasil diperbarui"); 
                  } 
@@ -558,7 +483,6 @@ public class DataBarang extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(rootPane, "Error"); 
             System.out.println(e.getMessage()); 
         }
-          
         
     }//GEN-LAST:event_btn_editActionPerformed
     
@@ -606,42 +530,22 @@ int i = table_barang.getSelectedRow();
         new FormKasir().setVisible(true);
     }//GEN-LAST:event_btn_kasirMouseClicked
 
-    private void btn_sewaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_sewaMouseClicked
+    private void btn_dataBarangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_dataBarangActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);
-        new DataSewaan().setVisible(true);
-    }//GEN-LAST:event_btn_sewaMouseClicked
+        new DataBarang().setVisible(true);
+    }//GEN-LAST:event_btn_dataBarangActionPerformed
 
-    private void btn_returnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_returnMouseClicked
-        // TODO add your handling code here:
-        this.setVisible(false);
-        new FormPengembalian().setVisible(true);
-    }//GEN-LAST:event_btn_returnMouseClicked
-
-    private void btn_penggunaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_penggunaMouseClicked
+    private void btn_penggunaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_penggunaActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);
         new Pengguna().setVisible(true);
-    }//GEN-LAST:event_btn_penggunaMouseClicked
+    }//GEN-LAST:event_btn_penggunaActionPerformed
 
-    private void jPanel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel4MouseClicked
-        // TODO add your handling code here:
-        this.setState(Frame.ICONIFIED);
-    }//GEN-LAST:event_jPanel4MouseClicked
-
-    private void jPanel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel3MouseClicked
-        // TODO add your handling code here:
-        int confirmExit = JOptionPane.showConfirmDialog(rootPane, "Yakin ingin keluar ?", "Confirmation", JOptionPane.YES_NO_OPTION);
-        if(confirmExit == JOptionPane.YES_OPTION){
-            System.exit(0);
-        }
-    }//GEN-LAST:event_jPanel3MouseClicked
-
-    private void btn_berandaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_berandaMouseClicked
-        // TODO add your handling code here:
+    private void btn_berandaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_berandaActionPerformed
         this.setVisible(false);
         new Dashboard().setVisible(true);
-    }//GEN-LAST:event_btn_berandaMouseClicked
+    }//GEN-LAST:event_btn_berandaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -680,7 +584,6 @@ int i = table_barang.getSelectedRow();
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField Terang;
-    private javax.swing.JLabel bg;
     private javax.swing.JButton btn_beranda;
     private javax.swing.JButton btn_dataBarang;
     private javax.swing.JButton btn_edit;
@@ -691,7 +594,6 @@ int i = table_barang.getSelectedRow();
     private javax.swing.JButton btn_return;
     private javax.swing.JButton btn_sewa;
     private javax.swing.JButton btn_tambah;
-    private javax.swing.JLabel exit;
     private javax.swing.JLabel id_barang;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel14;
@@ -700,16 +602,13 @@ int i = table_barang.getSelectedRow();
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JLabel minimize;
     private javax.swing.JTable table_barang;
     private javax.swing.JTextField txt_cari;
     private javax.swing.JTextField txt_harga1;
