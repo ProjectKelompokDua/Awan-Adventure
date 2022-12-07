@@ -311,6 +311,11 @@ public class Dashboard extends javax.swing.JFrame {
         btn_dataBarang.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 15, 1, 1, new java.awt.Color(248, 221, 113)));
         btn_dataBarang.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btn_dataBarang.setIconTextGap(12);
+        btn_dataBarang.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_dataBarangActionPerformed(evt);
+            }
+        });
 
         btn_sewa.setBackground(new java.awt.Color(248, 221, 113));
         btn_sewa.setFont(new java.awt.Font("Outfit", 0, 14)); // NOI18N
@@ -459,6 +464,12 @@ public class Dashboard extends javax.swing.JFrame {
         this.setVisible(false);
         new Pengguna().setVisible(true);
     }//GEN-LAST:event_btn_penggunaActionPerformed
+
+    private void btn_dataBarangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_dataBarangActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false);
+        new DataBarang().setVisible(true);
+    }//GEN-LAST:event_btn_dataBarangActionPerformed
 
     /**
      * @param args the command line arguments

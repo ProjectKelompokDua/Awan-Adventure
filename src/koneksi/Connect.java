@@ -18,7 +18,7 @@ public class Connect {
     public static Connection GetConnection() throws SQLException{
         if (koneksi == null) {
             new Driver();
-            koneksi = DriverManager.getConnection("jdbc:mysql://localhost:3306/kasir_awan1", "root", "");
+            koneksi = DriverManager.getConnection("jdbc:mysql://localhost:3306/kasir_awan", "root", "");
         }
         return koneksi;
     } 
