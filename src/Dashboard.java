@@ -311,9 +311,9 @@ public class Dashboard extends javax.swing.JFrame {
         btn_dataBarang.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 15, 1, 1, new java.awt.Color(248, 221, 113)));
         btn_dataBarang.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btn_dataBarang.setIconTextGap(12);
-        btn_dataBarang.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_dataBarangActionPerformed(evt);
+        btn_dataBarang.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_dataBarangMouseClicked(evt);
             }
         });
 
@@ -324,6 +324,11 @@ public class Dashboard extends javax.swing.JFrame {
         btn_sewa.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 15, 1, 1, new java.awt.Color(248, 221, 113)));
         btn_sewa.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btn_sewa.setIconTextGap(12);
+        btn_sewa.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_sewaMouseClicked(evt);
+            }
+        });
 
         btn_return.setBackground(new java.awt.Color(248, 221, 113));
         btn_return.setFont(new java.awt.Font("Outfit", 0, 14)); // NOI18N
@@ -332,6 +337,11 @@ public class Dashboard extends javax.swing.JFrame {
         btn_return.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 15, 1, 1, new java.awt.Color(248, 221, 113)));
         btn_return.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btn_return.setIconTextGap(12);
+        btn_return.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_returnMouseClicked(evt);
+            }
+        });
 
         btn_pengguna.setBackground(new java.awt.Color(248, 221, 113));
         btn_pengguna.setFont(new java.awt.Font("Outfit", 0, 14)); // NOI18N
@@ -341,9 +351,9 @@ public class Dashboard extends javax.swing.JFrame {
         btn_pengguna.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_pengguna.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btn_pengguna.setIconTextGap(12);
-        btn_pengguna.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_penggunaActionPerformed(evt);
+        btn_pengguna.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_penggunaMouseClicked(evt);
             }
         });
 
@@ -459,17 +469,29 @@ public class Dashboard extends javax.swing.JFrame {
         new FormKasir().setVisible(true);
     }//GEN-LAST:event_btn_kasirMouseClicked
 
-    private void btn_penggunaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_penggunaActionPerformed
-        // TODO add your handling code here:
-        this.setVisible(false);
-        new Pengguna().setVisible(true);
-    }//GEN-LAST:event_btn_penggunaActionPerformed
-
-    private void btn_dataBarangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_dataBarangActionPerformed
+    private void btn_dataBarangMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_dataBarangMouseClicked
         // TODO add your handling code here:
         this.setVisible(false);
         new DataBarang().setVisible(true);
-    }//GEN-LAST:event_btn_dataBarangActionPerformed
+    }//GEN-LAST:event_btn_dataBarangMouseClicked
+
+    private void btn_sewaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_sewaMouseClicked
+        // TODO add your handling code here:
+        this.setVisible(false);
+        new DataSewaan().setVisible(true);
+    }//GEN-LAST:event_btn_sewaMouseClicked
+
+    private void btn_returnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_returnMouseClicked
+        // TODO add your handling code here:
+        this.setVisible(false);
+        new FormPengembalian().setVisible(true);
+    }//GEN-LAST:event_btn_returnMouseClicked
+
+    private void btn_penggunaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_penggunaMouseClicked
+        // TODO add your handling code here:
+        this.setVisible(false);
+        new Pengguna().setVisible(true);
+    }//GEN-LAST:event_btn_penggunaMouseClicked
 
     /**
      * @param args the command line arguments
