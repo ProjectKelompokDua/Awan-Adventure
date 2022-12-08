@@ -8,6 +8,7 @@ import javax.swing.JOptionPane;
 import java.sql.*;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
 import koneksi.Connect;
 /**
  *
@@ -21,7 +22,7 @@ public class FormKasir extends javax.swing.JFrame {
     public FormKasir() {
         initComponents();
         updateComboBarang();
-        tbl_barang.removeAll();
+        clear();
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -60,8 +61,9 @@ public class FormKasir extends javax.swing.JFrame {
         txt_dp = new javax.swing.JTextField();
         jPanel4 = new javax.swing.JPanel();
         btn_tambahBarang = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        btn_editBarang = new javax.swing.JButton();
+        btn_hapusBarang = new javax.swing.JButton();
+        btn_clear = new javax.swing.JButton();
         tgl_kembali = new com.toedter.calendar.JDateChooser();
         tgl_pinjam = new com.toedter.calendar.JDateChooser();
         icon = new javax.swing.JPanel();
@@ -110,10 +112,7 @@ public class FormKasir extends javax.swing.JFrame {
         tbl_barang.setFont(new java.awt.Font("Outfit", 0, 16)); // NOI18N
         tbl_barang.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+
             },
             new String [] {
                 "No.", "Nama Barang", "Jumlah", "Harga/hari", "Harga > 2 hari"
@@ -125,6 +124,11 @@ public class FormKasir extends javax.swing.JFrame {
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
+            }
+        });
+        tbl_barang.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tbl_barangMouseClicked(evt);
             }
         });
         jScrollPane1.setViewportView(tbl_barang);
@@ -220,6 +224,11 @@ public class FormKasir extends javax.swing.JFrame {
 
         combo_identitas.setFont(new java.awt.Font("Outfit", 0, 16)); // NOI18N
         combo_identitas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pilih Identitas...", "KTP", "SIM", "Kartu Pelajar" }));
+        combo_identitas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                combo_identitasActionPerformed(evt);
+            }
+        });
         getContentPane().add(combo_identitas, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 150, 260, 30));
 
         jLabel9.setFont(new java.awt.Font("Outfit", 0, 18)); // NOI18N
@@ -274,32 +283,49 @@ public class FormKasir extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setBackground(new java.awt.Color(23, 162, 184));
-        jButton2.setFont(new java.awt.Font("Outfit", 0, 16)); // NOI18N
-        jButton2.setText("Edit");
-        jButton2.setBorder(null);
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btn_editBarang.setBackground(new java.awt.Color(23, 162, 184));
+        btn_editBarang.setFont(new java.awt.Font("Outfit", 0, 16)); // NOI18N
+        btn_editBarang.setForeground(new java.awt.Color(255, 255, 255));
+        btn_editBarang.setText("Edit");
+        btn_editBarang.setBorder(null);
+        btn_editBarang.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btn_editBarangActionPerformed(evt);
             }
         });
 
-        jButton3.setBackground(new java.awt.Color(220, 53, 69));
-        jButton3.setFont(new java.awt.Font("Outfit", 0, 16)); // NOI18N
-        jButton3.setText("Hapus");
-        jButton3.setBorder(null);
+        btn_hapusBarang.setBackground(new java.awt.Color(220, 53, 69));
+        btn_hapusBarang.setFont(new java.awt.Font("Outfit", 0, 16)); // NOI18N
+        btn_hapusBarang.setForeground(new java.awt.Color(255, 255, 255));
+        btn_hapusBarang.setText("Hapus");
+        btn_hapusBarang.setBorder(null);
+
+        btn_clear.setBackground(new java.awt.Color(108, 117, 125));
+        btn_clear.setFont(new java.awt.Font("Outfit", 0, 14)); // NOI18N
+        btn_clear.setForeground(new java.awt.Color(255, 255, 255));
+        btn_clear.setText("Clear");
+        btn_clear.setBorder(null);
+        btn_clear.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_clear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_clearActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+            .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(btn_tambahBarang, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(btn_tambahBarang, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btn_editBarang, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btn_hapusBarang, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btn_clear, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(7, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
@@ -307,15 +333,15 @@ public class FormKasir extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(9, 9, 9)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(1, 1, 1)
-                        .addComponent(btn_tambahBarang, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(jButton2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btn_tambahBarang, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_editBarang, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_hapusBarang, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btn_clear, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
-        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 480, 350, 70));
+        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 480, 350, 120));
         getContentPane().add(tgl_kembali, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 230, 110, 30));
         getContentPane().add(tgl_pinjam, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 230, 110, 30));
 
@@ -494,7 +520,7 @@ public class FormKasir extends javax.swing.JFrame {
         );
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 90, 80, 30));
-        getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 320, 1000, 20));
+        getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 320, 1010, 20));
         getContentPane().add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 650, 200, 10));
 
         total_harga.setFont(new java.awt.Font("Outfit", 0, 18)); // NOI18N
@@ -633,9 +659,27 @@ public class FormKasir extends javax.swing.JFrame {
         }
     }
     
+    private void clear(){
+        txt_nama.setText("");
+        text_areaAlamat.setText("");
+        combo_identitas.setSelectedIndex(0);
+        txt_identitas.setText("");
+        txt_identitas.disable();
+        tgl_pinjam.cleanup();
+        tgl_kembali.cleanup();
+        txt_dp.setText("");
+        txt_dp.enable();
+        tbl_barang.removeAll();
+        combo_barang.setSelectedIndex(0);
+        combo_jumlah.setSelectedItem("");
+        combo_jumlah.setEnabled(false);
+        btn_editBarang.setEnabled(false);
+        btn_hapusBarang.setEnabled(false);
+    }
+    
     private void combo_barangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combo_barangActionPerformed
         // TODO add your handling code here:
-        combo_jumlah.enable();
+        combo_jumlah.setEnabled(true);
         updateComboJumlah();
         if(combo_barang.getSelectedItem().equals("Pilih Barang...")){
             combo_jumlah.removeAllItems();
@@ -728,9 +772,9 @@ public class FormKasir extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_identitasActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btn_editBarangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_editBarangActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btn_editBarangActionPerformed
 
     private void jPanel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel6MouseClicked
         // TODO add your handling code here:
@@ -750,6 +794,35 @@ public class FormKasir extends javax.swing.JFrame {
         this.setVisible(false);
         new Dashboard().setVisible(true);
     }//GEN-LAST:event_btn_berandaMouseClicked
+
+    private void btn_clearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_clearActionPerformed
+        // TODO add your handling code here:
+        clear();
+    }//GEN-LAST:event_btn_clearActionPerformed
+
+    private void combo_identitasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combo_identitasActionPerformed
+        // TODO add your handling code here:
+        if(combo_identitas.getSelectedItem().equals("Pilih Identitas...")){
+            txt_identitas.disable();
+            txt_dp.disable();
+        }else{
+            txt_identitas.enable();
+            txt_dp.enable();
+        }
+    }//GEN-LAST:event_combo_identitasActionPerformed
+
+    private void tbl_barangMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbl_barangMouseClicked
+        // TODO add your handling code here:
+        int i = tbl_barang.getSelectedRow();
+        TableModel tbl = tbl_barang.getModel();
+        
+        String field2 = tbl.getValueAt(i, 1).toString();
+        String field3 = tbl.getValueAt(i, 2).toString();
+        
+        combo_barang.setSelectedItem(field2);
+        combo_jumlah.setEnabled(true);
+        combo_jumlah.setSelectedItem(field3);
+    }//GEN-LAST:event_tbl_barangMouseClicked
 
     /**
      * @param args the command line arguments
@@ -792,7 +865,10 @@ public class FormKasir extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel bg;
     private javax.swing.JButton btn_beranda;
+    private javax.swing.JButton btn_clear;
     private javax.swing.JButton btn_dataBarang;
+    private javax.swing.JButton btn_editBarang;
+    private javax.swing.JButton btn_hapusBarang;
     private javax.swing.JButton btn_kasir;
     private javax.swing.JButton btn_pengguna;
     private javax.swing.JButton btn_report;
@@ -805,8 +881,6 @@ public class FormKasir extends javax.swing.JFrame {
     private javax.swing.JLabel exit;
     private javax.swing.JPanel icon;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;

@@ -23,8 +23,18 @@ public class Dashboard extends javax.swing.JFrame {
     /**
      * Creates new form Dashboard
      */
-        public static int pesanan_berlangsung;
+    public static int pesanan_berlangsung;
 
+    public Dashboard() {
+        initComponents();
+        tanggal();
+        Total_Transaksi();
+        Total_Pesanan();
+        Pesanan_Selesai();
+        Pesanan_Berlangsung();
+        showTime();
+    }
+    
     public void Pesanan_Berlangsung() {
         try {
             String sql = "SELECT COUNT(Status) AS psn_brlngsg FROM data_sewaan WHERE Status = 'Proses'";
@@ -112,17 +122,6 @@ public class Dashboard extends javax.swing.JFrame {
             }
         }).start();
     }
-    
-    public Dashboard() {
-        initComponents();
-        tanggal();
-        Total_Transaksi();
-        Total_Pesanan();
-        Pesanan_Selesai();
-        Pesanan_Berlangsung();
-        showTime();
-    }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -461,8 +460,8 @@ public class Dashboard extends javax.swing.JFrame {
         });
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 86, 70, 30));
 
-        bg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Dashboard.png"))); // NOI18N
-        getContentPane().add(bg, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 0, -1, -1));
+        bg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/dashboard.png"))); // NOI18N
+        getContentPane().add(bg, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 0, 1010, -1));
 
         pack();
         setLocationRelativeTo(null);
@@ -531,7 +530,7 @@ public class Dashboard extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Metal".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }

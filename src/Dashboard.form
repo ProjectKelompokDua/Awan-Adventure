@@ -637,12 +637,12 @@
     <Component class="javax.swing.JLabel" name="bg">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/images/Dashboard.png"/>
+          <Image iconType="3" name="/images/dashboard.png"/>
         </Property>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="190" y="0" width="-1" height="-1"/>
+          <AbsoluteConstraints x="190" y="0" width="1010" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>
