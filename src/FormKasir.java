@@ -380,6 +380,7 @@ public class FormKasir extends javax.swing.JFrame {
         btn_beranda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/home.png"))); // NOI18N
         btn_beranda.setText("Beranda");
         btn_beranda.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 15, 1, 1, new java.awt.Color(248, 221, 113)));
+        btn_beranda.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_beranda.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btn_beranda.setIconTextGap(12);
         btn_beranda.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -393,7 +394,7 @@ public class FormKasir extends javax.swing.JFrame {
         btn_kasir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/trolley-removebg-preview.png"))); // NOI18N
         btn_kasir.setText("Form Kasir");
         btn_kasir.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 15, 1, 1, new java.awt.Color(248, 221, 113)));
-        btn_kasir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_kasir.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btn_kasir.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btn_kasir.setIconTextGap(12);
 
@@ -402,6 +403,7 @@ public class FormKasir extends javax.swing.JFrame {
         btn_dataBarang.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/package.png"))); // NOI18N
         btn_dataBarang.setText("Data Barang");
         btn_dataBarang.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 15, 1, 1, new java.awt.Color(248, 221, 113)));
+        btn_dataBarang.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_dataBarang.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btn_dataBarang.setIconTextGap(12);
         btn_dataBarang.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -415,6 +417,7 @@ public class FormKasir extends javax.swing.JFrame {
         btn_sewa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/rent-removebg-preview.png"))); // NOI18N
         btn_sewa.setText("Data Sewaan");
         btn_sewa.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 15, 1, 1, new java.awt.Color(248, 221, 113)));
+        btn_sewa.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_sewa.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btn_sewa.setIconTextGap(12);
         btn_sewa.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -428,6 +431,7 @@ public class FormKasir extends javax.swing.JFrame {
         btn_return.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/product-return-removebg-preview.png"))); // NOI18N
         btn_return.setText("Form Pengembalian");
         btn_return.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 15, 1, 1, new java.awt.Color(248, 221, 113)));
+        btn_return.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_return.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btn_return.setIconTextGap(12);
         btn_return.addMouseListener(new java.awt.event.MouseAdapter() {

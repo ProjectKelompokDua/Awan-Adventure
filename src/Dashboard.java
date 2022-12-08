@@ -1,5 +1,3 @@
-
-import java.awt.Color;
 import java.awt.Frame;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -45,7 +43,7 @@ public class Dashboard extends javax.swing.JFrame {
                 pesanan_berlangsung = rs.getInt("psn_brlngsg");
             }
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, e);
+            JOptionPane.showMessageDialog(null, e.getMessage());
         }
         String result = String.valueOf(pesanan_berlangsung);
         txt_pesanan_lngsng.setText(result);
@@ -63,7 +61,7 @@ public class Dashboard extends javax.swing.JFrame {
                 ttl_pesanan = rs.getInt("jml_pesanan");
             }
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, e);
+            JOptionPane.showMessageDialog(null, e.getMessage());
         }
         String result = String.valueOf(ttl_pesanan);
         txt_ttl_pesanan.setText(result);
@@ -81,7 +79,7 @@ public class Dashboard extends javax.swing.JFrame {
                 pesanan_selesai = rs.getInt("jml_pengembalian");
             }
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, e);
+            JOptionPane.showMessageDialog(null, e.getMessage());
         }
         String result = String.valueOf(pesanan_selesai);
         txt_pesanan_selesai.setText(result);
@@ -99,7 +97,7 @@ public class Dashboard extends javax.swing.JFrame {
                 total = rs.getInt("jml");
             }
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, e);
+            JOptionPane.showMessageDialog(null, e.getMessage());
         }
         String result = String.valueOf(total);
         total_transaksi.setText("Rp" + result);
@@ -240,6 +238,7 @@ public class Dashboard extends javax.swing.JFrame {
         btn_dataBarang.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/package.png"))); // NOI18N
         btn_dataBarang.setText("Data Barang");
         btn_dataBarang.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 15, 1, 1, new java.awt.Color(248, 221, 113)));
+        btn_dataBarang.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_dataBarang.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btn_dataBarang.setIconTextGap(12);
         btn_dataBarang.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -253,6 +252,7 @@ public class Dashboard extends javax.swing.JFrame {
         btn_sewa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/rent-removebg-preview.png"))); // NOI18N
         btn_sewa.setText("Data Sewaan");
         btn_sewa.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 15, 1, 1, new java.awt.Color(248, 221, 113)));
+        btn_sewa.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_sewa.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btn_sewa.setIconTextGap(12);
         btn_sewa.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -266,6 +266,7 @@ public class Dashboard extends javax.swing.JFrame {
         btn_return.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/product-return-removebg-preview.png"))); // NOI18N
         btn_return.setText("Form Pengembalian");
         btn_return.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 15, 1, 1, new java.awt.Color(248, 221, 113)));
+        btn_return.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_return.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btn_return.setIconTextGap(12);
         btn_return.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -293,6 +294,7 @@ public class Dashboard extends javax.swing.JFrame {
         btn_report.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/report-removebg-preview.png"))); // NOI18N
         btn_report.setText("Laporan");
         btn_report.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 15, 1, 1, new java.awt.Color(248, 221, 113)));
+        btn_report.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btn_report.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btn_report.setIconTextGap(12);
 

@@ -5,6 +5,7 @@
  */
 import com.mysql.cj.jdbc.Driver;
 import java.awt.*;
+import java.awt.event.KeyEvent;
 import java.sql.*;
 import javax.swing.JOptionPane;
 import koneksi.Connect;
@@ -61,10 +62,20 @@ public class Login extends javax.swing.JFrame {
 
         txt_username.setFont(new java.awt.Font("Outfit", 0, 20)); // NOI18N
         txt_username.setBorder(null);
+        txt_username.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txt_usernameKeyPressed(evt);
+            }
+        });
         getContentPane().add(txt_username, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 320, 310, 20));
 
         txt_password.setFont(new java.awt.Font("Outfit", 0, 20)); // NOI18N
         txt_password.setBorder(null);
+        txt_password.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txt_passwordKeyPressed(evt);
+            }
+        });
         getContentPane().add(txt_password, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 410, 310, 20));
 
         btn_login.setBackground(new java.awt.Color(252, 191, 73));
@@ -352,6 +363,20 @@ public class Login extends javax.swing.JFrame {
         // TODO add your handling code here:
         this.setState(Frame.ICONIFIED);
     }//GEN-LAST:event_jPanel4MouseClicked
+
+    private void txt_usernameKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_usernameKeyPressed
+        // TODO add your handling code here:
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER){
+            btn_login.doClick();
+        }
+    }//GEN-LAST:event_txt_usernameKeyPressed
+
+    private void txt_passwordKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_passwordKeyPressed
+        // TODO add your handling code here:
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER){
+            btn_login.doClick();
+        }
+    }//GEN-LAST:event_txt_passwordKeyPressed
 
     /**
      * @param args the command line arguments
