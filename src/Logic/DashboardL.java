@@ -50,7 +50,7 @@ public class DashboardL {
     }
     public int Pesanan_Berlangsung(String dateStart ,String dateEnd){
         try {
-            String sql = "SELECT COUNT(Status) AS psn_brlngsg FROM data_sewaan WHERE Status = 'Proses' AND tgl_transaksi BETWEEN '"+dateStart+"' AND '"+dateEnd+"'";
+            String sql = "SELECT COUNT(Status) AS psn_brlngsg FROM data_sewaan WHERE status = 'Proses' AND tgl_transaksi BETWEEN '"+dateStart+"' AND '"+dateEnd+"'";
             java.sql.Connection conn = (Connection) koneksi.Connect.GetConnection();
             java.sql.PreparedStatement pst = conn.prepareStatement(sql);
             java.sql.ResultSet rs = pst.executeQuery(sql);
@@ -65,7 +65,7 @@ public class DashboardL {
     
     public int Pesanan_Selesai(String dateStart ,String dateEnd) {
         try {
-            String sql = "SELECT COUNT(id_sewaan) AS pesanan_selesai FROM data_sewaan WHERE Status = 'Selesai' AND tgl_transaksi BETWEEN '"+dateStart+"' AND '"+dateEnd+"'";
+            String sql = "SELECT COUNT(id_sewaan) AS pesanan_selesai FROM data_sewaan WHERE status = 'Selesai' AND tgl_transaksi BETWEEN '"+dateStart+"' AND '"+dateEnd+"'";
             java.sql.Connection conn = (Connection) koneksi.Connect.GetConnection();
             java.sql.PreparedStatement pst = conn.prepareStatement(sql);
             java.sql.ResultSet rs = pst.executeQuery(sql);
@@ -75,7 +75,7 @@ public class DashboardL {
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.getMessage());
         }
-        return pesanan_berlangsung;
+        return pesanan_selesai;
     }
     
     public int Total_Transaksi(String dateStart ,String dateEnd) {
@@ -116,5 +116,6 @@ public class DashboardL {
     public static void main(String[] args) {
         DashboardL db = new DashboardL();
         System.out.println(db.Pesanan_Selesai("2022-12-01","2022-12-30"));
+        System.out.println(db.Pesanan_Berlangsung("2022-12-01","2022-12-30"));
     }
 }
