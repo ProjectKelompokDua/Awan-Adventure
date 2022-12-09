@@ -30,7 +30,7 @@ public class DataBarang extends javax.swing.JFrame {
             
             try{
                 int no = 1;
-                String sql = "SELECT * FROM data_barang";
+                String sql = "SELECT * FROM data_barang ORDER BY id_barang desc";
                 java.sql.Connection conn=(Connection)Connect.GetConnection();
                 java.sql.Statement pst = conn.createStatement();
                 java.sql.ResultSet res = pst.executeQuery(sql);
@@ -109,7 +109,9 @@ public class DataBarang extends javax.swing.JFrame {
         setUndecorated(true);
         getContentPane().setLayout(null);
 
-        cmbfilter.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Urutkan Dari--", "Data Paling Baru", "Data Paling lama", "Stok Paling Sedikit" }));
+        cmbfilter.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Urutkan Dari--", "Data Paling Baru", "Data Paling lama", "Stok Paling Sedikit", "Stok Paling Banyak" }));
+        cmbfilter.setBorder(null);
+        cmbfilter.setName(""); // NOI18N
         cmbfilter.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmbfilterActionPerformed(evt);
@@ -474,11 +476,13 @@ try{
         String sql = "DELETE FROM data_barang Where id_barang ='"+id_barang.getText()+"'";
         java.sql.Connection conn=(Connection)Connect.GetConnection();
         java.sql.PreparedStatement pst=conn.prepareStatement(sql);
+        int confirmLogout = JOptionPane.showConfirmDialog(rootPane, "Yakin ingin logout ?", "Logout", JOptionPane.YES_NO_OPTION);
+        if (confirmLogout == JOptionPane.YES_OPTION) {
         pst.execute();
         JOptionPane.showMessageDialog(null, "Data Berhasil Dihapus");
         kosong();
         load_table();
-                       
+     }                  
     } catch (Exception e) {
         JOptionPane.showMessageDialog(this, e.getMessage());
     }        
@@ -670,6 +674,9 @@ int i = table_barang.getSelectedRow();
            }
        else if (filter == 3){
            msql = "SELECT * FROM data_barang GROUP BY id_barang ORDER BY stok ASC";
+       }
+       else if (filter == 4){
+           msql = "SELECT * FROM data_barang GROUP BY id_barang ORDER BY stok DESC";
        }
        else{
            msql = "SELECT * FROM data_barang GROUP BY id_barang ORDER BY id_barang DESC";
