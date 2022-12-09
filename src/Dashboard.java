@@ -1,11 +1,11 @@
 import java.awt.Frame;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.Connection;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.swing.JOptionPane;
 import javax.swing.Timer;
+import Logic.DashboardL;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -21,92 +21,55 @@ public class Dashboard extends javax.swing.JFrame {
     /**
      * Creates new form Dashboard
      */
-    public static int pesanan_berlangsung;
-
+    public String filter = "Hari";
     public Dashboard() {
         initComponents();
         tanggal();
-        Total_Transaksi();
-        Total_Pesanan();
-        Pesanan_Selesai();
-        Pesanan_Berlangsung();
         showTime();
     }
     
-    public void Pesanan_Berlangsung() {
-        try {
-            String sql = "SELECT COUNT(Status) AS psn_brlngsg FROM data_sewaan WHERE Status = 'Proses'";
-            java.sql.Connection conn = (Connection) koneksi.Connect.GetConnection();
-            java.sql.PreparedStatement pst = conn.prepareStatement(sql);
-            java.sql.ResultSet rs = pst.executeQuery(sql);
-            if (rs.next()) {
-                pesanan_berlangsung = rs.getInt("psn_brlngsg");
+    public void load_data(){
+             hari();
+            if(filter.equals("hari")){
+                hari();
+            }else if(filter.equals("Bulan")){
+                bulan();
             }
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, e.getMessage());
-        }
-        String result = String.valueOf(pesanan_berlangsung);
-        txt_pesanan_lngsng.setText(result);
     }
     
-    public static int ttl_pesanan;
-
-    public void Total_Pesanan() {
-        try {
-            String sql = "SELECT COUNT(id_sewaan) AS jml_pesanan FROM data_sewaan";
-            java.sql.Connection conn = (Connection) koneksi.Connect.GetConnection();
-            java.sql.PreparedStatement pst = conn.prepareStatement(sql);
-            java.sql.ResultSet rs = pst.executeQuery(sql);
-            if (rs.next()) {
-                ttl_pesanan = rs.getInt("jml_pesanan");
-            }
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, e.getMessage());
-        }
-        String result = String.valueOf(ttl_pesanan);
-        txt_ttl_pesanan.setText(result);
+    public void hari(){
+            DashboardL db = new DashboardL();
+            String date = db.date();
+            String Pesanan_Berlangsung = String.valueOf(db.Pesanan_Berlangsung(db.dateStart(),db.dateEnd()));
+            String Pesanan_Selesai = String.valueOf(db.Pesanan_Selesai(db.dateStart(), db.dateEnd()));
+            String Total_Transaksi = String.valueOf(db.Total_Transaksi(db.dateStart(), db.dateEnd()));
+            String Total_Pesanan = String.valueOf(db.Total_Pesanan(db.dateStart(), db.dateEnd()));
+            lblDate.setText(date);
+            txt_pesanan_lngsng.setText(Pesanan_Berlangsung);
+            txt_pesanan_selesai.setText(Pesanan_Selesai);
+            total_transaksi.setText(Total_Transaksi);
+            txt_ttl_pesanan.setText(Total_Pesanan);
     }
     
-        public static int pesanan_selesai;
-
-    public void Pesanan_Selesai() {
-        try {
-            String sql = "SELECT COUNT(id_pengembalian) AS jml_pengembalian FROM data_pengembalian";
-            java.sql.Connection conn = (Connection) koneksi.Connect.GetConnection();
-            java.sql.PreparedStatement pst = conn.prepareStatement(sql);
-            java.sql.ResultSet rs = pst.executeQuery(sql);
-            if (rs.next()) {
-                pesanan_selesai = rs.getInt("jml_pengembalian");
-            }
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, e.getMessage());
-        }
-        String result = String.valueOf(pesanan_selesai);
-        txt_pesanan_selesai.setText(result);
+        public void bulan(){
+        DashboardL db = new DashboardL();
+            String dateEnd = db.dateEnd();
+            String dateStart = db.dateMonthAgo();
+            String Pesanan_Berlangsung = String.valueOf(db.Pesanan_Berlangsung(dateStart, dateEnd));
+            String Pesanan_Selesai = String.valueOf(db.Pesanan_Selesai(dateStart, dateEnd));
+            String Total_Transaksi = String.valueOf(db.Total_Transaksi(dateStart, dateEnd));
+            String Total_Pesanan = String.valueOf(db.Total_Pesanan(dateStart, dateEnd));
+            lblDate.setText(dateStart+" Sampai " +db.date());
+            txt_pesanan_lngsng.setText(Pesanan_Berlangsung);
+            txt_pesanan_selesai.setText(Pesanan_Selesai);
+            total_transaksi.setText(Total_Transaksi);
+            txt_ttl_pesanan.setText(Total_Pesanan);
     }
-    
-        public static int total;
-
-    public void Total_Transaksi() {
-        try {
-            String sql = "SELECT SUM(total) AS jml FROM data_sewaan";
-            java.sql.Connection conn = (Connection) koneksi.Connect.GetConnection();
-            java.sql.PreparedStatement pst = conn.prepareStatement(sql);
-            java.sql.ResultSet rs = pst.executeQuery(sql);
-            if (rs.next()) {
-                total = rs.getInt("jml");
-            }
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, e.getMessage());
-        }
-        String result = String.valueOf(total);
-        total_transaksi.setText("Rp" + result);
-    }
-    
-        public void tanggal() {
+        
+    public void tanggal() {
         Date ys = new Date();
         SimpleDateFormat s = new SimpleDateFormat("dd-MM-yyyy");
-        txttgl.setText(s.format(ys));
+        lblDate.setText(s.format(ys));
     }
 
     public void showTime() {
@@ -150,7 +113,7 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         txt_ttl_pesanan = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
-        txttgl = new javax.swing.JLabel();
+        lblDate = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
         txtwaktu = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
@@ -159,6 +122,8 @@ public class Dashboard extends javax.swing.JFrame {
         jPanel4 = new javax.swing.JPanel();
         minimize = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        cmbFilter = new javax.swing.JComboBox<>();
+        jLabel9 = new javax.swing.JLabel();
         bg = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -212,7 +177,7 @@ public class Dashboard extends javax.swing.JFrame {
         jPanel8.setBackground(new java.awt.Color(248, 221, 113));
 
         btn_beranda.setBackground(new java.awt.Color(248, 221, 113));
-        btn_beranda.setFont(new java.awt.Font("Outfit", 0, 14)); // NOI18N
+        btn_beranda.setFont(new java.awt.Font("Outfit", 1, 14)); // NOI18N
         btn_beranda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/home.png"))); // NOI18N
         btn_beranda.setText("Beranda");
         btn_beranda.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 15, 1, 1, new java.awt.Color(248, 221, 113)));
@@ -220,7 +185,7 @@ public class Dashboard extends javax.swing.JFrame {
         btn_beranda.setIconTextGap(12);
 
         btn_kasir.setBackground(new java.awt.Color(248, 221, 113));
-        btn_kasir.setFont(new java.awt.Font("Outfit", 0, 14)); // NOI18N
+        btn_kasir.setFont(new java.awt.Font("Outfit", 1, 14)); // NOI18N
         btn_kasir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/trolley-removebg-preview.png"))); // NOI18N
         btn_kasir.setText("Form Kasir");
         btn_kasir.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 15, 1, 1, new java.awt.Color(248, 221, 113)));
@@ -234,7 +199,7 @@ public class Dashboard extends javax.swing.JFrame {
         });
 
         btn_dataBarang.setBackground(new java.awt.Color(248, 221, 113));
-        btn_dataBarang.setFont(new java.awt.Font("Outfit", 0, 14)); // NOI18N
+        btn_dataBarang.setFont(new java.awt.Font("Outfit", 1, 14)); // NOI18N
         btn_dataBarang.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/package.png"))); // NOI18N
         btn_dataBarang.setText("Data Barang");
         btn_dataBarang.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 15, 1, 1, new java.awt.Color(248, 221, 113)));
@@ -248,7 +213,7 @@ public class Dashboard extends javax.swing.JFrame {
         });
 
         btn_sewa.setBackground(new java.awt.Color(248, 221, 113));
-        btn_sewa.setFont(new java.awt.Font("Outfit", 0, 14)); // NOI18N
+        btn_sewa.setFont(new java.awt.Font("Outfit", 1, 14)); // NOI18N
         btn_sewa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/rent-removebg-preview.png"))); // NOI18N
         btn_sewa.setText("Data Sewaan");
         btn_sewa.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 15, 1, 1, new java.awt.Color(248, 221, 113)));
@@ -262,7 +227,7 @@ public class Dashboard extends javax.swing.JFrame {
         });
 
         btn_return.setBackground(new java.awt.Color(248, 221, 113));
-        btn_return.setFont(new java.awt.Font("Outfit", 0, 14)); // NOI18N
+        btn_return.setFont(new java.awt.Font("Outfit", 1, 14)); // NOI18N
         btn_return.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/product-return-removebg-preview.png"))); // NOI18N
         btn_return.setText("Form Pengembalian");
         btn_return.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 15, 1, 1, new java.awt.Color(248, 221, 113)));
@@ -276,7 +241,7 @@ public class Dashboard extends javax.swing.JFrame {
         });
 
         btn_pengguna.setBackground(new java.awt.Color(248, 221, 113));
-        btn_pengguna.setFont(new java.awt.Font("Outfit", 0, 14)); // NOI18N
+        btn_pengguna.setFont(new java.awt.Font("Outfit", 1, 14)); // NOI18N
         btn_pengguna.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/user-removebg-preview.png"))); // NOI18N
         btn_pengguna.setText("Pengguna");
         btn_pengguna.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 15, 1, 1, new java.awt.Color(248, 221, 113)));
@@ -290,7 +255,7 @@ public class Dashboard extends javax.swing.JFrame {
         });
 
         btn_report.setBackground(new java.awt.Color(248, 221, 113));
-        btn_report.setFont(new java.awt.Font("Outfit", 0, 14)); // NOI18N
+        btn_report.setFont(new java.awt.Font("Outfit", 1, 14)); // NOI18N
         btn_report.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/report-removebg-preview.png"))); // NOI18N
         btn_report.setText("Laporan");
         btn_report.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 15, 1, 1, new java.awt.Color(248, 221, 113)));
@@ -306,7 +271,7 @@ public class Dashboard extends javax.swing.JFrame {
             .addComponent(btn_kasir, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(btn_dataBarang, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(btn_sewa, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(btn_return, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
+            .addComponent(btn_return, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(btn_pengguna, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(btn_report, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -336,41 +301,41 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel5.setText("Pesanan Berlangsung");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 170, -1, -1));
 
-        txt_pesanan_lngsng.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
-        txt_pesanan_lngsng.setText("-");
-        getContentPane().add(txt_pesanan_lngsng, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 180, -1, -1));
+        txt_pesanan_lngsng.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        txt_pesanan_lngsng.setText("***");
+        getContentPane().add(txt_pesanan_lngsng, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 200, 50, -1));
 
         jLabel6.setFont(new java.awt.Font("Outfit", 0, 14)); // NOI18N
-        jLabel6.setText("Pesanan Selesai");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 170, -1, -1));
+        jLabel6.setText("Filter By");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 260, -1, 30));
 
-        txt_pesanan_selesai.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
-        txt_pesanan_selesai.setText("-");
-        getContentPane().add(txt_pesanan_selesai, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 180, -1, -1));
+        txt_pesanan_selesai.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        txt_pesanan_selesai.setText("***");
+        getContentPane().add(txt_pesanan_selesai, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 200, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Outfit", 0, 14)); // NOI18N
         jLabel7.setText("Total Transaksi");
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 170, -1, -1));
 
-        total_transaksi.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
-        total_transaksi.setText("-");
-        getContentPane().add(total_transaksi, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 180, -1, -1));
+        total_transaksi.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        total_transaksi.setText("***");
+        getContentPane().add(total_transaksi, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 200, -1, -1));
 
         jLabel8.setFont(new java.awt.Font("Outfit", 0, 14)); // NOI18N
         jLabel8.setText("Total Pesanan");
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 170, -1, -1));
 
-        txt_ttl_pesanan.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
-        txt_ttl_pesanan.setText("-");
-        getContentPane().add(txt_ttl_pesanan, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 180, -1, -1));
+        txt_ttl_pesanan.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        txt_ttl_pesanan.setText("***");
+        getContentPane().add(txt_ttl_pesanan, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 200, -1, -1));
 
         jLabel26.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel26.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8_pay_date_30px.png"))); // NOI18N
-        getContentPane().add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 640, 30, 30));
+        getContentPane().add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 640, 30, 30));
 
-        txttgl.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        txttgl.setText("tanggal");
-        getContentPane().add(txttgl, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 640, -1, 30));
+        lblDate.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblDate.setText("tanggal");
+        getContentPane().add(lblDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 640, -1, 30));
 
         jLabel25.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8_time_30px.png"))); // NOI18N
@@ -462,6 +427,19 @@ public class Dashboard extends javax.swing.JFrame {
         });
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 86, 70, 30));
 
+        cmbFilter.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        cmbFilter.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "............", "Hari", "Bulan" }));
+        cmbFilter.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbFilterActionPerformed(evt);
+            }
+        });
+        getContentPane().add(cmbFilter, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 260, 140, 30));
+
+        jLabel9.setFont(new java.awt.Font("Outfit", 0, 14)); // NOI18N
+        jLabel9.setText("Pesanan Selesai");
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 170, -1, -1));
+
         bg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/dashboard.png"))); // NOI18N
         getContentPane().add(bg, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 0, 1010, -1));
 
@@ -521,6 +499,17 @@ public class Dashboard extends javax.swing.JFrame {
         this.setState(Frame.ICONIFIED);
     }//GEN-LAST:event_jPanel4MouseClicked
 
+    private void cmbFilterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbFilterActionPerformed
+        String flt = String.valueOf(cmbFilter.getSelectedItem());
+        if(flt.equals("Hari")){
+            filter = "Hari";
+            load_data();
+        }else if(flt.equals("Bulan")){
+            filter = "Bulan";
+            load_data();
+        }
+    }//GEN-LAST:event_cmbFilterActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -538,14 +527,15 @@ public class Dashboard extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Dashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DashboardL.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Dashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DashboardL.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Dashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DashboardL.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Dashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DashboardL.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
@@ -565,6 +555,7 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JButton btn_report;
     private javax.swing.JButton btn_return;
     private javax.swing.JButton btn_sewa;
+    private javax.swing.JComboBox<String> cmbFilter;
     private javax.swing.JLabel exit;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -575,18 +566,19 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
+    private javax.swing.JLabel lblDate;
     private javax.swing.JLabel minimize;
     private javax.swing.JLabel total_transaksi;
     private javax.swing.JLabel txt_pesanan_lngsng;
     private javax.swing.JLabel txt_pesanan_selesai;
     private javax.swing.JLabel txt_ttl_pesanan;
-    private javax.swing.JLabel txttgl;
     private javax.swing.JLabel txtwaktu;
     // End of variables declaration//GEN-END:variables
 }
