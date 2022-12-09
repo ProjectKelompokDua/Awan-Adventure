@@ -30,13 +30,18 @@
     <Component class="javax.swing.JComboBox" name="cmbfilter">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="4">
+          <StringArray count="5">
             <StringItem index="0" value="--Urutkan Dari--"/>
             <StringItem index="1" value="Data Paling Baru"/>
             <StringItem index="2" value="Data Paling lama"/>
             <StringItem index="3" value="Stok Paling Sedikit"/>
+            <StringItem index="4" value="Stok Paling Banyak"/>
           </StringArray>
         </Property>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="null"/>
+        </Property>
+        <Property name="name" type="java.lang.String" value="" noResource="true"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cmbfilterActionPerformed"/>
