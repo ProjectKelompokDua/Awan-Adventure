@@ -66,6 +66,7 @@ public class DataBarang extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        cmbfilter = new javax.swing.JComboBox<>();
         jLabel6 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -108,6 +109,15 @@ public class DataBarang extends javax.swing.JFrame {
         setUndecorated(true);
         getContentPane().setLayout(null);
 
+        cmbfilter.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Urutkan Dari--", "Data Paling Baru", "Data Paling lama", "Stok Paling Sedikit" }));
+        cmbfilter.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbfilterActionPerformed(evt);
+            }
+        });
+        getContentPane().add(cmbfilter);
+        cmbfilter.setBounds(740, 470, 160, 30);
+
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel6.setText("Keterangan");
         getContentPane().add(jLabel6);
@@ -136,7 +146,7 @@ public class DataBarang extends javax.swing.JFrame {
         id_barang.setForeground(new java.awt.Color(242, 242, 242));
         id_barang.setText("jLabel21");
         getContentPane().add(id_barang);
-        id_barang.setBounds(870, 290, 43, 16);
+        id_barang.setBounds(870, 290, 45, 16);
         getContentPane().add(txt_stok);
         txt_stok.setBounds(330, 200, 310, 30);
         getContentPane().add(txt_namaBarang);
@@ -166,6 +176,7 @@ public class DataBarang extends javax.swing.JFrame {
         getContentPane().add(jPanel2);
         jPanel2.setBounds(1040, 10, 80, 60);
 
+        table_barang.setAutoCreateRowSorter(true);
         table_barang.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -356,7 +367,7 @@ public class DataBarang extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jLabel14);
-        jLabel14.setBounds(1100, 84, 56, 30);
+        jLabel14.setBounds(1100, 84, 55, 30);
 
         jPanel4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel4.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -384,7 +395,7 @@ public class DataBarang extends javax.swing.JFrame {
         );
 
         getContentPane().add(jPanel4);
-        jPanel4.setBounds(1160, 0, 40, 31);
+        jPanel4.setBounds(1160, 0, 40, 32);
 
         jPanel5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel5.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -413,7 +424,7 @@ public class DataBarang extends javax.swing.JFrame {
         );
 
         getContentPane().add(jPanel5);
-        jPanel5.setBounds(1120, 0, 40, 30);
+        jPanel5.setBounds(1120, 0, 37, 30);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/dataBarang.jpg"))); // NOI18N
         jLabel1.setText("jLabel1");
@@ -483,6 +494,7 @@ try{
         pst.execute();
         JOptionPane.showMessageDialog(null, "Data Berhasil Disimpan");
                        
+        
     } catch (Exception e) {
         JOptionPane.showMessageDialog(this, e.getMessage());
     }
@@ -642,6 +654,57 @@ int i = table_barang.getSelectedRow();
         new FormPengembalian().setVisible(true);
     }//GEN-LAST:event_btn_returnMouseClicked
 
+    private void cmbfilterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbfilterActionPerformed
+       try{
+        int filter = cmbfilter.getSelectedIndex();
+       Connection conn = koneksi.Connect.GetConnection();
+       
+       Statement stm = conn.createStatement();
+       String msql;
+       
+       if (filter == 1){
+           msql = "SELECT * FROM data_barang GROUP BY id_barang ORDER BY id_barang DESC";
+       }
+       else if (filter == 2){
+           msql = "SELECT * FROM data_barang GROUP BY id_barang ORDER BY id_barang ASC";
+           }
+       else if (filter == 3){
+           msql = "SELECT * FROM data_barang GROUP BY id_barang ORDER BY stok ASC";
+       }
+       else{
+           msql = "SELECT * FROM data_barang GROUP BY id_barang ORDER BY id_barang DESC";
+       }
+       
+       ResultSet res = stm.executeQuery(msql);
+        DefaultTableModel dtm = new DefaultTableModel();
+        dtm.addColumn("ID Barang");
+        dtm.addColumn("Nama Barang");
+        dtm.addColumn("Stok");
+        dtm.addColumn("harga 1 hari");
+        dtm.addColumn("harga < 2 hari");
+        dtm.addColumn("keterangan");
+        table_barang.setModel(dtm);
+        
+            while(res.next()){ 
+                dtm.addRow(new Object[]{ 
+                    res.getString("id_barang"), 
+                    res.getString("nama_barang"), 
+                    res.getString("stok"), 
+                    res.getString("harga_hari"), 
+                    res.getString("harga_2hari"),
+                    res.getString("keterangan")
+                }); 
+                table_barang.setModel(dtm); 
+        
+        
+       
+       } 
+       }catch(Exception e) {
+           
+       }
+       
+    }//GEN-LAST:event_cmbfilterActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -689,6 +752,7 @@ int i = table_barang.getSelectedRow();
     private javax.swing.JButton btn_return;
     private javax.swing.JButton btn_sewa;
     private javax.swing.JButton btn_tambah;
+    private javax.swing.JComboBox<String> cmbfilter;
     private javax.swing.JLabel exit;
     private javax.swing.JLabel id_barang;
     private javax.swing.JLabel jLabel1;
