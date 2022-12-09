@@ -476,7 +476,7 @@ try{
         String sql = "DELETE FROM data_barang Where id_barang ='"+id_barang.getText()+"'";
         java.sql.Connection conn=(Connection)Connect.GetConnection();
         java.sql.PreparedStatement pst=conn.prepareStatement(sql);
-        int confirmLogout = JOptionPane.showConfirmDialog(rootPane, "Yakin ingin logout ?", "Logout", JOptionPane.YES_NO_OPTION);
+        int confirmLogout = JOptionPane.showConfirmDialog(rootPane, "Ingin menghapus data? ?", "Hapus Data", JOptionPane.YES_NO_OPTION);
         if (confirmLogout == JOptionPane.YES_OPTION) {
         pst.execute();
         JOptionPane.showMessageDialog(null, "Data Berhasil Dihapus");
