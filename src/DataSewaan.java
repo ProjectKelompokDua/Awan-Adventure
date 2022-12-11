@@ -453,7 +453,7 @@ public class DataSewaan extends javax.swing.JFrame {
 
     private void loadTable() {
         DefaultTableModel tableModel = new DefaultTableModel();
-        tableModel.addColumn("No");
+        tableModel.addColumn("ID Sewaan");
         tableModel.addColumn("Nama Penyewa");
         tableModel.addColumn("Identitas");
         tableModel.addColumn("DP");
@@ -462,14 +462,16 @@ public class DataSewaan extends javax.swing.JFrame {
         tableModel.addColumn("Tanggal Kembali");
         tableModel.addColumn("Jumlah");
         tableModel.addColumn("Total");
-
+        tableModel.addColumn("Tanggal Transaksi");
         try {
-            String sql = "SELECT data_sewaan.id_sewaan, data_sewaan.nama_penyewa, data_sewaan.jenis_identitas,\n"
-                    + "data_sewaan.dp, data_barang.nama_barang, data_sewaan.tanggal_pinjam, data_sewaan.tanggal_kembali,\n"
-                    + "data_sewaan.jumlah, data_sewaan.total\n"
+            String sql = ("SELECT data_sewaan.id_sewaan, data_sewaan.nama_penyewa, detail_data_sewaan.jenis_identitas,\n"
+                    + "detail_data_sewaan.dp, data_barang.nama_barang, data_sewaan.tgl_pinjam, data_sewaan.tgl_kembali,\n"
+                    + "detail_data_sewaan.jumlah, data_sewaan.total, data_sewaan.tgl_transaksi\n"
                     + "FROM data_sewaan\n"
+                    + "JOIN detail_data_sewaan\n"
+                    + "ON data_sewaan.id_sewaan = detail_data_sewaan.id_sewaan\n"
                     + "JOIN data_barang\n"
-                    + "ON data_sewaan.id_barang = data_barang.id_barang";
+                    + "ON detail_data_sewaan.id_barang = data_barang.id_barang");
 
             Connection connect = koneksi.Connect.GetConnection();
             PreparedStatement pst = connect.prepareStatement(sql);
@@ -478,7 +480,7 @@ public class DataSewaan extends javax.swing.JFrame {
             while (rs.next()) {
                 tableModel.addRow(new Object[]{rs.getString(1), rs.getString(2),
                     rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6),
-                    rs.getString(7), rs.getString(8), rs.getString(9)});
+                    rs.getString(7), rs.getString(8), rs.getString(9), rs.getString(10)});
             }
             table_sewaan.setModel(tableModel);
         } catch (Exception e) {
@@ -505,7 +507,7 @@ public class DataSewaan extends javax.swing.JFrame {
         String cari = txt_carisewaan.getText();
 
         DefaultTableModel dtm = new DefaultTableModel();
-        dtm.addColumn("No");
+        dtm.addColumn("ID Sewaan");
         dtm.addColumn("Nama Penyewa");
         dtm.addColumn("Identitas");
         dtm.addColumn("DP");
@@ -514,17 +516,20 @@ public class DataSewaan extends javax.swing.JFrame {
         dtm.addColumn("Tanggal Kembali");
         dtm.addColumn("Jumlah");
         dtm.addColumn("Total");
-        dtm.addColumn("Aksi");
+        dtm.addColumn("Tanggal Transaksi");
         table_sewaan.setModel(dtm);
 
         try {
             Statement statement = (Statement) Connect.GetConnection().createStatement();
-            ResultSet res = statement.executeQuery("SELECT data_sewaan.id_sewaan, data_sewaan.nama_penyewa, data_sewaan.jenis_identitas,\n"
-                    + "data_sewaan.dp, data_barang.nama_barang, data_sewaan.tanggal_pinjam, data_sewaan.tanggal_kembali,\n"
-                    + "data_sewaan.jumlah, data_sewaan.total\n"
-                    + "FROM data_sewaan join data_barang\n"
-                    + "on data_sewaan.id_barang = data_barang.id_barang \n"
-                    + "where nama_penyewa like '%"+cari+"%' or jenis_identitas like '%"+cari+"%'");
+            ResultSet res = statement.executeQuery("SELECT data_sewaan.id_sewaan, data_sewaan.nama_penyewa, detail_data_sewaan.jenis_identitas,\n"
+                    + "detail_data_sewaan.dp, data_barang.nama_barang, data_sewaan.tgl_pinjam, data_sewaan.tgl_kembali,\n"
+                    + "detail_data_sewaan.jumlah, data_sewaan.total, data_sewaan.tgl_transaksi\n"
+                    + "FROM data_sewaan\n"
+                    + "JOIN detail_data_sewaan\n"
+                    + "on data_sewaan.id_sewaan = detail_data_sewaan.id_sewaan\n"
+                    + "JOIN data_barang\n"
+                    + "ON detail_data_sewaan.id_barang = data_barang.id_barang\n"
+                    + "where data_sewaan.nama_penyewa like '%"+cari+"%' or data_sewaan.id_sewaan like '%"+cari+"%'");
 
             while (res.next()) {
                 dtm.addRow(new Object[]{
@@ -533,10 +538,11 @@ public class DataSewaan extends javax.swing.JFrame {
                     res.getString("jenis_identitas"),
                     res.getString("dp"),
                     res.getString("nama_barang"),
-                    res.getString("tanggal_pinjam"),
-                    res.getString("tanggal_kembali"),
+                    res.getString("tgl_pinjam"),
+                    res.getString("tgl_kembali"),
                     res.getString("jumlah"),
-                    res.getString("total")
+                    res.getString("total"),
+                    res.getString("tgl_transaksi")
                 });
                 table_sewaan.setModel(dtm);
             }
