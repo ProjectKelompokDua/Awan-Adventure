@@ -3,6 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+import com.toedter.calendar.JDateChooser;
 import java.awt.Frame;
 import javax.swing.JOptionPane;
 import java.sql.*;
@@ -14,6 +15,7 @@ import java.util.Locale;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableColumnModel;
 import javax.swing.table.TableModel;
 import koneksi.Connect;
 /**
@@ -71,6 +73,7 @@ public class FormKasir extends javax.swing.JFrame {
         btn_editBarang = new javax.swing.JButton();
         btn_hapusBarang = new javax.swing.JButton();
         btn_clear = new javax.swing.JButton();
+        btn_clearSelection = new javax.swing.JButton();
         tgl_kembali = new com.toedter.calendar.JDateChooser();
         tgl_pinjam = new com.toedter.calendar.JDateChooser();
         icon = new javax.swing.JPanel();
@@ -133,6 +136,7 @@ public class FormKasir extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        tbl_barang.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         tbl_barang.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tbl_barangMouseClicked(evt);
@@ -301,6 +305,7 @@ public class FormKasir extends javax.swing.JFrame {
         btn_editBarang.setForeground(new java.awt.Color(255, 255, 255));
         btn_editBarang.setText("Edit");
         btn_editBarang.setBorder(null);
+        btn_editBarang.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_editBarang.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_editBarangActionPerformed(evt);
@@ -312,16 +317,34 @@ public class FormKasir extends javax.swing.JFrame {
         btn_hapusBarang.setForeground(new java.awt.Color(255, 255, 255));
         btn_hapusBarang.setText("Hapus");
         btn_hapusBarang.setBorder(null);
+        btn_hapusBarang.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_hapusBarang.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_hapusBarangActionPerformed(evt);
+            }
+        });
 
         btn_clear.setBackground(new java.awt.Color(108, 117, 125));
         btn_clear.setFont(new java.awt.Font("Outfit", 0, 14)); // NOI18N
         btn_clear.setForeground(new java.awt.Color(255, 255, 255));
-        btn_clear.setText("Clear");
+        btn_clear.setText("Bersihkan");
         btn_clear.setBorder(null);
         btn_clear.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_clear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_clearActionPerformed(evt);
+            }
+        });
+
+        btn_clearSelection.setBackground(new java.awt.Color(108, 117, 125));
+        btn_clearSelection.setFont(new java.awt.Font("Outfit", 0, 14)); // NOI18N
+        btn_clearSelection.setForeground(new java.awt.Color(255, 255, 255));
+        btn_clearSelection.setText("Bersihkan Pilihan");
+        btn_clearSelection.setBorder(null);
+        btn_clearSelection.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_clearSelection.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_clearSelectionActionPerformed(evt);
             }
         });
 
@@ -337,9 +360,13 @@ public class FormKasir extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btn_editBarang, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btn_hapusBarang, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(btn_clear, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(7, Short.MAX_VALUE))
+                        .addComponent(btn_hapusBarang, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 1, Short.MAX_VALUE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(btn_clear, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btn_clearSelection, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -350,7 +377,9 @@ public class FormKasir extends javax.swing.JFrame {
                     .addComponent(btn_editBarang, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_hapusBarang, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btn_clear, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_clear, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_clearSelection, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
@@ -687,6 +716,7 @@ public class FormKasir extends javax.swing.JFrame {
         txt_dp.setText("");
         txt_dp.enable();
         tbl_barang.removeAll();
+        tbl_barang.setRowSelectionAllowed(true);
         combo_barang.setSelectedIndex(0);
         combo_jumlah.setSelectedItem("");
         combo_jumlah.setEnabled(false);
@@ -699,15 +729,20 @@ public class FormKasir extends javax.swing.JFrame {
         dtm.addColumn("Harga/Hari");
         dtm.addColumn("Harga > 2 Hari");
         tbl_barang.setModel(dtm);
+        tbl_barang.setDefaultEditor(Object.class, null);
+        btn_clearSelection.setEnabled(false);
+        total_harga.setText("");
     }
     
     private void tanggalHariIni(){
         long waktu = System.currentTimeMillis();
         Date today = new Date(waktu);
         tgl_pinjam.setMinSelectableDate(today);
+        tgl_pinjam.setDate(today);
         tgl_pinjam.setLocale(new Locale("id", "ID"));
         tgl_kembali.setMinSelectableDate(today);
         tgl_kembali.setLocale(new Locale("id", "ID"));
+        
     }
     
     private void combo_barangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combo_barangActionPerformed
@@ -746,7 +781,6 @@ public class FormKasir extends javax.swing.JFrame {
                 LocalDate tanggalKembali = LocalDate.parse(tanggalKembaliString);
                 Period jarak = Period.between(tanggalPinjam , tanggalKembali);
                     
-                int no = 1;
                 if(combo_barang.getSelectedItem().equals("Pilih Barang...")){
                     JOptionPane.showMessageDialog(rootPane, "Silahkan pilih barang terlebih dahulu");
                 }else if(combo_jumlah.getSelectedItem().equals("0")){
@@ -778,8 +812,9 @@ public class FormKasir extends javax.swing.JFrame {
 
                                 //query tambah data ke jTable
                                 DefaultTableModel dtm = (DefaultTableModel)tbl_barang.getModel();
+                                int rowCount = tbl_barang.getModel().getRowCount() + 1;
                                 dtm.addRow(new Object[]{
-                                    no++,
+                                    rowCount++,
                                     res.getString("nama_barang"),
                                     combo_jumlah.getSelectedItem(),
                                     res.getString("harga_hari"),
@@ -794,8 +829,9 @@ public class FormKasir extends javax.swing.JFrame {
 
                                 //query tambah data ke jTable
                                 DefaultTableModel dtm = (DefaultTableModel)tbl_barang.getModel();
+                                int rowCount = tbl_barang.getModel().getRowCount() + 1;
                                 dtm.addRow(new Object[]{
-                                    no++,
+                                    rowCount++,
                                     res.getString("nama_barang"),
                                     combo_jumlah.getSelectedItem(),
                                     res.getString("harga_hari"),
@@ -817,8 +853,9 @@ public class FormKasir extends javax.swing.JFrame {
 
                                 //query tambah data ke jTable
                                 DefaultTableModel dtm = (DefaultTableModel)tbl_barang.getModel();
+                                int rowCount = tbl_barang.getModel().getRowCount() + 1;
                                 dtm.addRow(new Object[]{
-                                    no++,
+                                    rowCount++,
                                     res.getString("nama_barang"),
                                     combo_jumlah.getSelectedItem(),
                                     res.getString("harga_hari"),
@@ -833,8 +870,9 @@ public class FormKasir extends javax.swing.JFrame {
 
                                 //query tambah data ke jTable
                                 DefaultTableModel dtm = (DefaultTableModel)tbl_barang.getModel();
+                                int rowCount = tbl_barang.getModel().getRowCount() + 1;
                                 dtm.addRow(new Object[]{
-                                    no++,
+                                    rowCount++,
                                     res.getString("nama_barang"),
                                     combo_jumlah.getSelectedItem(),
                                     res.getString("harga_hari"),
@@ -887,6 +925,151 @@ public class FormKasir extends javax.swing.JFrame {
 
     private void btn_editBarangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_editBarangActionPerformed
         // TODO add your handling code here:
+        if(tgl_pinjam.getDate() == null && tgl_kembali.getDate() == null){
+            JOptionPane.showMessageDialog(rootPane, "Silahkan pilih tanggal pinjam dan tanggal kembali terlebih dahulu");
+        }else{
+            int confirmEdit = JOptionPane.showConfirmDialog(rootPane, "Yakin ingin mengubah data ini?", "Edit", JOptionPane.YES_NO_OPTION);
+            if (confirmEdit == JOptionPane.YES_OPTION) {
+                try{
+                    int i = tbl_barang.getSelectedRow();
+
+                    //ambil value harga
+                    int jumlahbeli = Integer.parseInt(tbl_barang.getValueAt(i, 2).toString());
+                    int fieldhargaHari = Integer.parseInt(tbl_barang.getValueAt(i, 3).toString()) * jumlahbeli;
+                    int fieldharga3Hari = Integer.parseInt(tbl_barang.getValueAt(i, 4).toString()) * jumlahbeli;
+
+                    //query cari jarakHari
+                    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-M-dd");
+                    String tanggalPinjamString = sdf.format(tgl_pinjam.getDate());
+                    String tanggalKembaliString = sdf.format(tgl_kembali.getDate());
+                    LocalDate tanggalPinjam = LocalDate.parse(tanggalPinjamString);
+                    LocalDate tanggalKembali = LocalDate.parse(tanggalKembaliString);
+                    Period jarak = Period.between(tanggalPinjam , tanggalKembali);
+
+                    if(jarak.getDays() > 2){
+                        int totalHarga = Integer.parseInt(total_harga.getText()) - fieldharga3Hari;
+                        String total = String.valueOf(totalHarga);
+                        total_harga.setText(total);
+                    }else{
+                        int totalHarga = Integer.parseInt(total_harga.getText()) - fieldhargaHari;
+                        String total = String.valueOf(totalHarga);
+                        total_harga.setText(total);
+                    }
+
+                    DefaultTableModel hapus = (DefaultTableModel) tbl_barang.getModel();
+                    hapus.removeRow(i);
+
+                    if(combo_barang.getSelectedItem().equals("Pilih Barang...")){
+                        JOptionPane.showMessageDialog(rootPane, "Silahkan pilih barang terlebih dahulu");
+                    }else if(combo_jumlah.getSelectedItem().equals("0")){
+                        JOptionPane.showMessageDialog(rootPane, "Silahkan pilih jumlah barang terlebih dahulu");
+                    }else if(jarak.getDays() < 1){
+                        JOptionPane.showMessageDialog(rootPane, "Silahkan dicek kembali tanggal peminjaman dan pengembalian");
+                    }else{
+
+                        //ambil data barang
+                        String sql = "select * from data_barang where nama_barang='"+ combo_barang.getSelectedItem() +"'";
+                        Connection conn = koneksi.Connect.GetConnection();
+                        PreparedStatement pst = conn.prepareStatement(sql);
+                        ResultSet res = pst.executeQuery();
+
+                        res.next();
+                            if(jarak.getDays() > 2){
+                                int jumlah = Integer.parseInt(combo_jumlah.getSelectedItem().toString());
+                                int harga = Integer.parseInt(res.getString("harga_2hari"));
+                                int hasil = jumlah * harga;
+                                String total = total_harga.getText().toString();
+                                if(total.equals("")){
+                                    int totalSebelumnya = 0; 
+                                    int totalFix = totalSebelumnya + hasil;
+                                    String hasilString = String.valueOf(totalFix);
+
+                                    total_harga.setText(hasilString);
+
+                                    //query tambah data ke jTable
+                                    DefaultTableModel dtm = (DefaultTableModel)tbl_barang.getModel();
+                                    int rowCount = tbl_barang.getModel().getRowCount() + 1;
+                                    dtm.addRow(new Object[]{
+                                        rowCount++,
+                                        res.getString("nama_barang"),
+                                        combo_jumlah.getSelectedItem(),
+                                        res.getString("harga_hari"),
+                                        res.getString("harga_2hari")
+                                    });
+                                }else{
+                                    int totalSebelumnya = Integer.parseInt(total_harga.getText().toString());
+                                    int totalFix = totalSebelumnya + hasil;
+                                    String hasilString = String.valueOf(totalFix);
+
+                                    total_harga.setText(hasilString);
+
+                                    //query tambah data ke jTable
+                                    DefaultTableModel dtm = (DefaultTableModel)tbl_barang.getModel();
+                                    int rowCount = tbl_barang.getModel().getRowCount() + 1;
+                                    dtm.addRow(new Object[]{
+                                        rowCount++,
+                                        res.getString("nama_barang"),
+                                        combo_jumlah.getSelectedItem(),
+                                        res.getString("harga_hari"),
+                                        res.getString("harga_2hari")
+                                    });
+                                }
+
+                            }else{
+                                int jumlah = Integer.parseInt(combo_jumlah.getSelectedItem().toString());
+                                int harga = Integer.parseInt(res.getString("harga_hari"));
+                                int hasil = jumlah * harga;
+                                String total = total_harga.getText().toString();
+                                if(total.equals("")){
+                                    int totalSebelumnya = 0; 
+                                    int totalFix = totalSebelumnya + hasil;
+                                    String hasilString = String.valueOf(totalFix);
+
+                                    total_harga.setText(hasilString);
+
+                                    //query tambah data ke jTable
+                                    DefaultTableModel dtm = (DefaultTableModel)tbl_barang.getModel();
+                                    int rowCount = tbl_barang.getModel().getRowCount() + 1;
+                                    dtm.addRow(new Object[]{
+                                        rowCount++,
+                                        res.getString("nama_barang"),
+                                        combo_jumlah.getSelectedItem(),
+                                        res.getString("harga_hari"),
+                                        res.getString("harga_2hari")
+                                    });
+                                }else{
+                                    int totalSebelumnya = Integer.parseInt(total_harga.getText().toString());
+                                    int totalFix = totalSebelumnya + hasil;
+                                    String hasilString = String.valueOf(totalFix);
+
+                                    total_harga.setText(hasilString);
+
+                                    //query tambah data ke jTable
+                                    DefaultTableModel dtm = (DefaultTableModel)tbl_barang.getModel();
+                                    int rowCount = tbl_barang.getModel().getRowCount() + 1;
+                                    dtm.addRow(new Object[]{
+                                        rowCount++,
+                                        res.getString("nama_barang"),
+                                        combo_jumlah.getSelectedItem(),
+                                        res.getString("harga_hari"),
+                                        res.getString("harga_2hari")
+                                    });
+                                }
+                            }
+                        btn_tambahBarang.setEnabled(true);
+                        btn_editBarang.setEnabled(false);
+                        btn_hapusBarang.setEnabled(false);
+                        combo_barang.setSelectedIndex(0);
+                        combo_jumlah.setSelectedIndex(0);
+                        combo_jumlah.setEnabled(false);
+                        btn_clearSelection.setEnabled(false);
+                    }   
+                }catch(Exception e){
+                    JOptionPane.showMessageDialog(rootPane, "Error");
+                    System.out.println(e.getMessage());
+                }
+            }
+        }      
     }//GEN-LAST:event_btn_editBarangActionPerformed
 
     private void jPanel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel6MouseClicked
@@ -910,7 +1093,12 @@ public class FormKasir extends javax.swing.JFrame {
 
     private void btn_clearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_clearActionPerformed
         // TODO add your handling code here:
-        clear();
+        int clear = JOptionPane.showConfirmDialog(rootPane, "Yakin ingin membersihkan seluruh isian ? (termasuk pada table pilihan barang)", "Clear", JOptionPane.YES_NO_OPTION);
+        if (clear == JOptionPane.YES_OPTION) {
+            clear();
+            tanggalHariIni();
+        }
+        
     }//GEN-LAST:event_btn_clearActionPerformed
 
     private void combo_identitasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combo_identitasActionPerformed
@@ -939,6 +1127,10 @@ public class FormKasir extends javax.swing.JFrame {
         combo_barang.setSelectedItem(field2);
         combo_jumlah.setEnabled(true);
         combo_jumlah.setSelectedItem(field3);
+        btn_tambahBarang.setEnabled(false);
+        btn_editBarang.setEnabled(true);
+        btn_hapusBarang.setEnabled(true);
+        btn_clearSelection.setEnabled(true);
     }//GEN-LAST:event_tbl_barangMouseClicked
 
     private void btn_prosesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_prosesActionPerformed
@@ -1017,6 +1209,62 @@ public class FormKasir extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btn_prosesActionPerformed
 
+    private void btn_hapusBarangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_hapusBarangActionPerformed
+        // TODO add your handling code here:
+        int confirmDelete = JOptionPane.showConfirmDialog(rootPane, "Yakin ingin dihapus ?", "Hapus", JOptionPane.YES_NO_OPTION);
+        if(confirmDelete == JOptionPane.YES_OPTION){
+            int i = tbl_barang.getSelectedRow();
+            
+            //ambil value harga
+            int jumlahbeli = Integer.parseInt(tbl_barang.getValueAt(i, 2).toString());
+            int fieldhargaHari = Integer.parseInt(tbl_barang.getValueAt(i, 3).toString()) * jumlahbeli;
+            int fieldharga3Hari = Integer.parseInt(tbl_barang.getValueAt(i, 4).toString()) * jumlahbeli;
+            
+            //query cari jarakHari
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-M-dd");
+            String tanggalPinjamString = sdf.format(tgl_pinjam.getDate());
+            String tanggalKembaliString = sdf.format(tgl_kembali.getDate());
+            LocalDate tanggalPinjam = LocalDate.parse(tanggalPinjamString);
+            LocalDate tanggalKembali = LocalDate.parse(tanggalKembaliString);
+            Period jarak = Period.between(tanggalPinjam , tanggalKembali);
+            
+            if(jarak.getDays() > 2){
+                int totalHarga = Integer.parseInt(total_harga.getText()) - fieldharga3Hari;
+                String total = String.valueOf(totalHarga);
+                total_harga.setText(total);
+            }else{
+                int totalHarga = Integer.parseInt(total_harga.getText()) - fieldhargaHari;
+                String total = String.valueOf(totalHarga);
+                total_harga.setText(total);
+            }
+            
+            DefaultTableModel dtm = (DefaultTableModel) tbl_barang.getModel();
+            dtm.removeRow(i);
+            
+            btn_tambahBarang.setEnabled(true);
+            btn_editBarang.setEnabled(false);
+            btn_hapusBarang.setEnabled(false);
+            combo_barang.setSelectedIndex(0);
+            combo_jumlah.setSelectedIndex(0);
+            combo_jumlah.setEnabled(false);
+            btn_clearSelection.setEnabled(false);
+        }
+        
+    }//GEN-LAST:event_btn_hapusBarangActionPerformed
+
+    private void btn_clearSelectionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_clearSelectionActionPerformed
+        // TODO add your handling code here:
+        tbl_barang.clearSelection();
+        combo_barang.setSelectedIndex(0);
+        combo_jumlah.setSelectedIndex(0);
+        combo_jumlah.setEnabled(false);
+        btn_clearSelection.setEnabled(false);
+        btn_tambahBarang.setEnabled(true);
+        btn_editBarang.setEnabled(false);
+        btn_hapusBarang.setEnabled(false);
+    }//GEN-LAST:event_btn_clearSelectionActionPerformed
+
+    
     /**
      * @param args the command line arguments
      */
@@ -1059,6 +1307,7 @@ public class FormKasir extends javax.swing.JFrame {
     private javax.swing.JLabel bg;
     private javax.swing.JButton btn_beranda;
     private javax.swing.JButton btn_clear;
+    private javax.swing.JButton btn_clearSelection;
     private javax.swing.JButton btn_dataBarang;
     private javax.swing.JButton btn_editBarang;
     private javax.swing.JButton btn_hapusBarang;
